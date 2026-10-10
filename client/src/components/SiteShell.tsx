@@ -115,50 +115,30 @@ export default function SiteShell({ language, onLanguageChange, activePage, chil
             <Link className="footer-arrow-link" href={routePaths.contact} onClick={scrollToTop}>{language === "fr" ? "Parler avec nous" : "Talk with us"} <span>↗</span></Link>
           </div>
         </div>
-        {/* INFUSA Client Acquisition Spotlight */}
+        {/* INFUSA Client Acquisition Spotlight (Compact) */}
         <div className="container site-footer__infusa-section">
           <div className="footer-infusa-banner">
             <div className="footer-infusa-banner__info">
-              <div className="footer-infusa-banner__badge">
-                <span className="footer-infusa-banner__pulse" />
-                <span className="footer-infusa-banner__tag">
-                  {language === "fr" ? "Agence Web & Ingénierie Logicielle" : "Web Agency & Software Engineering"}
-                </span>
-                <span className="footer-infusa-banner__sep">•</span>
-                <span className="footer-infusa-banner__status">
-                  {language === "fr" ? "Disponible pour nouveaux projets" : "Available for new projects"}
-                </span>
-              </div>
-              <h4 className="footer-infusa-banner__title">
+              <span className="footer-infusa-banner__pulse" />
+              <span className="footer-infusa-banner__tag">
+                {language === "fr" ? "Agence INFUSA" : "INFUSA Agency"}
+              </span>
+              <span className="footer-infusa-banner__sep">•</span>
+              <span className="footer-infusa-banner__pitch">
                 {language === "fr"
-                  ? "Vous aimez la réalisation de ce site ? Faites concevoir le vôtre par INFUSA."
-                  : "Admiring the craft of this website? Have yours built by INFUSA."}
-              </h4>
-              <p className="footer-infusa-banner__desc">
-                {language === "fr"
-                  ? "Création de sites web professionnels d’exception, plateformes sur mesure, modules de dons et solutions logicielles pour fondations, églises, ONG et entreprises."
-                  : "High-performance websites, custom platforms, online donation modules, and scalable software for non-profits, churches, NGOs, and businesses."}
-              </p>
+                  ? "Vous aimez la réalisation de ce site ? Confiez-nous votre projet web ou logiciel."
+                  : "Admiring this website? Entrust your web or software project to us."}
+              </span>
             </div>
-            <div className="footer-infusa-banner__action">
-              <a
-                href="https://www.infusa.pro"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="footer-infusa-banner__btn"
-              >
-                <span>{language === "fr" ? "Créer votre site avec INFUSA" : "Start your project with INFUSA"}</span>
-                <ArrowRight size={15} />
-              </a>
-              <a
-                href="https://www.infusa.pro"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="footer-infusa-banner__link"
-              >
-                www.infusa.pro ↗
-              </a>
-            </div>
+            <a
+              href="https://www.infusa.pro"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-infusa-banner__btn"
+            >
+              <span>{language === "fr" ? "Créer votre site avec INFUSA" : "Start your project with INFUSA"}</span>
+              <ArrowRight size={13} />
+            </a>
           </div>
         </div>
 
