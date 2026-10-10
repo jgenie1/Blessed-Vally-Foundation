@@ -348,7 +348,10 @@ blockquote { position: relative; max-width: 700px; margin: 39px 0 0; padding: 19
 .contact-team__header, .leadership-team__header { max-width: 720px; margin-bottom: 40px; }
 .contact-team__header h2, .leadership-team__header h2 { margin: 10px 0 16px; font: 500 clamp(32px, 4vw, 48px)/1.08 "Fraunces", serif; letter-spacing: -.04em; color: var(--ink); }
 .contact-team__sub, .leadership-team__sub { color: var(--muted); font-size: 15px; line-height: 1.6; margin: 0; }
-.contact-team__grid, .leadership-team__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 24px; align-items: stretch; }
+.contact-team__grid, .leadership-team__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; align-items: stretch; }
+@media (min-width: 1120px) {
+  .leadership-team__grid { grid-template-columns: repeat(5, 1fr); }
+}
 .contact-card { display: flex; flex-direction: column; background: var(--paper); border: 1px solid var(--line); border-radius: 4px; overflow: hidden; transition: transform .25s ease, box-shadow .25s ease; box-shadow: 0 4px 14px rgba(16,42,67,.04); }
 .contact-card:hover { transform: translateY(-4px); box-shadow: 0 14px 28px rgba(16,42,67,.09); }
 .contact-card__image-wrap { position: relative; width: 100%; aspect-ratio: 4/5; overflow: hidden; background: var(--sand-dark); }
@@ -358,12 +361,34 @@ blockquote { position: relative; max-width: 700px; margin: 39px 0 0; padding: 19
 .contact-card__content { display: flex; flex-direction: column; flex-grow: 1; padding: 18px 18px 20px; }
 .contact-card__name { margin: 0; font: 500 19px/1.2 "Fraunces", serif; letter-spacing: -.02em; color: var(--ink); }
 .contact-card__role { margin: 4px 0 10px; font-size: 12px; font-weight: 700; color: var(--coral-dark); letter-spacing: .02em; text-transform: uppercase; }
-.contact-card__note { margin: 0 0 14px; font-size: 13px; color: var(--muted); line-height: 1.5; flex-grow: 1; }
+.contact-card__note { margin: 0 0 12px; font-size: 13px; color: var(--muted); line-height: 1.5; flex-grow: 1; }
+.contact-card__highlight { font-size: 11px; font-weight: 600; color: var(--ink); background: var(--sand); padding: 6px 10px; border-radius: 4px; margin-bottom: 12px; border-left: 3px solid var(--coral); line-height: 1.4; }
 .contact-card__actions { display: flex; align-items: center; justify-content: space-between; gap: 8px; border-top: 1px solid var(--line); padding-top: 12px; margin-top: auto; flex-wrap: wrap; }
 .contact-card__cta { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 700; color: var(--ink); transition: color .2s ease; cursor: pointer; text-decoration: none; }
 .contact-card__cta:hover { color: var(--coral); }
 .contact-card__anchor-btn { display: inline-flex; align-items: center; gap: 4px; font-size: 11px; font-weight: 700; color: var(--coral-dark); text-decoration: none; transition: color .2s ease; }
 .contact-card__anchor-btn:hover { color: var(--ink); }
+
+/* Founders Corner as Top Hero */
+.founders-corner--hero { padding-top: clamp(48px, 6vw, 76px); background: var(--paper); border-bottom: 1px solid var(--line); }
+
+/* Contact Page - Directory Section */
+.contact-directory { background: var(--sand); border-bottom: 1px solid var(--line); }
+.contact-directory__header { max-width: 720px; margin-bottom: 36px; }
+.contact-directory__header h2 { margin: 10px 0 14px; font: 500 clamp(30px, 3.8vw, 44px)/1.1 "Fraunces", serif; letter-spacing: -.03em; color: var(--ink); }
+.contact-directory__sub { color: var(--muted); font-size: 15px; line-height: 1.6; margin: 0; }
+.contact-directory__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; }
+.contact-dept-card { display: flex; align-items: flex-start; gap: 16px; background: var(--paper); border: 1px solid var(--line); border-radius: 8px; padding: 20px; box-shadow: 0 4px 12px rgba(16,42,67,.03); transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease; cursor: pointer; text-align: left; }
+.contact-dept-card:hover { transform: translateY(-3px); border-color: var(--coral); box-shadow: 0 10px 24px rgba(16,42,67,.08); }
+.contact-dept-card__avatar { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; flex-shrink: 0; border: 2px solid var(--sand); box-shadow: 0 2px 6px rgba(16,42,67,.08); }
+.contact-dept-card__info { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.contact-dept-card__top { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 3px; }
+.contact-dept-card__name { margin: 0; font-size: 15px; font-weight: 700; color: var(--ink); }
+.contact-dept-card__badge { font-size: 9px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--coral-dark); background: rgba(224, 90, 71, .08); padding: 2px 7px; border-radius: 3px; }
+.contact-dept-card__role { font-size: 12px; font-weight: 600; color: var(--muted); margin: 0 0 8px; }
+.contact-dept-card__scope { font-size: 12px; color: var(--ink-soft); line-height: 1.45; margin: 0 0 12px; }
+.contact-dept-card__cta { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 700; color: var(--coral-dark); margin-top: auto; transition: gap .2s ease; }
+.contact-dept-card:hover .contact-dept-card__cta { gap: 9px; color: var(--coral); }
 
 .team-sync-banner { margin-top: 40px; display: flex; align-items: center; justify-content: space-between; gap: 24px; background: var(--paper); border: 1px solid var(--line); padding: 24px 28px; border-left: 4px solid var(--coral); box-shadow: 0 4px 16px rgba(16,42,67,.04); }
 .team-sync-banner__content { display: flex; flex-direction: column; gap: 4px; max-width: 700px; }

@@ -29,19 +29,30 @@ export default function SitePage({ pageKey, language }: { pageKey: Exclude<PageK
 
   return (
     <>
-      <PageHero kicker={model.kicker} title={model.title} description={model.description} image={model.image} language={language} />
+      {pageKey !== "leadership" && (
+        <PageHero
+          kicker={model.kicker}
+          title={model.title}
+          description={model.description}
+          image={model.image}
+          language={language}
+        />
+      )}
 
       {pageKey === "leadership" && (
         <>
+          <FoundersCorner language={language} isHero={true} />
           <LeadershipTeamSection language={language} />
-          <FoundersCorner language={language} />
           <LeadershipGovernanceSection language={language} />
         </>
       )}
 
       {pageKey === "contact" && (
         <>
-          <ContactTeamGallery language={language} onSelectRecipient={handleSelectRecipient} />
+          <ContactDirectorySection
+            language={language}
+            onSelectRecipient={handleSelectRecipient}
+          />
           <ContactPanel language={language} activeRecipient={selectedRecipient} />
         </>
       )}
@@ -89,6 +100,10 @@ export default function SitePage({ pageKey, language }: { pageKey: Exclude<PageK
 }
 
 function LeadershipTeamSection({ language }: { language: Language }) {
+  // Dr. Vally is prominently honored in FoundersCorner right above,
+  // so the board grid showcases the other 5 executive leaders
+  const executiveMembers = teamMembers.filter((m) => !m.isFounder);
+
   return (
     <section className="leadership-team section-space">
       <div className="container">
@@ -99,18 +114,18 @@ function LeadershipTeamSection({ language }: { language: Language }) {
           </p>
           <h2>
             {language === "fr"
-              ? "Les visages et l’engagement qui portent la mission."
-              : "The faces and leadership carrying the mission forward."}
+              ? "Le Conseil d’Administration & La Direction"
+              : "Executive Board & Leadership"}
           </h2>
           <p className="leadership-team__sub">
             {language === "fr"
-              ? "Découvrez l’équipe dirigeante de la Fondation Blessed Vally. Ensemble, ils conjuguent fidélité pastorale, vision éducative, rigueur institutionnelle et dévouement envers les familles aux États-Unis et en Haïti."
-              : "Meet the executive leaders of the Blessed Vally Foundation. Together, they unite pastoral fidelity, educational vision, institutional integrity, and grassroots devotion to families across the United States and Haiti."}
+              ? "Aux côtés de la Présidente Fondatrice, l’équipe dirigeante de la Fondation Blessed Vally assure la gouvernance stratégique, la gestion financière, le discernement consultatif et le déploiement des missions sur le terrain."
+              : "Alongside the Founder & President, the executive leadership of the Blessed Vally Foundation ensures strategic governance, financial stewardship, advisory counsel, and on-the-ground mission deployment."}
           </p>
         </div>
 
         <div className="leadership-team__grid">
-          {teamMembers.map((member) => (
+          {executiveMembers.map((member) => (
             <div key={member.id} className="contact-card">
               <div className="contact-card__image-wrap">
                 <img src={member.image} alt={member.name} className="contact-card__image" />
@@ -120,18 +135,18 @@ function LeadershipTeamSection({ language }: { language: Language }) {
                 <h3 className="contact-card__name">{member.name}</h3>
                 <p className="contact-card__role">{member.role[language]}</p>
                 <p className="contact-card__note">{member.note[language]}</p>
+                {member.bioHighlight && (
+                  <div className="contact-card__highlight">
+                    {member.bioHighlight[language]}
+                  </div>
+                )}
                 <div className="contact-card__actions">
-                  {member.isFounder ? (
-                    <a href="#coin-fondatrice" className="contact-card__anchor-btn">
-                      {language === "fr" ? "Biographie détaillée" : "Full Biography"} &darr;
-                    </a>
-                  ) : null}
                   <a
                     href={`/contact?to=${member.id}`}
                     className="contact-card__cta"
                   >
                     <Mail size={13} />
-                    {language === "fr" ? "Contacter" : "Contact"}
+                    {language === "fr" ? "Écrire au bureau" : "Contact Office"}
                   </a>
                 </div>
               </div>
@@ -229,66 +244,142 @@ function NewsArchive({ language }: { language: Language }) {
 }
 
 
-function ContactTeamGallery({
+function ContactDirectorySection({
   language,
   onSelectRecipient,
 }: {
   language: Language;
   onSelectRecipient: (id: string) => void;
 }) {
+  const contactDirectory = [
+    {
+      id: "vally",
+      name: "Dr. Vally Jean-Louis Legouté",
+      role: { fr: "Fondatrice & Présidente", en: "Founder & President" },
+      badge: { fr: "Direction générale", en: "Executive Office" },
+      image: "/images/contact/contact-1.jpg",
+      scope: {
+        fr: "Orientation pastorale, vision stratégique et relations institutionnelles de haut niveau.",
+        en: "Pastoral guidance, strategic vision, and high-level institutional relations.",
+      },
+      actionLabel: { fr: "Écrire à la Présidence", en: "Message President" },
+    },
+    {
+      id: "jean-ronald",
+      name: "Mr. Jean Ronald Legouté",
+      role: { fr: "Vice-Président", en: "Vice President" },
+      badge: { fr: "Vice-Présidence", en: "Vice Presidency" },
+      image: "/images/contact/contact-2.jpg",
+      scope: {
+        fr: "Partenariats stratégiques, développement institutionnel et relations extérieures.",
+        en: "Strategic partnerships, institutional development, and external relations.",
+      },
+      actionLabel: { fr: "Écrire au Vice-Président", en: "Message Vice President" },
+    },
+    {
+      id: "vanessa",
+      name: "Vanessa Ramona Bastien-Joseph",
+      role: { fr: "Trésorière et Directrice Financière (CFO)", en: "Treasurer & CFO" },
+      badge: { fr: "Finance & Trésorerie", en: "Finance & Treasury" },
+      image: "/images/contact/vanessa-bastien.jpg",
+      scope: {
+        fr: "Vérification des virements, reçus de dons officiels, fiscalité et conformité comptable.",
+        en: "Wire transfer verifications, official tax receipts, and financial compliance.",
+      },
+      actionLabel: { fr: "Contacter les Finances", en: "Contact Finance" },
+    },
+    {
+      id: "pierre",
+      name: "Ing. Geraldy Loudy Pierre",
+      role: { fr: "Conseiller", en: "Counselor" },
+      badge: { fr: "Conseil & Orientation", en: "Advisory & Engineering" },
+      image: "/images/contact/contact-3.jpg",
+      scope: {
+        fr: "Conseil stratégique, chantiers d'ingénierie, eau potable et infrastructures en Haïti.",
+        en: "Strategic counsel, engineering projects, clean water and infrastructure in Haiti.",
+      },
+      actionLabel: { fr: "Contacter le Conseil", en: "Contact Advisory" },
+    },
+    {
+      id: "relations",
+      name: "Direction & Relations Partenaires",
+      role: { fr: "Coordination & Partenariats", en: "Partnerships & Outreach" },
+      badge: { fr: "Partenariats", en: "Outreach Team" },
+      image: "/images/contact/contact-4.jpg",
+      scope: {
+        fr: "Églises partenaires, fondations mécènes, réseaux de donateurs et parrainages d'écoles.",
+        en: "Partner churches, philanthropic foundations, recurring donors, and school sponsorships.",
+      },
+      actionLabel: { fr: "Contacter les Partenariats", en: "Contact Outreach" },
+    },
+    {
+      id: "programmes",
+      name: "Direction des Programmes Éducatifs",
+      role: { fr: "Programmes & Communautés", en: "Programs & Communities" },
+      badge: { fr: "Missions Terrain", en: "Field Programs" },
+      image: "/images/contact/contact-5.jpg",
+      scope: {
+        fr: "Scolarisation des enfants, vie des classes, logistique des cantines et distributions de terrain.",
+        en: "Children's schooling, classroom operations, nutrition logistics, and field relief.",
+      },
+      actionLabel: { fr: "Contacter les Programmes", en: "Contact Programs" },
+    },
+  ];
+
   return (
-    <section className="contact-team section-space">
+    <section className="contact-directory section-space">
       <div className="container">
-        <div className="contact-team__header">
+        <div className="contact-directory__header">
           <p className="eyebrow">
             <span className="eyebrow-dot" />
-            {language === "fr" ? "Vos interlocuteurs" : "Your Contact Team"}
+            {language === "fr" ? "Pôles & Interlocuteurs Directs" : "Departments & Direct Contacts"}
           </p>
-          <h2>{language === "fr" ? "Une équipe dévouée à votre écoute." : "A dedicated team ready to connect."}</h2>
-          <p className="contact-team__sub">
+          <h2>
             {language === "fr"
-              ? "Rencontrez la direction et les représentants de la Fondation Blessed Vally. Nous sommes disponibles pour échanger sur nos missions, nos projets éducatifs et nos partenariats aux États-Unis et en Haïti."
-              : "Meet the leadership and representatives of the Blessed Vally Foundation. We are available to connect regarding our mission, educational initiatives, and partnerships in the United States and Haiti."}
+              ? "À qui souhaitez-vous vous adresser ?"
+              : "Who would you like to connect with?"}
+          </h2>
+          <p className="contact-directory__sub">
+            {language === "fr"
+              ? "Cliquez sur un département ou un représentant pour lui adresser directement votre message dans le formulaire officiel ci-dessous."
+              : "Click a department or leadership representative to pre-select your recipient in the official inquiry form below."}
           </p>
         </div>
 
-        <div className="contact-team__grid">
-          {teamMembers.map((member) => (
-            <div key={member.id} className="contact-card">
-              <div className="contact-card__image-wrap">
-                <img src={member.image} alt={member.name} className="contact-card__image" />
-                <span className="contact-card__badge">{member.badge[language]}</span>
-              </div>
-              <div className="contact-card__content">
-                <h3 className="contact-card__name">{member.name}</h3>
-                <p className="contact-card__role">{member.role[language]}</p>
-                <p className="contact-card__note">{member.note[language]}</p>
-                <div className="contact-card__actions">
-                  <button
-                    type="button"
-                    onClick={() => onSelectRecipient(member.id)}
-                    className="contact-card__cta"
-                    style={{ background: "none", border: "none", padding: 0 }}
-                  >
-                    <Mail size={13} />
-                    {language === "fr" ? "Écrire à ce contact" : "Message this contact"}
-                  </button>
-                  {member.isFounder && (
-                    <a href="/leadership#coin-fondatrice" className="contact-card__anchor-btn">
-                      {language === "fr" ? "Biographie" : "Bio"} &rarr;
-                    </a>
-                  )}
+        <div className="contact-directory__grid">
+          {contactDirectory.map((dept) => (
+            <button
+              key={dept.id}
+              type="button"
+              className="contact-dept-card"
+              onClick={() => onSelectRecipient(dept.id)}
+            >
+              <img
+                src={dept.image}
+                alt={dept.name}
+                className="contact-dept-card__avatar"
+              />
+              <div className="contact-dept-card__info">
+                <div className="contact-dept-card__top">
+                  <h3 className="contact-dept-card__name">{dept.name}</h3>
+                  <span className="contact-dept-card__badge">{dept.badge[language]}</span>
                 </div>
+                <p className="contact-dept-card__role">{dept.role[language]}</p>
+                <p className="contact-dept-card__scope">{dept.scope[language]}</p>
+                <span className="contact-dept-card__cta">
+                  <Mail size={13} />
+                  {dept.actionLabel[language]} &darr;
+                </span>
               </div>
-            </div>
+            </button>
           ))}
         </div>
 
-        {/* Synchronized Cross-Link Banner */}
+        {/* Cross-Link to Leadership */}
         <div className="team-sync-banner">
           <div className="team-sync-banner__content">
             <span className="team-sync-banner__badge">
-              {language === "fr" ? "Gouvernance & Vocation" : "Governance & Calling"}
+              {language === "fr" ? "Biographies & Gouvernance" : "Biographies & Governance"}
             </span>
             <h4>
               {language === "fr"
@@ -297,8 +388,8 @@ function ContactTeamGallery({
             </h4>
             <p>
               {language === "fr"
-                ? "Consultez le Coin de la Fondatrice Dre Vally, ses 36 ans d’enseignement et les piliers éthiques qui animent la Fondation."
-                : "Read Dr. Vally’s biographical journey, 36 years in education, and the ethical foundations animating the Foundation."}
+                ? "Consultez le Coin de la Fondatrice Dre Vally, ses 36 ans d’enseignement et les piliers statutaires qui animent la Fondation."
+                : "Read Dr. Vally’s biographical journey, 36 years in education, and the legal foundations animating the Foundation."}
             </p>
           </div>
           <a href={routePaths.leadership} className="button button--paper">

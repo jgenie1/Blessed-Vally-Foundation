@@ -2,9 +2,19 @@ import { ArrowRight, Award, BookOpen, GraduationCap, Heart, Quote, Sparkles } fr
 import { Link } from "wouter";
 import { routePaths, type Language } from "@/lib/site-content";
 
-export default function FoundersCorner({ language }: { language: Language }) {
+export default function FoundersCorner({
+  language,
+  isHero = false,
+}: {
+  language: Language;
+  isHero?: boolean;
+}) {
   return (
-    <section className="founders-corner section-space" id="coin-fondatrice" aria-label={language === "fr" ? "Le Coin de la Fondatrice" : "Founder's Corner"}>
+    <section
+      className={`founders-corner section-space ${isHero ? "founders-corner--hero" : ""}`}
+      id="coin-fondatrice"
+      aria-label={language === "fr" ? "Le Coin de la Fondatrice" : "Founder's Corner"}
+    >
       <div className="container">
         <div className="founders-corner__grid">
           {/* Left Media & Quotes Column */}
