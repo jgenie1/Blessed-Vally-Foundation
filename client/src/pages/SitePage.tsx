@@ -269,7 +269,7 @@ function ContactDirectorySection({
       name: "Mr. Jean Ronald Legouté",
       role: { fr: "Vice-Président", en: "Vice President" },
       badge: { fr: "Vice-Présidence", en: "Vice Presidency" },
-      image: "/images/contact/contact-2.jpg",
+      image: "/images/contact/contact-3.jpg",
       scope: {
         fr: "Partenariats stratégiques, développement institutionnel et relations extérieures.",
         en: "Strategic partnerships, institutional development, and external relations.",
@@ -293,7 +293,7 @@ function ContactDirectorySection({
       name: "Ing. Geraldy Loudy Pierre",
       role: { fr: "Conseiller", en: "Counselor" },
       badge: { fr: "Conseil & Orientation", en: "Advisory & Engineering" },
-      image: "/images/contact/contact-3.jpg",
+      image: "/images/contact/contact-2.jpg",
       scope: {
         fr: "Conseil stratégique, chantiers d'ingénierie, eau potable et infrastructures en Haïti.",
         en: "Strategic counsel, engineering projects, clean water and infrastructure in Haiti.",

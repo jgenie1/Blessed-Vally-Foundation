@@ -45,7 +45,7 @@ export const teamMembers: TeamMember[] = [
       fr: "Direction exécutive",
       en: "Executive Leadership",
     },
-    image: "/images/contact/contact-2.jpg",
+    image: "/images/contact/contact-3.jpg",
     note: {
       fr: "Coordonne les initiatives stratégiques, le développement institutionnel et les partenariats humanitaires et communautaires.",
       en: "Coordinates strategic initiatives, institutional development, and humanitarian community partnerships.",
@@ -89,7 +89,7 @@ export const teamMembers: TeamMember[] = [
       fr: "Conseil & Orientation",
       en: "Advisory & Counsel",
     },
-    image: "/images/contact/contact-3.jpg",
+    image: "/images/contact/contact-2.jpg",
     note: {
       fr: "Apporte son expertise d'ingénierie, ses conseils stratégiques et son accompagnement continu au déploiement de la mission et des chantiers.",
       en: "Provides engineering expertise, strategic counsel, and ongoing guidance for the deployment of the Foundation's mission and projects.",
