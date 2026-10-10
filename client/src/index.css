@@ -150,14 +150,14 @@ img { display: block; max-width: 100%; }
 .image-frame--portrait img { object-position: center 12%; }
 .image-frame__badge {
   position: absolute;
-  bottom: 22px;
-  left: 22px;
+  top: 20px;
+  left: 20px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   min-width: 68px;
   min-height: 34px;
-  padding: 6px 13px;
+  padding: 6px 14px;
   color: var(--white);
   background: var(--coral);
   font: 600 11px/1 "Fraunces", serif;
@@ -166,6 +166,7 @@ img { display: block; max-width: 100%; }
   box-shadow: 0 4px 14px rgba(16,42,67,.25);
   border-radius: 2px;
   z-index: 2;
+  white-space: nowrap;
 }
 .image-frame__caption {
   position: absolute;
@@ -2597,6 +2598,7 @@ blockquote { position: relative; max-width: 700px; margin: 39px 0 0; padding: 19
   .mobile-nav__inner { grid-template-columns: 1fr; }
   .founders-corner__milestones { grid-template-columns: 1fr; gap: 10px; }
   .banking-card { padding: 20px 14px; }
+  .image-frame__badge { top: 16px; left: 16px; padding: 5px 10px; font-size: 10px; }
   .site-footer__bottom { padding: 14px 0 16px; font-size: 10px; }
   .site-footer__top { grid-template-columns: 1fr; gap: 28px; }
 }
