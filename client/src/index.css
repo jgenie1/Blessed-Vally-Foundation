@@ -377,18 +377,54 @@ blockquote { position: relative; max-width: 700px; margin: 39px 0 0; padding: 19
 .contact-directory__header { max-width: 720px; margin-bottom: 36px; }
 .contact-directory__header h2 { margin: 10px 0 14px; font: 500 clamp(30px, 3.8vw, 44px)/1.1 "Fraunces", serif; letter-spacing: -.03em; color: var(--ink); }
 .contact-directory__sub { color: var(--muted); font-size: 15px; line-height: 1.6; margin: 0; }
-.contact-directory__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; }
-.contact-dept-card { display: flex; align-items: flex-start; gap: 16px; background: var(--paper); border: 1px solid var(--line); border-radius: 8px; padding: 20px; box-shadow: 0 4px 12px rgba(16,42,67,.03); transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease; cursor: pointer; text-align: left; }
-.contact-dept-card:hover { transform: translateY(-3px); border-color: var(--coral); box-shadow: 0 10px 24px rgba(16,42,67,.08); }
-.contact-dept-card__avatar { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; flex-shrink: 0; border: 2px solid var(--sand); box-shadow: 0 2px 6px rgba(16,42,67,.08); }
-.contact-dept-card__info { flex: 1; min-width: 0; display: flex; flex-direction: column; }
-.contact-dept-card__top { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 3px; }
-.contact-dept-card__name { margin: 0; font-size: 15px; font-weight: 700; color: var(--ink); }
-.contact-dept-card__badge { font-size: 9px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--coral-dark); background: rgba(224, 90, 71, .08); padding: 2px 7px; border-radius: 3px; }
-.contact-dept-card__role { font-size: 12px; font-weight: 600; color: var(--muted); margin: 0 0 8px; }
-.contact-dept-card__scope { font-size: 12px; color: var(--ink-soft); line-height: 1.45; margin: 0 0 12px; }
-.contact-dept-card__cta { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 700; color: var(--coral-dark); margin-top: auto; transition: gap .2s ease; }
-.contact-dept-card:hover .contact-dept-card__cta { gap: 9px; color: var(--coral); }
+.contact-directory__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; align-items: stretch; }
+@media (min-width: 960px) {
+  .contact-directory__grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+.contact-card--interactive {
+  cursor: pointer;
+  outline: none;
+}
+.contact-card--interactive:hover {
+  border-color: var(--coral);
+}
+.contact-card--interactive:focus-visible {
+  outline: 2px solid var(--coral);
+  outline-offset: 2px;
+}
+
+.contact-card__action-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--white);
+  background: var(--ink);
+  border: 1px solid var(--ink);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background .2s ease, border-color .2s ease, transform .2s ease, box-shadow .2s ease;
+  font-family: inherit;
+}
+.contact-card__action-btn:hover {
+  background: var(--coral);
+  border-color: var(--coral);
+  color: var(--white);
+  box-shadow: 0 4px 14px rgba(224, 90, 71, 0.28);
+}
+.contact-card__action-btn .action-arrow {
+  transition: transform .2s ease;
+  font-size: 15px;
+  line-height: 1;
+}
+.contact-card__action-btn:hover .action-arrow {
+  transform: translateY(2px);
+}
 
 .team-sync-banner { margin-top: 40px; display: flex; align-items: center; justify-content: space-between; gap: 24px; background: var(--paper); border: 1px solid var(--line); padding: 24px 28px; border-left: 4px solid var(--coral); box-shadow: 0 4px 16px rgba(16,42,67,.04); }
 .team-sync-banner__content { display: flex; flex-direction: column; gap: 4px; max-width: 700px; }

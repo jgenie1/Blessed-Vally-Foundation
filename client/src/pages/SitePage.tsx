@@ -348,30 +348,47 @@ function ContactDirectorySection({
 
         <div className="contact-directory__grid">
           {contactDirectory.map((dept) => (
-            <button
+            <div
               key={dept.id}
-              type="button"
-              className="contact-dept-card"
+              className="contact-card contact-card--interactive"
               onClick={() => onSelectRecipient(dept.id)}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
+                  onSelectRecipient(dept.id);
+                }
+              }}
             >
-              <img
-                src={dept.image}
-                alt={dept.name}
-                className="contact-dept-card__avatar"
-              />
-              <div className="contact-dept-card__info">
-                <div className="contact-dept-card__top">
-                  <h3 className="contact-dept-card__name">{dept.name}</h3>
-                  <span className="contact-dept-card__badge">{dept.badge[language]}</span>
-                </div>
-                <p className="contact-dept-card__role">{dept.role[language]}</p>
-                <p className="contact-dept-card__scope">{dept.scope[language]}</p>
-                <span className="contact-dept-card__cta">
-                  <Mail size={13} />
-                  {dept.actionLabel[language]} &darr;
-                </span>
+              <div className="contact-card__image-wrap">
+                <img
+                  src={dept.image}
+                  alt={dept.name}
+                  className="contact-card__image"
+                />
+                <span className="contact-card__badge">{dept.badge[language]}</span>
               </div>
-            </button>
+              <div className="contact-card__content">
+                <h3 className="contact-card__name">{dept.name}</h3>
+                <p className="contact-card__role">{dept.role[language]}</p>
+                <p className="contact-card__note">{dept.scope[language]}</p>
+                <div className="contact-card__actions" style={{ marginTop: "auto", paddingTop: "14px" }}>
+                  <button
+                    type="button"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      onSelectRecipient(dept.id);
+                    }}
+                    className="contact-card__action-btn"
+                  >
+                    <Mail size={14} />
+                    <span>{dept.actionLabel[language]}</span>
+                    <span className="action-arrow">&darr;</span>
+                  </button>
+                </div>
+              </div>
+            </div>
           ))}
         </div>
 
