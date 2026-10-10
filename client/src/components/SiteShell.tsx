@@ -69,6 +69,11 @@ export default function SiteShell({ language, onLanguageChange, activePage, chil
             <div className="container mobile-nav__inner">
               <Link href="/" onClick={closeMenus} className={activePage === "home" ? "is-active" : ""}>{pageLabels.home[language]}</Link>
               {[...primaryNav, ...secondaryNav].map((item) => <Link key={item.key} href={routePaths[item.key]} onClick={closeMenus} className={activePage === item.key ? "is-active" : ""}>{item.label[language]}</Link>)}
+              <div className="mobile-nav__cta">
+                <Link className="button button--coral button--full" href={routePaths.donate} onClick={closeMenus}>
+                  {copy.donate}
+                </Link>
+              </div>
             </div>
           </div>
         )}

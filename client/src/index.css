@@ -20,8 +20,8 @@
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body { margin: 0; background: var(--paper); color: var(--ink); font-family: "DM Sans", sans-serif; font-size: 16px; line-height: 1.65; }
+html { scroll-behavior: smooth; overflow-x: hidden; max-width: 100%; -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: "DM Sans", sans-serif; font-size: 16px; line-height: 1.65; overflow-x: hidden; max-width: 100%; }
 body, button, input, textarea { font-family: "DM Sans", sans-serif; }
 button, a { -webkit-tap-highlight-color: transparent; }
 a { color: inherit; text-decoration: none; }
@@ -424,6 +424,14 @@ blockquote { position: relative; max-width: 700px; margin: 39px 0 0; padding: 19
 }
 .contact-card__action-btn:hover .action-arrow {
   transform: translateY(2px);
+}
+
+.founders-corner__actions {
+  margin-top: 28px;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .team-sync-banner { margin-top: 40px; display: flex; align-items: center; justify-content: space-between; gap: 24px; background: var(--paper); border: 1px solid var(--line); padding: 24px 28px; border-left: 4px solid var(--coral); box-shadow: 0 4px 16px rgba(16,42,67,.04); }
@@ -2553,6 +2561,44 @@ blockquote { position: relative; max-width: 700px; margin: 39px 0 0; padding: 19
   .home-carousel__bottom-bar { bottom: 14px; left: 14px; right: 14px; }
   .home-carousel__nav-arrow { width: 38px; height: 38px; }
   .home-carousel__thumbs { display: none; }
+  .contact-directory__grid, .leadership-team__grid { grid-template-columns: 1fr; gap: 20px; }
+  .contact-card__actions { width: 100%; }
+  .contact-card__action-btn { min-height: 44px; width: 100%; justify-content: center; font-size: 13px; }
+  .brand-logo-img { height: 38px; max-width: 110px; }
+  .banking-card { padding: 22px 18px; }
+  .banking-copy-row { flex-wrap: wrap; gap: 8px; }
+  .copy-btn { width: 100%; justify-content: center; min-height: 40px; }
+  .contact-panel__details a { display: inline-block; padding: 2px 0; }
+  .payment-tabs-nav { grid-template-columns: repeat(2, 1fr); gap: 6px; }
+  .founders-corner__actions { flex-direction: column; align-items: stretch; gap: 12px; }
+  .founders-corner__actions .button, .founders-corner__actions .text-link { width: 100%; justify-content: center; text-align: center; min-height: 44px; }
+  .mobile-nav__cta { grid-column: 1 / -1; padding-top: 14px; padding-bottom: 4px; }
+  .mobile-nav__cta .button { width: 100%; justify-content: center; min-height: 44px; font-weight: 700; font-size: 14px; }
+  .team-sync-banner .button { width: 100%; justify-content: center; min-height: 44px; }
+  .leadership-governance__actions .button { width: 100%; justify-content: center; min-height: 44px; }
+}
+
+/* iOS Safari Input Zoom Fix */
+@media (max-width: 768px) {
+  .contact-form input,
+  .contact-form textarea,
+  .contact-form select,
+  .stripe-form input,
+  .stripe-form select,
+  .tribute-input,
+  .custom-amount-input {
+    font-size: 16px !important;
+  }
+}
+
+/* Ultra-Compact Small Mobile Viewports (< 480px) */
+@media (max-width: 480px) {
+  .container { width: min(100% - 24px, 560px); }
+  .mobile-nav__inner { grid-template-columns: 1fr; }
+  .founders-corner__milestones { grid-template-columns: 1fr; gap: 10px; }
+  .banking-card { padding: 20px 14px; }
+  .site-footer__bottom { padding: 14px 0 16px; font-size: 10px; }
+  .site-footer__top { grid-template-columns: 1fr; gap: 28px; }
 }
 
 /* =============================================================================

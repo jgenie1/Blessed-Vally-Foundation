@@ -138,7 +138,7 @@ export default function FoundersCorner({
               </div>
             </div>
 
-            <div style={{ marginTop: 28, display: "flex", gap: 16, alignItems: "center" }}>
+            <div className="founders-corner__actions">
               <Link className="button button--coral" href={routePaths.mission}>
                 {language === "fr" ? "Découvrir la vision complète" : "Discover our full vision"}
                 <ArrowRight size={16} />
