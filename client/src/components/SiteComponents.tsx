@@ -103,5 +103,14 @@ export function Stat({ value, label }: { value: string; label: string }) {
 }
 
 export function FooterLink({ page, language }: { page: PageKey; language: Language }) {
-  return <Link href={routePaths[page]}>{pageLabels[page][language]}</Link>;
+  const handleClick = () => {
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+  };
+  return (
+    <Link href={routePaths[page]} onClick={handleClick}>
+      {pageLabels[page][language]}
+    </Link>
+  );
 }

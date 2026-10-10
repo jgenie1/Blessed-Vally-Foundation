@@ -49,6 +49,22 @@ export default function App() {
     setMeta(language, activePage);
   }, [language, activePage]);
 
+  // Remonter immédiatement en haut de la page lors de chaque changement de route
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    if (window.location.hash) {
+      const targetId = window.location.hash.replace("#", "");
+      const elem = document.getElementById(targetId);
+      if (elem) {
+        elem.scrollIntoView({ behavior: "smooth" });
+        return;
+      }
+    }
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+  }, [location]);
+
   return (
     <ErrorBoundary>
       <SiteShell language={language} onLanguageChange={setLanguage} activePage={activePage}>

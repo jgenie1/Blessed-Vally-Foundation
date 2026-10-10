@@ -11,9 +11,18 @@ export default function SiteShell({ language, onLanguageChange, activePage, chil
   const [exploreOpen, setExploreOpen] = useState(false);
   const copy = ui[language];
 
+  const scrollToTop = () => {
+    if (typeof window !== "undefined") {
+      window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    }
+  };
+
   const closeMenus = () => {
     setMobileOpen(false);
     setExploreOpen(false);
+    scrollToTop();
   };
 
   return (
@@ -22,7 +31,7 @@ export default function SiteShell({ language, onLanguageChange, activePage, chil
         <div className="container announcement-bar__inner">
           <span className="announcement-bar__mark" />
           <span>{language === "fr" ? "Une nouvelle phase pour la Fondation Blessed Vally" : "A new chapter for Blessed Vally Foundation"}</span>
-          <Link href={routePaths.mission}>{language === "fr" ? "Lire notre vision" : "Read our vision"}<span aria-hidden="true">↗</span></Link>
+          <Link href={routePaths.mission} onClick={scrollToTop}>{language === "fr" ? "Lire notre vision" : "Read our vision"}<span aria-hidden="true">↗</span></Link>
         </div>
       </div>
 
@@ -30,8 +39,8 @@ export default function SiteShell({ language, onLanguageChange, activePage, chil
         <div className="container site-header__inner">
           <LogoMark />
           <nav className="desktop-nav" aria-label={language === "fr" ? "Navigation principale" : "Primary navigation"}>
-            <Link href="/" className={activePage === "home" ? "is-active" : ""}>{pageLabels.home[language]}</Link>
-            {primaryNav.map((item) => <Link key={item.key} href={routePaths[item.key]} className={activePage === item.key ? "is-active" : ""}>{item.label[language]}</Link>)}
+            <Link href="/" onClick={scrollToTop} className={activePage === "home" ? "is-active" : ""}>{pageLabels.home[language]}</Link>
+            {primaryNav.map((item) => <Link key={item.key} href={routePaths[item.key]} onClick={scrollToTop} className={activePage === item.key ? "is-active" : ""}>{item.label[language]}</Link>)}
             <div className="explore-menu">
               <button type="button" className={`explore-trigger ${secondaryNav.some((item) => item.key === activePage) ? "is-active" : ""}`} onClick={() => setExploreOpen((open) => !open)} aria-expanded={exploreOpen}>
                 {copy.explore}<ChevronDown size={14} className={exploreOpen ? "rotate" : ""} />
@@ -51,7 +60,7 @@ export default function SiteShell({ language, onLanguageChange, activePage, chil
               <span>/</span>
               <button type="button" className={language === "fr" ? "is-active" : ""} onClick={() => onLanguageChange("fr")}>FR</button>
             </div>
-            <Link className="button button--small button--coral header-donate" href={routePaths.donate}>{copy.donate}</Link>
+            <Link className="button button--small button--coral header-donate" href={routePaths.donate} onClick={scrollToTop}>{copy.donate}</Link>
             <button className="mobile-menu-button" type="button" onClick={() => setMobileOpen((open) => !open)} aria-label={mobileOpen ? copy.closeMenu : copy.openMenu} aria-expanded={mobileOpen}>{mobileOpen ? <X size={22} /> : <Menu size={22} />}</button>
           </div>
         </div>
@@ -103,7 +112,7 @@ export default function SiteShell({ language, onLanguageChange, activePage, chil
             <span className="footer-contact-address">12933 SW 129 St, Miami, FL 33177</span>
             <span className="footer-contact-address">Delmas, Port-au-Prince, Haïti</span>
             <span>{language === "fr" ? "États-Unis & Haïti" : "United States & Haiti"}</span>
-            <Link className="footer-arrow-link" href={routePaths.contact}>{language === "fr" ? "Parler avec nous" : "Talk with us"} <span>↗</span></Link>
+            <Link className="footer-arrow-link" href={routePaths.contact} onClick={scrollToTop}>{language === "fr" ? "Parler avec nous" : "Talk with us"} <span>↗</span></Link>
           </div>
         </div>
         <div className="container site-footer__bottom">
