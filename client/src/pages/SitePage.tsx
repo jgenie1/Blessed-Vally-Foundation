@@ -476,15 +476,15 @@ function ContactPanel({
             <div className="contact-panel__item">
               <Smartphone size={16} />
               <div>
-                <strong>{language === "fr" ? "Téléphone (USA) :" : "Phone (USA):"}</strong>{" "}
-                <a href="tel:+17864430472">+1 (786) 443-0472</a>
+                <strong>{language === "fr" ? "Téléphones (USA) :" : "Phones (USA):"}</strong>{" "}
+                <a href="tel:+17864430472">+1 (786) 443-0472</a> &bull; <a href="tel:+18456557399">+1 (845) 655-7399</a>
               </div>
             </div>
             <div className="contact-panel__item">
               <Smartphone size={16} />
               <div>
                 <strong>{language === "fr" ? "Téléphones (Haïti) :" : "Phones (Haiti):"}</strong>{" "}
-                <a href="tel:+50936184340">+509 3618-4340</a> &bull; <a href="tel:+50943108621">+509 4310-8621</a>
+                <a href="tel:+50936184340">+509 3618-4340</a> &bull; <a href="tel:+50943108621">+509 4310-8621</a> &bull; <a href="tel:+50948342601">+509 48 34 2601</a>
               </div>
             </div>
             <div className="contact-panel__item">
@@ -874,8 +874,13 @@ function TaxStatusDirectorySection({ language }: { language: Language }) {
             </p>
             <div className="banking-card__fields">
               <CopyField
-                label={language === "fr" ? "Téléphone officiel (États-Unis)" : "Official Phone (United States)"}
+                label={language === "fr" ? "Téléphone officiel (États-Unis - Ligne 1)" : "Official Phone (United States - Line 1)"}
                 value="+1 (786) 443-0472"
+                language={language}
+              />
+              <CopyField
+                label={language === "fr" ? "Téléphone officiel (États-Unis - Ligne 2)" : "Official Phone (United States - Line 2)"}
+                value="+1 (845) 655-7399"
                 language={language}
               />
               <CopyField
@@ -886,6 +891,11 @@ function TaxStatusDirectorySection({ language }: { language: Language }) {
               <CopyField
                 label={language === "fr" ? "Téléphone officiel (Haïti - Ligne 2)" : "Official Phone (Haiti - Line 2)"}
                 value="+509 4310-8621"
+                language={language}
+              />
+              <CopyField
+                label={language === "fr" ? "Téléphone officiel (Haïti - Ligne 3)" : "Official Phone (Haiti - Line 3)"}
+                value="+509 48 34 2601"
                 language={language}
               />
               <CopyField

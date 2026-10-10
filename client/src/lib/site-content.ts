@@ -440,7 +440,7 @@ export const pageContent: Record<Language, Record<Exclude<PageKey, "home">, Page
         {
           eyebrow: "Directory & Offices",
           title: "Blessed Vally Foundation Inc.",
-          body: "Official Directory:\n• U.S. Mailing Address: 12933 SW 129 Street, Miami, FL 33177, USA\n• Administrative Office: 609 NE 123rd Street, North-Miami, FL 33161, USA\n• Haiti Address: 12, Pelerin 4A, Petionville-Haiti\n• Haiti Mission Center: Brostage, Dondon, Northern Department, Haiti\n• Email: blessedvallyfoundation@gmail.com\n• Website: blessedvallyfoundation.org\n• U.S. Phone: +1 (786) 443-0472\n• Haiti Phones: +509 3618-4340 / +509 4310-8621",
+          body: "Official Directory:\n• U.S. Mailing Address: 12933 SW 129 Street, Miami, FL 33177, USA\n• Administrative Office: 609 NE 123rd Street, North-Miami, FL 33161, USA\n• Haiti Address: 12, Pelerin 4A, Petionville-Haiti\n• Haiti Mission Center: Brostage, Dondon, Northern Department, Haiti\n• Email: blessedvallyfoundation@gmail.com\n• Website: blessedvallyfoundation.org\n• U.S. Phones: +1 (786) 443-0472 / +1 (845) 655-7399\n• Haiti Phones: +509 3618-4340 / +509 4310-8621 / +509 48 34 2601",
         },
         { eyebrow: "Commitment", title: "Thoughtful attention for every inquiry.", body: "Whether you represent an educational institution, a humanitarian organization, a Christian community, or wish to get involved personally, every inquiry is given dedicated attention by our team." },
       ],
@@ -473,7 +473,7 @@ export const pageContent: Record<Language, Record<Exclude<PageKey, "home">, Page
         {
           eyebrow: "Official Phone & Hours",
           title: "Direct telephone numbers and operating hours.",
-          body: "The Foundation may be contacted through its verified telephone lines and email:\n\n• OFFICIAL U.S. TELEPHONE:\n+1 (786) 443-0472\n\n• OFFICIAL HAITI TELEPHONES:\n+509 3618-4340\n+509 4310-8621\n\n• OFFICIAL EMAIL:\nblessedvallyfoundation@gmail.com\n\n• OPERATING HOURS:\nMonday – Friday: 9:00 AM – 11:00 PM (EST)\nSunday: 9:00 AM – 4:00 PM (EST)",
+          body: "The Foundation may be contacted through its verified telephone lines and email:\n\n• OFFICIAL U.S. TELEPHONES:\n+1 (786) 443-0472\n+1 (845) 655-7399\n\n• OFFICIAL HAITI TELEPHONES:\n+509 3618-4340\n+509 4310-8621\n+509 48 34 2601\n\n• OFFICIAL EMAIL:\nblessedvallyfoundation@gmail.com\n\n• OPERATING HOURS:\nMonday – Friday: 9:00 AM – 11:00 PM (EST)\nSunday: 9:00 AM – 4:00 PM (EST)",
         },
       ],
     },
@@ -536,7 +536,7 @@ export const pageContent: Record<Language, Record<Exclude<PageKey, "home">, Page
         {
           eyebrow: "Governing Law & Contact",
           title: "Applicable legal jurisdiction and official contacts.",
-          body: "These terms are governed by and construed in accordance with the laws of the State of Florida and the United States of America.\nFor any legal questions regarding these terms, contact our executive office:\n• Blessed Vally Foundation Inc.\n• Executive Office: 609 NE 123rd Street, North Miami, FL 33161\n• Official Mailing Address: 12933 SW 129 Street, Miami, FL 33177\n• Official Telephone: +1 (786) 443-0472 / +509 3618-4340\n• Official Email: blessedvallyfoundation@gmail.com",
+          body: "These terms are governed by and construed in accordance with the laws of the State of Florida and the United States of America.\nFor any legal questions regarding these terms, contact our executive office:\n• Blessed Vally Foundation Inc.\n• Executive Office: 609 NE 123rd Street, North Miami, FL 33161\n• Official Mailing Address: 12933 SW 129 Street, Miami, FL 33177\n• Official Telephones: +1 (786) 443-0472 / +1 (845) 655-7399 / +509 3618-4340\n• Official Email: blessedvallyfoundation@gmail.com",
         },
       ],
     },
@@ -708,7 +708,7 @@ export const pageContent: Record<Language, Record<Exclude<PageKey, "home">, Page
         {
           eyebrow: "Coordonnées & Bureaux",
           title: "Fondation Blessed Vally Inc.",
-          body: "Coordonnées officielles :\n• Adresse postale (Mailing) : 12933 SW 129 Street, Miami, FL 33177, États-Unis\n• Bureau administratif : 609 NE 123rd Street, North-Miami, FL 33161, États-Unis\n• Adresse en Haïti : 12, Pelerin 4A, Petionville-Haiti\n• Centre de mission Haïti : Brostage, Dondon, Département du Nord, Haïti\n• Courriel : blessedvallyfoundation@gmail.com\n• Site web : blessedvallyfoundation.org\n• Téléphone (USA) : +1 (786) 443-0472\n• Téléphones (Haïti) : +509 3618-4340 / +509 4310-8621",
+          body: "Coordonnées officielles :\n• Adresse postale (Mailing) : 12933 SW 129 Street, Miami, FL 33177, États-Unis\n• Bureau administratif : 609 NE 123rd Street, North-Miami, FL 33161, États-Unis\n• Adresse en Haïti : 12, Pelerin 4A, Petionville-Haiti\n• Centre de mission Haïti : Brostage, Dondon, Département du Nord, Haïti\n• Courriel : blessedvallyfoundation@gmail.com\n• Site web : blessedvallyfoundation.org\n• Téléphones (USA) : +1 (786) 443-0472 / +1 (845) 655-7399\n• Téléphones (Haïti) : +509 3618-4340 / +509 4310-8621 / +509 48 34 2601",
         },
         { eyebrow: "Engagement", title: "Une écoute attentive pour chaque message.", body: "Que vous représentiez une institution éducative, un organisme humanitaire, une communauté chrétienne ou que vous souhaitiez vous investir individuellement, chaque demande est traitée avec le plus grand soin par notre équipe." },
       ],
@@ -741,7 +741,7 @@ export const pageContent: Record<Language, Record<Exclude<PageKey, "home">, Page
         {
           eyebrow: "Téléphones & Permanence",
           title: "Numéros de téléphone officiels et disponibilité.",
-          body: "La Fondation est joignable directement par téléphone et par messagerie électronique aux coordonnées officielles suivantes :\n\n• TÉLÉPHONE OFFICIEL ÉTATS-UNIS :\n+1 (786) 443-0472\n\n• TÉLÉPHONES OFFICIELS HAÏTI :\n+509 3618-4340\n+509 4310-8621\n\n• COURRIEL OFFICIEL :\nblessedvallyfoundation@gmail.com\n\n• HORAIRES D'OUVERTURE ET DE PERMANENCE (Working Hours) :\nLundi – Vendredi : 09h00 – 23h00 (Heure de l'Est / EST)\nDimanche : 09h00 – 16h00 (Heure de l'Est / EST)",
+          body: "La Fondation est joignable directement par téléphone et par messagerie électronique aux coordonnées officielles suivantes :\n\n• TÉLÉPHONES OFFICIELS ÉTATS-UNIS :\n+1 (786) 443-0472\n+1 (845) 655-7399\n\n• TÉLÉPHONES OFFICIELS HAÏTI :\n+509 3618-4340\n+509 4310-8621\n+509 48 34 2601\n\n• COURRIEL OFFICIEL :\nblessedvallyfoundation@gmail.com\n\n• HORAIRES D'OUVERTURE ET DE PERMANENCE (Working Hours) :\nLundi – Vendredi : 09h00 – 23h00 (Heure de l'Est / EST)\nDimanche : 09h00 – 16h00 (Heure de l'Est / EST)",
         },
       ],
     },
@@ -804,7 +804,7 @@ export const pageContent: Record<Language, Record<Exclude<PageKey, "home">, Page
         {
           eyebrow: "Droit applicable & Siège officiel",
           title: "Juridiction compétente et coordonnées officielles.",
-          body: "Les présentes conditions d’utilisation sont régies et interprétées conformément aux lois de l’État de Floride et aux lois fédérales des États-Unis d’Amérique.\nPour toute question relative aux présentes conditions d’utilisation, vous pouvez joindre la direction de la Fondation :\n• Blessed Vally Foundation Inc.\n• Bureau officiel : 609 NE 123rd Street, North Miami, FL 33161\n• Adresse postale : 12933 SW 129 Street, Miami, FL 33177\n• Téléphone officiel : +1 (786) 443-0472 / +509 3618-4340\n• Courriel officiel : blessedvallyfoundation@gmail.com",
+          body: "Les présentes conditions d’utilisation sont régies et interprétées conformément aux lois de l’État de Floride et aux lois fédérales des États-Unis d’Amérique.\nPour toute question relative aux présentes conditions d’utilisation, vous pouvez joindre la direction de la Fondation :\n• Blessed Vally Foundation Inc.\n• Bureau officiel : 609 NE 123rd Street, North Miami, FL 33161\n• Adresse postale : 12933 SW 129 Street, Miami, FL 33177\n• Téléphones officiels : +1 (786) 443-0472 / +1 (845) 655-7399 / +509 3618-4340\n• Courriel officiel : blessedvallyfoundation@gmail.com",
         },
       ],
     },

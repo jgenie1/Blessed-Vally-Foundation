@@ -120,8 +120,10 @@ describe("Blessed Vally Foundation - Official Directory & Addresses", () => {
     );
     expect(frTaxPhones).toBeDefined();
     expect(frTaxPhones?.body).toContain("+1 (786) 443-0472");
+    expect(frTaxPhones?.body).toContain("+1 (845) 655-7399");
     expect(frTaxPhones?.body).toContain("+509 3618-4340");
     expect(frTaxPhones?.body).toContain("+509 4310-8621");
+    expect(frTaxPhones?.body).toContain("+509 48 34 2601");
   });
 
   it("includes registered Florida Non-Profit entity details", () => {

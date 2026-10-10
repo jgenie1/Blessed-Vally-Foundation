@@ -877,7 +877,7 @@ export default function HaitiWorksSection({ language }: { language: Language }) 
               </p>
               <div className="location-card__phone">
                 <Phone size={14} />
-                <span>+509 3618-4340 / +509 4310-8621</span>
+                <span>+509 3618-4340 / +509 4310-8621 / +509 48 34 2601</span>
               </div>
             </div>
 
@@ -917,7 +917,7 @@ export default function HaitiWorksSection({ language }: { language: Language }) 
               </p>
               <div className="location-card__phone">
                 <Phone size={14} />
-                <span>+1 (786) 443-0472</span>
+                <span>+1 (786) 443-0472 / +1 (845) 655-7399</span>
               </div>
             </div>
 
