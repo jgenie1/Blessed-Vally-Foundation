@@ -87,31 +87,31 @@ describe("Blessed Vally Foundation - Bilingual Content Integrity", () => {
 });
 
 describe("Blessed Vally Foundation - Official Directory & Addresses", () => {
-  it("includes the Port-au-Prince official address in both French and English tax status", () => {
+  it("includes the Haiti official address in both French and English tax status", () => {
     const frTaxAddresses = pageContent.fr.taxStatus.sections.find(
       (s) => s.eyebrow.includes("Adresses") || s.title.includes("Adresse")
     );
     expect(frTaxAddresses).toBeDefined();
-    expect(frTaxAddresses?.body).toContain("Rue Buteau L. Pierre #20");
-    expect(frTaxAddresses?.body).toContain("Fragneauville, Delmas");
+    expect(frTaxAddresses?.body).toContain("12, Pelerin 4A");
+    expect(frTaxAddresses?.body).toContain("Petionville-Haiti");
     expect(frTaxAddresses?.body).toContain("Haïti");
 
     const enTaxAddresses = pageContent.en.taxStatus.sections.find(
       (s) => s.eyebrow.includes("Addresses") || s.title.includes("address")
     );
     expect(enTaxAddresses).toBeDefined();
-    expect(enTaxAddresses?.body).toContain("Rue Buteau L. Pierre #20");
-    expect(enTaxAddresses?.body).toContain("Fragneauville, Delmas");
+    expect(enTaxAddresses?.body).toContain("12, Pelerin 4A");
+    expect(enTaxAddresses?.body).toContain("Petionville-Haiti");
   });
 
-  it("includes the Port-au-Prince official address in contact directories", () => {
+  it("includes the Haiti official address in contact directories", () => {
     const frContactDir = pageContent.fr.contact.sections[0];
-    expect(frContactDir.body).toContain("Rue Buteau L. Pierre #20");
-    expect(frContactDir.body).toContain("Fragneauville, Delmas");
+    expect(frContactDir.body).toContain("12, Pelerin 4A");
+    expect(frContactDir.body).toContain("Petionville-Haiti");
 
     const enContactDir = pageContent.en.contact.sections[0];
-    expect(enContactDir.body).toContain("Rue Buteau L. Pierre #20");
-    expect(enContactDir.body).toContain("Fragneauville, Delmas");
+    expect(enContactDir.body).toContain("12, Pelerin 4A");
+    expect(enContactDir.body).toContain("Petionville-Haiti");
   });
 
   it("includes all verified foundation telephone numbers", () => {

@@ -373,11 +373,12 @@ export const pageContent: Record<Language, Record<Exclude<PageKey, "home">, Page
       description: "The Foundation’s leadership brings together faith, education, stewardship and a commitment to communities in the United States and Haiti.",
       image: "/images/community-children.jpg",
       metaTitle: "Our Leadership | Blessed Vally Foundation",
-      metaDescription: "Meet the leadership team of Blessed Vally Foundation: Dr. Vally Jean-Louis Legouté, Jean-Ronald Legouté and Mr. Pierre.",
+      metaDescription: "Meet the leadership team of Blessed Vally Foundation: Dr. Vally Jean-Louis Legouté, Mr. Jean Ronald Legouté, Vanessa Ramona Bastien-Joseph and Ing. Geraldy Loudy Pierre.",
       sections: [
         { eyebrow: "Founder & President", title: "Dr. Vally Jean-Louis Legouté", body: "Dr. Vally Jean-Louis Legouté is the Founder and President of Blessed Vally Foundation. Her vision combines Christian faith, education, leadership, humanitarian service and community transformation." },
-        { eyebrow: "Vice President", title: "Mr. Jean-Ronald Legouté", body: "Mr. Jean-Ronald Legouté serves as Vice President and works alongside the President in advancing the Foundation’s mission, educational vision, community initiatives and long-term development." },
-        { eyebrow: "Counselor", title: "Mr. Pierre", body: "Mr. Pierre serves as a Counselor to the Foundation, providing guidance and support as the organization continues to develop its mission and initiatives." },
+        { eyebrow: "Vice President", title: "Mr. Jean Ronald Legouté", body: "Mr. Jean Ronald Legouté serves as Vice President and works alongside the President in advancing the Foundation’s mission, educational vision, community initiatives and long-term development." },
+        { eyebrow: "Treasurer & CFO", title: "Vanessa Ramona Bastien-Joseph", body: "Vanessa Ramona Bastien-Joseph serves as Treasurer and CFO, overseeing financial management, accounting integrity, resource allocation and compliance across all Foundation initiatives." },
+        { eyebrow: "Counselor", title: "Ing. Geraldy Loudy Pierre", body: "Ing. Geraldy Loudy Pierre serves as Counselor to the Foundation, providing strategic counsel, engineering insight and advisory guidance as the organization expands its mission and infrastructure projects." },
       ],
     },
     partnerships: {
@@ -439,7 +440,7 @@ export const pageContent: Record<Language, Record<Exclude<PageKey, "home">, Page
         {
           eyebrow: "Directory & Offices",
           title: "Blessed Vally Foundation Inc.",
-          body: "Official Directory:\n• U.S. Mailing Address: 12933 SW 129 Street, Miami, FL 33177, USA\n• Administrative Office: 609 NE 123rd Street, North-Miami, FL 33161, USA\n• Port-au-Prince Address: Rue Buteau L. Pierre #20, Fragneauville, Delmas, Haiti\n• Haiti Mission Center: Brostage, Dondon, Northern Department, Haiti\n• Email: blessedvallyfoundation@gmail.com\n• Website: blessedvallyfoundation.org\n• U.S. Phone: +1 (786) 443-0472\n• Haiti Phones: +509 3618-4340 / +509 4310-8621",
+          body: "Official Directory:\n• U.S. Mailing Address: 12933 SW 129 Street, Miami, FL 33177, USA\n• Administrative Office: 609 NE 123rd Street, North-Miami, FL 33161, USA\n• Haiti Address: 12, Pelerin 4A, Petionville-Haiti\n• Haiti Mission Center: Brostage, Dondon, Northern Department, Haiti\n• Email: blessedvallyfoundation@gmail.com\n• Website: blessedvallyfoundation.org\n• U.S. Phone: +1 (786) 443-0472\n• Haiti Phones: +509 3618-4340 / +509 4310-8621",
         },
         { eyebrow: "Commitment", title: "Thoughtful attention for every inquiry.", body: "Whether you represent an educational institution, a humanitarian organization, a Christian community, or wish to get involved personally, every inquiry is given dedicated attention by our team." },
       ],
@@ -455,7 +456,7 @@ export const pageContent: Record<Language, Record<Exclude<PageKey, "home">, Page
         {
           eyebrow: "Corporate & Tax Status",
           title: "Non-profit corporation registered in the State of Florida.",
-          body: "Blessed Vally Foundation Inc. is a registered Florida Non-Profit Corporation (incorporated under the Florida Department of State Division of Corporations - Sunbiz) under the official legal title:\n\n« BLESSED VALLY FOUNDATION, INC. »\n\n• Corporate Purpose: Christian faith, educational advancement, humanitarian service, leadership development, clean water infrastructure, and long-term community transformation serving children and families in Haiti and the United States.\n• Executive Governance: Headed by Dr. Vally Jean-Louis Legouté (Founder & President), Mr. Jean-Ronald Legouté (Vice President), and Mr. Pierre (Counselor).\n• Stewardship: Operating with strict accountability, where donor contributions directly fund educational initiatives, emergency relief, and verified on-the-ground infrastructure in Haiti.",
+          body: "Blessed Vally Foundation Inc. is a registered Florida Non-Profit Corporation (incorporated under the Florida Department of State Division of Corporations - Sunbiz) under the official legal title:\n\n« BLESSED VALLY FOUNDATION, INC. »\n\n• Corporate Purpose: Christian faith, educational advancement, humanitarian service, leadership development, clean water infrastructure, and long-term community transformation serving children and families in Haiti and the United States.\n• Executive Governance: Headed by Dr. Vally Jean-Louis Legouté (Founder & President), Mr. Jean Ronald Legouté (Vice President), Vanessa Ramona Bastien-Joseph (Treasurer & CFO), and Ing. Geraldy Loudy Pierre (Counselor).\n• Stewardship: Operating with strict accountability, where donor contributions directly fund educational initiatives, emergency relief, and verified on-the-ground infrastructure in Haiti.",
           bullets: ["Legal Title: Blessed Vally Foundation Inc.", "Incorporated as a Florida Non-Profit Corporation", "Dedicated to educational, humanitarian and Christian mission", "Financial stewardship and direct-to-field impact"],
         },
         {
@@ -467,7 +468,7 @@ export const pageContent: Record<Language, Record<Exclude<PageKey, "home">, Page
         {
           eyebrow: "Official Addresses",
           title: "Registered postal mailing address and office locations.",
-          body: "In accordance with the Foundation's official directory (as published on blessedvallyfoundation.org):\n\n• OFFICIAL POSTAL MAILING ADDRESS:\nBlessed Vally Foundation Inc.\n12933 SW 129 Street\nMiami, FL 33177, United States\n(Official address for check contributions, legal correspondence and administrative mail)\n\n• ADMINISTRATIVE OFFICE:\n609 NE 123rd Street\nNorth-Miami, FL 33161, United States\n\n• PORT-AU-PRINCE ADDRESS (HAITI):\nRue Buteau L. Pierre #20\nFragneauville, Delmas, Haiti\n\n• HAITI MISSION CENTER & PROGRAM GROUNDS:\nBrostage, Dondon, Northern Department, Haiti\n(Site of the primary school, community agora, and ongoing construction complex)",
+          body: "In accordance with the Foundation's official directory (as published on blessedvallyfoundation.org):\n\n• OFFICIAL POSTAL MAILING ADDRESS:\nBlessed Vally Foundation Inc.\n12933 SW 129 Street\nMiami, FL 33177, United States\n(Official address for check contributions, legal correspondence and administrative mail)\n\n• ADMINISTRATIVE OFFICE:\n609 NE 123rd Street\nNorth-Miami, FL 33161, United States\n\n• HAITI ADDRESS:\n12, Pelerin 4A, Petionville-Haiti\n\n• HAITI MISSION CENTER & PROGRAM GROUNDS:\nBrostage, Dondon, Northern Department, Haiti\n(Site of the primary school, community agora, and ongoing construction complex)",
         },
         {
           eyebrow: "Official Phone & Hours",
@@ -640,11 +641,12 @@ export const pageContent: Record<Language, Record<Exclude<PageKey, "home">, Page
       description: "La direction de la Fondation réunit foi, éducation, responsabilité et engagement envers les communautés aux États-Unis et en Haïti.",
       image: "/images/community-children.jpg",
       metaTitle: "Notre équipe dirigeante | Fondation Blessed Vally",
-      metaDescription: "Découvrez l’équipe dirigeante de la Fondation Blessed Vally : Dr. Vally Jean-Louis Legouté, Jean-Ronald Legouté et M. Pierre.",
+      metaDescription: "Découvrez l’équipe dirigeante de la Fondation Blessed Vally : Dr. Vally Jean-Louis Legouté, M. Jean Ronald Legouté, Vanessa Ramona Bastien-Joseph et Ing. Geraldy Loudy Pierre.",
       sections: [
         { eyebrow: "Fondatrice et Présidente", title: "Dr. Vally Jean-Louis Legouté", body: "Dr. Vally Jean-Louis Legouté est la Fondatrice et Présidente de la Fondation Blessed Vally. Sa vision réunit la foi chrétienne, l’éducation, le leadership, le service humanitaire et la transformation communautaire." },
-        { eyebrow: "Vice-Président", title: "M. Jean-Ronald Legouté", body: "M. Jean-Ronald Legouté exerce les fonctions de Vice-Président et travaille aux côtés de la Présidente pour faire progresser la mission de la Fondation, sa vision éducative, ses initiatives communautaires et son développement à long terme." },
-        { eyebrow: "Conseiller", title: "M. Pierre", body: "M. Pierre agit en qualité de Conseiller auprès de la Fondation et apporte ses conseils et son soutien au développement de la mission et des initiatives de l’organisation." },
+        { eyebrow: "Vice-Président", title: "M. Jean Ronald Legouté", body: "M. Jean Ronald Legouté exerce les fonctions de Vice-Président et travaille aux côtés de la Présidente pour faire progresser la mission de la Fondation, sa vision éducative, ses initiatives communautaires et son développement à long terme." },
+        { eyebrow: "Trésorière et Directrice Financière (CFO)", title: "Vanessa Ramona Bastien-Joseph", body: "Vanessa Ramona Bastien-Joseph assure les fonctions de Trésorière et CFO, supervisant la gestion financière, la transparence budgétaire, la conformité légale et la saine gouvernance des ressources de la Fondation." },
+        { eyebrow: "Conseiller", title: "Ing. Geraldy Loudy Pierre", body: "Ing. Geraldy Loudy Pierre agit en qualité de Conseiller auprès de la Fondation et apporte son expertise d'ingénierie, ses conseils stratégiques et son soutien continu au développement de la mission et des chantiers." },
       ],
     },
     partnerships: {
@@ -706,7 +708,7 @@ export const pageContent: Record<Language, Record<Exclude<PageKey, "home">, Page
         {
           eyebrow: "Coordonnées & Bureaux",
           title: "Fondation Blessed Vally Inc.",
-          body: "Coordonnées officielles :\n• Adresse postale (Mailing) : 12933 SW 129 Street, Miami, FL 33177, États-Unis\n• Bureau administratif : 609 NE 123rd Street, North-Miami, FL 33161, États-Unis\n• Adresse Port-au-Prince : Rue Buteau L. Pierre #20, Fragneauville, Delmas, Haïti\n• Centre de mission Haïti : Brostage, Dondon, Département du Nord, Haïti\n• Courriel : blessedvallyfoundation@gmail.com\n• Site web : blessedvallyfoundation.org\n• Téléphone (USA) : +1 (786) 443-0472\n• Téléphones (Haïti) : +509 3618-4340 / +509 4310-8621",
+          body: "Coordonnées officielles :\n• Adresse postale (Mailing) : 12933 SW 129 Street, Miami, FL 33177, États-Unis\n• Bureau administratif : 609 NE 123rd Street, North-Miami, FL 33161, États-Unis\n• Adresse en Haïti : 12, Pelerin 4A, Petionville-Haiti\n• Centre de mission Haïti : Brostage, Dondon, Département du Nord, Haïti\n• Courriel : blessedvallyfoundation@gmail.com\n• Site web : blessedvallyfoundation.org\n• Téléphone (USA) : +1 (786) 443-0472\n• Téléphones (Haïti) : +509 3618-4340 / +509 4310-8621",
         },
         { eyebrow: "Engagement", title: "Une écoute attentive pour chaque message.", body: "Que vous représentiez une institution éducative, un organisme humanitaire, une communauté chrétienne ou que vous souhaitiez vous investir individuellement, chaque demande est traitée avec le plus grand soin par notre équipe." },
       ],
@@ -722,7 +724,7 @@ export const pageContent: Record<Language, Record<Exclude<PageKey, "home">, Page
         {
           eyebrow: "Statut fiscal exact",
           title: "Organisation sans but lucratif constituée en Floride.",
-          body: "La Fondation Blessed Vally Inc. est une organisation à but non lucratif (Florida Non-Profit Corporation) régulièrement immatriculée auprès de la Division of Corporations du Département d'État de Floride (Sunbiz) sous la raison sociale officielle :\n\n« BLESSED VALLY FOUNDATION, INC. »\n\n• Vocation statutaire : Organisation chrétienne, éducative, humanitaire et de bienfaisance engagée dans l'autonomie et la transformation durable des communautés en Haïti et aux États-Unis.\n• Gouvernance exécutive : Dirigée par Dr. Vally Jean-Louis Legouté (Fondatrice et Présidente), M. Jean-Ronald Legouté (Vice-Président) et M. Pierre (Conseiller).\n• Transparence financière : La Fondation opère avec intégrité et veille à ce que l'intégralité des contributions serve directement à la réalisation de sa mission éducative, au soutien humanitaire et à la construction des infrastructures en cours.",
+          body: "La Fondation Blessed Vally Inc. est une organisation à but non lucratif (Florida Non-Profit Corporation) régulièrement immatriculée auprès de la Division of Corporations du Département d'État de Floride (Sunbiz) sous la raison sociale officielle :\n\n« BLESSED VALLY FOUNDATION, INC. »\n\n• Vocation statutaire : Organisation chrétienne, éducative, humanitaire et de bienfaisance engagée dans l'autonomie et la transformation durable des communautés en Haïti et aux États-Unis.\n• Gouvernance exécutive : Dirigée par Dr. Vally Jean-Louis Legouté (Fondatrice et Présidente), M. Jean Ronald Legouté (Vice-Président), Vanessa Ramona Bastien-Joseph (Trésorière & CFO) et Ing. Geraldy Loudy Pierre (Conseiller).\n• Transparence financière : La Fondation opère avec intégrité et veille à ce que l'intégralité des contributions serve directement à la réalisation de sa mission éducative, au soutien humanitaire et à la construction des infrastructures en cours.",
           bullets: ["Raison sociale : Blessed Vally Foundation Inc.", "Statut d'entité sans but lucratif en Floride (Florida Non-Profit Corporation)", "Vocation caritative, éducative et humanitaire internationale", "Comptabilité et gouvernance financière dédiées à la mission"],
         },
         {
@@ -734,7 +736,7 @@ export const pageContent: Record<Language, Record<Exclude<PageKey, "home">, Page
         {
           eyebrow: "Adresses officielles",
           title: "Adresse postale officielle et bureaux de la Fondation.",
-          body: "Conformément aux registres officiels de la Fondation (consultables sur blessedvallyfoundation.org) :\n\n• ADRESSE POSTALE OFFICIELLE (Mailing Address) :\nBlessed Vally Foundation Inc.\n12933 SW 129 Street\nMiami, FL 33177, États-Unis\n(Adresse recommandée pour l'envoi des chèques de dons, courriers administratifs et documents officiels)\n\n• BUREAU ADMINISTRATIF (Office Address) :\n609 NE 123rd Street\nNorth-Miami, FL 33161, États-Unis\n\n• ADRESSE PORT-AU-PRINCE (HAÏTI) :\nRue Buteau L. Pierre #20\nFragneauville, Delmas, Haïti\n\n• SIÈGE ET CENTRE DE MISSION EN HAÏTI :\nBrostage, Dondon, Département du Nord, Haïti\n(Lieu d'implantation du complexe éducatif, de l'école et des travaux en cours)",
+          body: "Conformément aux registres officiels de la Fondation (consultables sur blessedvallyfoundation.org) :\n\n• ADRESSE POSTALE OFFICIELLE (Mailing Address) :\nBlessed Vally Foundation Inc.\n12933 SW 129 Street\nMiami, FL 33177, États-Unis\n(Adresse recommandée pour l'envoi des chèques de dons, courriers administratifs et documents officiels)\n\n• BUREAU ADMINISTRATIF (Office Address) :\n609 NE 123rd Street\nNorth-Miami, FL 33161, États-Unis\n\n• ADRESSE EN HAÏTI :\n12, Pelerin 4A, Petionville-Haiti\n\n• SIÈGE ET CENTRE DE MISSION EN HAÏTI :\nBrostage, Dondon, Département du Nord, Haïti\n(Lieu d'implantation du complexe éducatif, de l'école et des travaux en cours)",
         },
         {
           eyebrow: "Téléphones & Permanence",

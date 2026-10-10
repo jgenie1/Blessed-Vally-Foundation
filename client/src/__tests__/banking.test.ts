@@ -30,13 +30,13 @@ describe("Banking & Donation Methods - Authenticity & Data", () => {
     expect(holder).toBe("Vally Jean-Louis Bastien");
   });
 
-  it("includes official Port-au-Prince and Miami, Florida mailing addresses", () => {
+  it("includes official Haiti and Miami, Florida mailing addresses", () => {
     const frTax = pageContent.fr.taxStatus;
     const taxBody = frTax.sections.map((s) => s.body).join(" ");
 
-    // Port-au-Prince address
-    expect(taxBody).toContain("Rue Buteau L. Pierre #20");
-    expect(taxBody).toContain("Fragneauville, Delmas");
+    // Haiti address
+    expect(taxBody).toContain("12, Pelerin 4A");
+    expect(taxBody).toContain("Petionville-Haiti");
     expect(taxBody).toContain("Haïti");
 
     // US Address (Miami, Florida)

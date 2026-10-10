@@ -332,8 +332,9 @@ function ContactPanel({
   const recipientOptions = [
     { id: "all", fr: "Secrétariat général & Direction", en: "General Secretariat & Leadership" },
     { id: "vally", fr: "Dr. Vally Jean-Louis Legouté (Présidence)", en: "Dr. Vally Jean-Louis Legouté (President)" },
-    { id: "jean-ronald", fr: "M. Jean-Ronald Legouté (Vice-Présidence)", en: "Mr. Jean-Ronald Legouté (Vice President)" },
-    { id: "pierre", fr: "M. Pierre (Conseil & Orientation)", en: "Mr. Pierre (Counselor & Advisory)" },
+    { id: "jean-ronald", fr: "Mr. Jean Ronald Legouté (Vice-Présidence)", en: "Mr. Jean Ronald Legouté (Vice President)" },
+    { id: "vanessa", fr: "Vanessa Ramona Bastien-Joseph (Trésorerie & CFO)", en: "Vanessa Ramona Bastien-Joseph (Treasurer & CFO)" },
+    { id: "pierre", fr: "Ing. Geraldy Loudy Pierre (Conseil & Orientation)", en: "Ing. Geraldy Loudy Pierre (Counselor & Advisory)" },
     { id: "relations", fr: "Direction & Relations Partenaires", en: "Leadership & Outreach Team" },
     { id: "programmes", fr: "Direction des Programmes Éducatifs", en: "Educational Programs Team" },
   ];
@@ -395,8 +396,8 @@ function ContactPanel({
             <div className="contact-panel__item">
               <Landmark size={16} />
               <div>
-                <strong>{language === "fr" ? "Adresse Port-au-Prince :" : "Port-au-Prince Address:"}</strong>
-                <div>Rue Buteau L. Pierre #20, Fragneauville, Delmas Haïti</div>
+                <strong>{language === "fr" ? "Adresse en Haïti :" : "Haiti Address:"}</strong>
+                <div>12, Pelerin 4A, Petionville-Haiti</div>
               </div>
             </div>
             <div className="contact-panel__item">
@@ -735,8 +736,8 @@ function TaxStatusDirectorySection({ language }: { language: Language }) {
                 language={language}
               />
               <CopyField
-                label={language === "fr" ? "Adresse Port-au-Prince" : "Port-au-Prince Address"}
-                value="Rue Buteau L. Pierre #20, Fragneauville, Delmas Haïti"
+                label={language === "fr" ? "Adresse en Haïti" : "Haiti Address"}
+                value="12, Pelerin 4A, Petionville-Haiti"
                 language={language}
               />
               <CopyField

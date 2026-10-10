@@ -110,7 +110,7 @@ export default function SiteShell({ language, onLanguageChange, activePage, chil
             <a href="mailto:Blessedvallyfoundation@gmail.com">Blessedvallyfoundation@gmail.com</a>
             <a href="tel:+17864430472" className="footer-contact-phone">+1 (786) 443-0472</a>
             <span className="footer-contact-address">12933 SW 129 St, Miami, FL 33177</span>
-            <span className="footer-contact-address">Delmas, Port-au-Prince, Haïti</span>
+            <span className="footer-contact-address">12, Pelerin 4A, Petionville-Haiti</span>
             <span>{language === "fr" ? "États-Unis & Haïti" : "United States & Haiti"}</span>
             <Link className="footer-arrow-link" href={routePaths.contact} onClick={scrollToTop}>{language === "fr" ? "Parler avec nous" : "Talk with us"} <span>↗</span></Link>
           </div>

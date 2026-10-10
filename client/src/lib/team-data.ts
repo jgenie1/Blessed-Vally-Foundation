@@ -36,7 +36,7 @@ export const teamMembers: TeamMember[] = [
   },
   {
     id: "jean-ronald",
-    name: "M. Jean-Ronald Legouté",
+    name: "Mr. Jean Ronald Legouté",
     role: {
       fr: "Vice-Président",
       en: "Vice President",
@@ -57,8 +57,30 @@ export const teamMembers: TeamMember[] = [
     email: "Blessedvallyfoundation@gmail.com",
   },
   {
+    id: "vanessa",
+    name: "Vanessa Ramona Bastien-Joseph",
+    role: {
+      fr: "Trésorière et Directrice Financière (CFO)",
+      en: "Treasurer and CFO",
+    },
+    badge: {
+      fr: "Finance & Trésorerie",
+      en: "Finance & Treasury",
+    },
+    image: "/images/contact/vanessa-bastien.jpg",
+    note: {
+      fr: "Assure la gouvernance financière, la supervision budgétaire, la transparence comptable et l'allocation rigoureuse des ressources de la Fondation.",
+      en: "Leads financial governance, budget oversight, accounting transparency, and rigorous stewardship of Foundation resources.",
+    },
+    bioHighlight: {
+      fr: "Direction financière · Conformité & Trésorerie",
+      en: "Financial leadership · Compliance & Treasury",
+    },
+    email: "Blessedvallyfoundation@gmail.com",
+  },
+  {
     id: "pierre",
-    name: "M. Pierre",
+    name: "Ing. Geraldy Loudy Pierre",
     role: {
       fr: "Conseiller",
       en: "Counselor",
@@ -69,12 +91,12 @@ export const teamMembers: TeamMember[] = [
     },
     image: "/images/contact/contact-3.jpg",
     note: {
-      fr: "Apporte ses conseils avisés, son discernement et son accompagnement continu au déploiement de la mission et des chantiers.",
-      en: "Provides valuable guidance, wisdom, and ongoing advisory support for the Foundation's mission and field operations.",
+      fr: "Apporte son expertise d'ingénierie, ses conseils stratégiques et son accompagnement continu au déploiement de la mission et des chantiers.",
+      en: "Provides engineering expertise, strategic counsel, and ongoing guidance for the deployment of the Foundation's mission and projects.",
     },
     bioHighlight: {
-      fr: "Accompagnement consultatif & Orientation de mission",
-      en: "Advisory counsel & Mission guidance",
+      fr: "Ingénierie · Conseil technique & Orientation stratégique",
+      en: "Engineering · Technical advisory & Strategic counsel",
     },
     email: "Blessedvallyfoundation@gmail.com",
   },
