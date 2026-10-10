@@ -483,7 +483,203 @@ blockquote { position: relative; max-width: 700px; margin: 39px 0 0; padding: 19
 .footer-contact-address { font-size: 12px; color: rgba(255,255,255,.65); line-height: 1.4; }
 .site-footer__contact > span { font-size: 12px; }
 .footer-arrow-link { display: inline-flex; gap: 8px; margin-top: 17px; color: var(--coral) !important; font-weight: 700; }
-.site-footer__bottom { display: flex; justify-content: space-between; gap: 25px; padding: 17px 0 20px; border-top: 1px solid rgba(255,255,255,.14); color: rgba(255,255,255,.4); font-size: 10px; }
+/* INFUSA Client Acquisition Spotlight & Footer Bottom */
+.site-footer__infusa-section {
+  padding-bottom: 30px;
+}
+
+.footer-infusa-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 28px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-left: 4px solid var(--coral);
+  border-radius: 6px;
+  padding: 24px 28px;
+  backdrop-filter: blur(8px);
+  transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+}
+
+.footer-infusa-banner:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.22);
+  border-left-color: var(--coral);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.footer-infusa-banner__info {
+  flex: 1;
+  min-width: 0;
+}
+
+.footer-infusa-banner__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.footer-infusa-banner__pulse {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 10px #22c55e;
+  animation: infusaDotPulse 2s infinite ease-in-out;
+}
+
+@keyframes infusaDotPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.35);
+    opacity: 0.6;
+  }
+}
+
+.footer-infusa-banner__tag {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--coral);
+}
+
+.footer-infusa-banner__sep {
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 11px;
+}
+
+.footer-infusa-banner__status {
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-infusa-banner__title {
+  margin: 0 0 6px;
+  font: 500 clamp(17px, 2vw, 21px)/1.25 "Fraunces", serif;
+  color: var(--white);
+  letter-spacing: -.02em;
+}
+
+.footer-infusa-banner__desc {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.65);
+  max-width: 680px;
+}
+
+.footer-infusa-banner__action {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.footer-infusa-banner__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 22px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--white);
+  background: var(--coral);
+  border-radius: 4px;
+  text-decoration: none;
+  white-space: nowrap;
+  box-shadow: 0 4px 16px rgba(224, 90, 71, 0.35);
+  transition: all .2s ease;
+}
+
+.footer-infusa-banner__btn:hover {
+  background: var(--coral-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(224, 90, 71, 0.45);
+  color: var(--white);
+}
+
+.footer-infusa-banner__btn svg {
+  transition: transform .2s ease;
+}
+
+.footer-infusa-banner__btn:hover svg {
+  transform: translateX(3px);
+}
+
+.footer-infusa-banner__link {
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.55);
+  text-decoration: none;
+  letter-spacing: .02em;
+  transition: color .2s ease;
+}
+
+.footer-infusa-banner__link:hover {
+  color: var(--white);
+  text-decoration: underline;
+}
+
+@media (max-width: 860px) {
+  .footer-infusa-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+  }
+  .footer-infusa-banner__action {
+    width: 100%;
+    align-items: stretch;
+  }
+  .footer-infusa-banner__btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+.site-footer__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+  padding: 18px 0 22px;
+  border-top: 1px solid rgba(255,255,255,.14);
+  color: rgba(255,255,255,.45);
+  font-size: 11px;
+}
+
+.site-footer__agency-credit {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.footer-infusa-credit-link {
+  color: var(--coral) !important;
+  font-weight: 700;
+  transition: color .2s ease;
+}
+
+.footer-infusa-credit-link:hover {
+  color: var(--white) !important;
+  text-decoration: underline;
+}
+
+@media (max-width: 720px) {
+  .site-footer__bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
+}
 
 /* Tax Status Directory */
 .tax-directory { background: var(--sand); border-top: 1px solid var(--line); }

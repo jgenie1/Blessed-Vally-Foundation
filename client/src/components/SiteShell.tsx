@@ -1,4 +1,4 @@
-import { ChevronDown, Globe2, Menu, X } from "lucide-react";
+import { ArrowRight, ChevronDown, Globe2, Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Link } from "wouter";
 import LogoMark from "@/components/LogoMark";
@@ -115,24 +115,65 @@ export default function SiteShell({ language, onLanguageChange, activePage, chil
             <Link className="footer-arrow-link" href={routePaths.contact} onClick={scrollToTop}>{language === "fr" ? "Parler avec nous" : "Talk with us"} <span>↗</span></Link>
           </div>
         </div>
+        {/* INFUSA Client Acquisition Spotlight */}
+        <div className="container site-footer__infusa-section">
+          <div className="footer-infusa-banner">
+            <div className="footer-infusa-banner__info">
+              <div className="footer-infusa-banner__badge">
+                <span className="footer-infusa-banner__pulse" />
+                <span className="footer-infusa-banner__tag">
+                  {language === "fr" ? "Agence Web & Ingénierie Logicielle" : "Web Agency & Software Engineering"}
+                </span>
+                <span className="footer-infusa-banner__sep">•</span>
+                <span className="footer-infusa-banner__status">
+                  {language === "fr" ? "Disponible pour nouveaux projets" : "Available for new projects"}
+                </span>
+              </div>
+              <h4 className="footer-infusa-banner__title">
+                {language === "fr"
+                  ? "Vous aimez la réalisation de ce site ? Faites concevoir le vôtre par INFUSA."
+                  : "Admiring the craft of this website? Have yours built by INFUSA."}
+              </h4>
+              <p className="footer-infusa-banner__desc">
+                {language === "fr"
+                  ? "Création de sites web professionnels d’exception, plateformes sur mesure, modules de dons et solutions logicielles pour fondations, églises, ONG et entreprises."
+                  : "High-performance websites, custom platforms, online donation modules, and scalable software for non-profits, churches, NGOs, and businesses."}
+              </p>
+            </div>
+            <div className="footer-infusa-banner__action">
+              <a
+                href="https://www.infusa.pro"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="footer-infusa-banner__btn"
+              >
+                <span>{language === "fr" ? "Créer votre site avec INFUSA" : "Start your project with INFUSA"}</span>
+                <ArrowRight size={15} />
+              </a>
+              <a
+                href="https://www.infusa.pro"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="footer-infusa-banner__link"
+              >
+                www.infusa.pro ↗
+              </a>
+            </div>
+          </div>
+        </div>
+
         <div className="container site-footer__bottom">
           <span>© {new Date().getFullYear()} Blessed Vally Foundation</span>
-          <span>
-            {copy.legal.includes("INFUSA") ? (
-              <>
-                design by{" "}
-                <a
-                  href="https://www.infusa.pro"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-white transition-colors underline underline-offset-2"
-                >
-                  INFUSA (www.infusa.pro)
-                </a>
-              </>
-            ) : (
-              copy.legal
-            )}
+          <span className="site-footer__agency-credit">
+            {language === "fr" ? "Conception & Développement :" : "Engineered & Designed by :"}{" "}
+            <a
+              href="https://www.infusa.pro"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-infusa-credit-link"
+            >
+              <strong>INFUSA</strong> (www.infusa.pro) ↗
+            </a>
           </span>
           <span>{language === "fr" ? "Foi. Éducation. Transformation." : "Faith. Education. Transformation."}</span>
         </div>
