@@ -39,7 +39,13 @@ img { display: block; max-width: 100%; }
 
 .site-header { position: sticky; top: 0; z-index: 100; background: rgba(252,251,248,.96); border-bottom: 1px solid var(--line); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); box-shadow: 0 4px 20px rgba(16,42,67,.04); }
 .site-header__inner { min-height: 82px; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
-.brand-lockup { display: inline-flex; align-items: center; gap: 11px; color: var(--ink); }
+.brand-lockup { display: inline-flex; align-items: center; gap: 11px; color: var(--ink); text-decoration: none; }
+.brand-logo-img { height: clamp(44px, 4.8vw, 54px); width: auto; max-width: 140px; object-fit: contain; display: block; transition: transform .2s ease; }
+.brand-lockup:hover .brand-logo-img { transform: scale(1.02); }
+.brand-lockup--compact .brand-logo-img { height: 36px; max-width: 95px; }
+.brand-lockup--footer { display: inline-flex; align-items: center; background: #ffffff; padding: 6px 14px; border-radius: 10px; box-shadow: 0 4px 14px rgba(0,0,0,.16); transition: transform .2s ease, box-shadow .2s ease; }
+.brand-lockup--footer:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,.22); }
+.brand-lockup--footer .brand-logo-img { height: 48px; max-width: 125px; }
 .brand-mark { width: 38px; height: 38px; display: grid; place-items: center; color: var(--coral); }
 .brand-mark svg { width: 100%; height: 100%; }
 .brand-type { display: flex; flex-direction: column; line-height: 1; }

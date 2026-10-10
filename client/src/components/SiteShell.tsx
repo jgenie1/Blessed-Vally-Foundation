@@ -79,7 +79,7 @@ export default function SiteShell({ language, onLanguageChange, activePage, chil
       <footer className="site-footer">
         <div className="container site-footer__top">
           <div className="site-footer__brand">
-            <LogoMark />
+            <LogoMark variant="footer" />
             <p>{copy.footerNote}</p>
             <div className="footer-tagline">{copy.footerLine}</div>
           </div>
