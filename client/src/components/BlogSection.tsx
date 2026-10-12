@@ -1,7 +1,7 @@
-import { ArrowLeft, ArrowRight, BookOpen, Calendar, Check, ChevronLeft, ChevronRight, Clock, Heart, Share2, Tag, User, X } from "lucide-react";
+import { ArrowRight, BookOpen, Calendar, ChevronLeft, ChevronRight, Heart, User, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link } from "wouter";
-import { blogPosts, type BlogPost } from "@/lib/blog-data";
+import { blogPosts } from "@/lib/blog-data";
 import { routePaths, type Language } from "@/lib/site-content";
 
 export default function BlogSection({ language }: { language: Language }) {

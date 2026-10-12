@@ -1,6 +1,6 @@
 import { ArrowRight, MapPin, Quote } from "lucide-react";
 import { Link } from "wouter";
-import { ContentSection, ImpactBand, PillarCard, SectionIntro, Stat } from "@/components/SiteComponents";
+import { ImpactBand, PillarCard, SectionIntro, Stat } from "@/components/SiteComponents";
 import HomePhotoCarousel from "@/components/HomePhotoCarousel";
 import { homeContent, pillars, newsCards, routePaths, type Language } from "@/lib/site-content";
 

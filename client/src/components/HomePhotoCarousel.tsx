@@ -1,7 +1,7 @@
 import { ArrowRight, ChevronLeft, ChevronRight, MapPin, Pause, Play } from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Link } from "wouter";
-import { carouselSlides, type CarouselSlide } from "@/lib/carousel-data";
+import { carouselSlides } from "@/lib/carousel-data";
 import { routePaths, type Language } from "@/lib/site-content";
 
 export default function HomePhotoCarousel({ language }: { language: Language }) {

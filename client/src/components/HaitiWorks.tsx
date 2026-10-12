@@ -16,7 +16,6 @@ import {
   X,
   Truck,
   Layers,
-  Users,
   Compass,
   Quote,
 } from "lucide-react";

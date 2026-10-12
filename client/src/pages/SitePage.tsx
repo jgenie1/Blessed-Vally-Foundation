@@ -1,5 +1,5 @@
-import { ArrowLeftRight, ArrowRight, Check, CheckCheck, ChevronLeft, ChevronRight, Copy, Eye, Landmark, LockKeyhole, Mail, Maximize2, Send, ShieldCheck, Smartphone, X } from "lucide-react";
-import { useCallback, useEffect, useState } from "react";
+import { ArrowRight, CheckCheck, Copy, Landmark, Mail, Send, ShieldCheck, Smartphone } from "lucide-react";
+import { useEffect, useState } from "react";
 import { ContentSection, ImpactBand, PageHero, SectionIntro } from "@/components/SiteComponents";
 import BlogSection from "@/components/BlogSection";
 import DonationModule from "@/components/DonationModule";

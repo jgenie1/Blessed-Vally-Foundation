@@ -7,14 +7,11 @@ import {
   CheckCircle2,
   Copy,
   CreditCard,
-  DollarSign,
   HeartHandshake,
-  HelpCircle,
   LockKeyhole,
   Mail,
   Printer,
   RotateCcw,
-  Send,
   ShieldCheck,
 } from "lucide-react";
 import React, { useEffect, useState } from "react";
