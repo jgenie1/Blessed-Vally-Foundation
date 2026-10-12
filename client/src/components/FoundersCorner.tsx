@@ -1,4 +1,4 @@
-import { ArrowRight, Award, BookOpen, GraduationCap, Heart, Quote, Sparkles } from "lucide-react";
+import { ArrowRight, Award, BookOpen, GraduationCap, Heart, Quote } from "lucide-react";
 import { Link } from "wouter";
 import { routePaths, type Language } from "@/lib/site-content";
 

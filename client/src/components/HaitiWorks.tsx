@@ -16,7 +16,6 @@ import {
   X,
   Truck,
   Layers,
-  Sparkles,
   Users,
   Compass,
   Quote,
@@ -292,16 +291,16 @@ export const machineryList: MachineryItem[] = [
     badgeEn: "Lifting & Logistics",
   },
   {
-    id: "chargeuse",
-    nameFr: "Tractopelle & chargeuse mobile",
-    nameEn: "Backhoe Loader & Feeder",
-    roleFr: "Extraction de granulats & Tranchées",
-    roleEn: "Aggregate Transport & Trenching",
-    descFr: "Mobilisée chaque jour pour le transport du gravier, du sable et le creusement des canalisations sanitaires et d'évacuation d'eau pluviale.",
-    descEn: "Deployed daily for transporting gravel and sand, as well as excavating trenches for sanitary pipes and rainwater drainage.",
+    id: "gros-oeuvre",
+    nameFr: "Équipes de gros œuvre & ferraillage",
+    nameEn: "Structural Masonry & Rebar Crew",
+    roleFr: "Ferraillage de dalle & Érection R+1",
+    roleEn: "Deck Rebar & Second-Story Framing",
+    descFr: "Artisans et ouvriers spécialisés mobilisés pour le coulage des planchers en béton armé antisismique et l'élévation des salles de classe.",
+    descEn: "Specialized masons and craftsmen advancing anti-seismic reinforced concrete slabs and second-floor classroom construction.",
     image: "/images/travaux/materiel-chargeuse.jpg",
-    badgeFr: "Polyvalence chantier",
-    badgeEn: "Multipurpose Rig",
+    badgeFr: "Ouvrage structurel",
+    badgeEn: "Structural Crew",
   },
   {
     id: "camion",
@@ -475,7 +474,7 @@ export default function HaitiWorksSection({ language }: { language: Language }) 
           <div className="haiti-founder-appeal">
             <div className="haiti-founder-appeal__header">
               <div className="haiti-founder-appeal__badge">
-                <Sparkles size={16} />
+                <HeartHandshake size={16} />
                 <span>
                   {language === "fr"
                     ? "Message officiel & Appel de la Fondatrice"

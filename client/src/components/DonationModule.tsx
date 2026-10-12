@@ -16,7 +16,6 @@ import {
   RotateCcw,
   Send,
   ShieldCheck,
-  Sparkles,
 } from "lucide-react";
 import React, { useEffect, useState } from "react";
 import {
@@ -364,7 +363,7 @@ export default function DonationModule({ language }: { language: Language }) {
                   className={`donation-freq-btn ${frequency === "monthly" ? "is-active" : ""}`}
                   onClick={() => setFrequency("monthly")}
                 >
-                  <Sparkles size={15} />
+                  <Calendar size={15} />
                   <span>{language === "fr" ? "Don mensuel" : "Monthly support"}</span>
                   <span className="donation-freq-badge">
                     {language === "fr" ? "Impact pérenne" : "Highest impact"}
@@ -661,7 +660,7 @@ export default function DonationModule({ language }: { language: Language }) {
               {activeTab === "zelle" && (
                 <div className="method-instruction-panel">
                   <div className="tab-intro-banner">
-                    <Sparkles size={18} />
+                    <ShieldCheck size={18} />
                     <div>
                       <h4>{language === "fr" ? "Paiement instantané via Zelle (USA)" : "Instant Zelle Payment (USA)"}</h4>
                       <p>{language === "fr" ? "100% de votre don nous parvient sans aucun frais intermédiaire bancaire." : "100% of your gift reaches the mission with zero banking deductions."}</p>
