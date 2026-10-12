@@ -20,7 +20,6 @@ import {
 } from "lucide-react";
 import React, { useEffect, useState } from "react";
 import {
-  calculateTaxDeduction,
   CURRENCY_SYMBOLS,
   DONATION_CAUSES,
   formatCurrencyAmount,
@@ -110,7 +109,6 @@ export default function DonationModule({ language }: { language: Language }) {
   const [copiedField, setCopiedField] = useState<string | null>(null);
 
   const numericAmount = parseFloat(amount) || 0;
-  const taxInfo = calculateTaxDeduction(numericAmount);
   const currentCause = DONATION_CAUSES.find((c) => c.id === selectedCause) || DONATION_CAUSES[0];
 
   const handleCopy = async (id: string, text: string) => {
@@ -463,20 +461,20 @@ export default function DonationModule({ language }: { language: Language }) {
                 </div>
               </div>
 
-              {/* Calculateur de Déduction Fiscale */}
-              {currency === "USD" && numericAmount > 0 && (
+              {/* Note officielle de Transparence et Reçu */}
+              {numericAmount > 0 && (
                 <div className="tax-deduction-callout">
                   <span className="tax-deduction-callout__pill">
-                    {language === "fr" ? "Avantage fiscal US" : "US Tax Benefit"}
+                    {language === "fr" ? "Reçu & Transparence" : "Receipt & Transparency"}
                   </span>
                   <div className="tax-deduction-callout__text">
                     {language === "fr" ? (
                       <>
-                        Grâce au statut sans but lucratif de la Fondation, votre don est déductible d'impôt. Coût réel estimé après déduction : <strong>~${taxInfo.netCost} USD</strong> (économie estimée de ~${taxInfo.deduction} USD).
+                        Un reçu officiel de confirmation est délivré pour chaque contribution. Les démarches administratives relatives au statut fiscal aux États-Unis sont actuellement en cours.
                       </>
                     ) : (
                       <>
-                        Through the Foundation&apos;s registered non-profit status, your gift qualifies for tax exemption. Estimated net cost after deduction: <strong>~${taxInfo.netCost} USD</strong> (savings of ~${taxInfo.deduction} USD).
+                        An official acknowledgment receipt is provided for every contribution. Administrative proceedings regarding corporate tax status in the United States are currently in progress.
                       </>
                     )}
                   </div>
@@ -816,7 +814,7 @@ export default function DonationModule({ language }: { language: Language }) {
                     <div className="banking-copy-row">
                       <div className="banking-copy-info">
                         <span className="copy-label">{language === "fr" ? "Titulaire légal du compte" : "Account Holder"}</span>
-                        <code className="copy-value">Vally Jean-Louis Bastien</code>
+                        <code className="copy-value">Dr. Vally Docteur Jean-Louis</code>
                       </div>
                     </div>
 

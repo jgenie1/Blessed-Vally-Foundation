@@ -1,6 +1,7 @@
 export interface TeamMember {
   id: string;
   name: string;
+  haitiName?: string;
   role: { fr: string; en: string };
   badge: { fr: string; en: string };
   image: string;
@@ -13,42 +14,43 @@ export interface TeamMember {
 export const teamMembers: TeamMember[] = [
   {
     id: "vally",
-    name: "Dr. Vally Jean-Louis Legouté",
+    name: "Dr. Vally D. Jn.-Ls. Legouté",
+    haitiName: "Dr. Vally Docteur Jean-Louis",
     role: {
-      fr: "Fondatrice et Présidente",
-      en: "Founder & President",
+      fr: "Présidente",
+      en: "President",
     },
     badge: {
-      fr: "Direction générale",
-      en: "Executive Leadership",
+      fr: "Présidence du Conseil",
+      en: "Board President",
     },
     image: "/images/contact/contact-1.jpg",
     note: {
-      fr: "Porte la vision de la Fondation Blessed Vally pour la foi, l’éducation d'excellence et la transformation durable des communautés.",
-      en: "Leading the Blessed Vally Foundation vision in faith, educational excellence, and sustainable community transformation.",
+      fr: "Fondatrice et Présidente du Conseil d’Administration. Porte la vision de l'évangélisation à travers des actions concrètes, l'éducation chrétienne d'excellence et l'implantation d'écoles aux États-Unis et en Haïti.",
+      en: "Founder and Board President. Leads the vision of evangelism through concrete actions, Christian educational excellence, and the establishment of Christian schools in the United States and Haiti.",
     },
     bioHighlight: {
       fr: "Doctorat en Éducation · Maîtrise en Théologie · 36+ années d'enseignement",
-      en: "Doctorate in Education · Master’s in Theology · 36+ years in education",
+      en: "Doctorate in Education · Master’s in Theology · 36+ years teaching",
     },
     email: "Blessedvallyfoundation@gmail.com",
     isFounder: true,
   },
   {
     id: "jean-ronald",
-    name: "Mr. Jean Ronald Legouté",
+    name: "Mr. Jean-Ronald Legouté",
     role: {
-      fr: "Vice-Président",
+      fr: "Vice-président",
       en: "Vice President",
     },
     badge: {
-      fr: "Direction exécutive",
-      en: "Executive Leadership",
+      fr: "Vice-Présidence",
+      en: "Vice Presidency",
     },
     image: "/images/contact/contact-3.jpg",
     note: {
-      fr: "Coordonne les initiatives stratégiques, le développement institutionnel et les partenariats humanitaires et communautaires.",
-      en: "Coordinates strategic initiatives, institutional development, and humanitarian community partnerships.",
+      fr: "Coordonne les initiatives stratégiques, le développement institutionnel et les partenariats humanitaires et communautaires au sein du Conseil d'administration.",
+      en: "Coordinates strategic initiatives, institutional development, and humanitarian community partnerships on the Board of Directors.",
     },
     bioHighlight: {
       fr: "Gouvernance stratégique & Développement des partenariats",
@@ -58,29 +60,73 @@ export const teamMembers: TeamMember[] = [
   },
   {
     id: "vanessa",
-    name: "Vanessa Ramona Bastien-Joseph",
+    name: "Mrs. Vanessa R. Bastien-Joseph",
     role: {
-      fr: "Trésorière et Directrice Financière (CFO)",
-      en: "Treasurer and CFO",
+      fr: "Trésorière",
+      en: "Treasurer",
     },
     badge: {
-      fr: "Finance & Trésorerie",
-      en: "Finance & Treasury",
+      fr: "Trésorerie & Finance",
+      en: "Treasury & Finance",
     },
     image: "/images/contact/vanessa-bastien.jpg",
     note: {
-      fr: "Assure la gouvernance financière, la supervision budgétaire, la transparence comptable et l'allocation rigoureuse des ressources de la Fondation.",
-      en: "Leads financial governance, budget oversight, accounting transparency, and rigorous stewardship of Foundation resources.",
+      fr: "Assure la gestion financière, la supervision budgétaire, la transparence comptable, la conservation des registres de dons et l'allocation rigoureuse des ressources.",
+      en: "Oversees financial management, budget supervision, accounting transparency, donation recordkeeping, and rigorous stewardship of Foundation resources.",
     },
     bioHighlight: {
-      fr: "Direction financière · Conformité & Trésorerie",
-      en: "Financial leadership · Compliance & Treasury",
+      fr: "Gestion financière · Conformité & Trésorerie",
+      en: "Financial management · Compliance & Treasury",
+    },
+    email: "Blessedvallyfoundation@gmail.com",
+  },
+  {
+    id: "corie-henrie",
+    name: "Ms. Corie-Henrie Bastien",
+    role: {
+      fr: "Secrétaire",
+      en: "Secretary",
+    },
+    badge: {
+      fr: "Secrétariat du Conseil",
+      en: "Board Secretariat",
+    },
+    image: "/images/contact/contact-4.jpg",
+    note: {
+      fr: "Assure la tenue des registres statutaires, la rédaction des procès-verbaux des assemblées, la correspondance officielle et le suivi des formalités administratives.",
+      en: "Maintains statutory corporate records, drafts official board meeting minutes, coordinates formal correspondence, and oversees administrative compliance.",
+    },
+    bioHighlight: {
+      fr: "Secrétariat statutaire · Procès-verbaux & Conformité",
+      en: "Statutory secretariat · Board minutes & Compliance",
+    },
+    email: "Blessedvallyfoundation@gmail.com",
+  },
+  {
+    id: "sasha-vally",
+    name: "Ms. Sasha-Vally Bastien",
+    role: {
+      fr: "Administratrice",
+      en: "Board Member / Trustee",
+    },
+    badge: {
+      fr: "Conseil d’Administration",
+      en: "Board Trustee",
+    },
+    image: "/images/contact/contact-5.jpg",
+    note: {
+      fr: "Participe aux délibérations du Conseil, veille à l'adéquation des projets avec la mission statutaire de la Fondation et appuie la gouvernance générale.",
+      en: "Participates in board deliberations, ensures programmatic alignment with the Foundation’s statutory mission, and supports organizational governance.",
+    },
+    bioHighlight: {
+      fr: "Gouvernance organisationnelle & Suivi des programmes",
+      en: "Organizational governance & Program oversight",
     },
     email: "Blessedvallyfoundation@gmail.com",
   },
   {
     id: "pierre",
-    name: "Ing. Geraldy Loudy Pierre",
+    name: "Mr. Geraldyr Lourdy Pierre",
     role: {
       fr: "Conseiller",
       en: "Counselor",
@@ -91,56 +137,12 @@ export const teamMembers: TeamMember[] = [
     },
     image: "/images/contact/contact-2.jpg",
     note: {
-      fr: "Apporte son expertise d'ingénierie, ses conseils stratégiques et son accompagnement continu au déploiement de la mission et des chantiers.",
-      en: "Provides engineering expertise, strategic counsel, and ongoing guidance for the deployment of the Foundation's mission and projects.",
+      fr: "Apporte son expertise technique et d'ingénierie, ses conseils stratégiques et son orientation continue au déploiement des chantiers et infrastructures de la Fondation.",
+      en: "Provides technical engineering expertise, strategic counsel, and ongoing guidance for the deployment of Foundation infrastructure and field projects.",
     },
     bioHighlight: {
       fr: "Ingénierie · Conseil technique & Orientation stratégique",
       en: "Engineering · Technical advisory & Strategic counsel",
-    },
-    email: "Blessedvallyfoundation@gmail.com",
-  },
-  {
-    id: "relations",
-    name: "Direction & Relations Partenaires",
-    role: {
-      fr: "Coordination & Partenariats",
-      en: "Partnerships & Outreach",
-    },
-    badge: {
-      fr: "Équipe Partenariats",
-      en: "Outreach Team",
-    },
-    image: "/images/contact/contact-4.jpg",
-    note: {
-      fr: "À votre écoute pour faciliter les échanges avec nos donateurs, mécènes, églises partenaires et institutions académiques.",
-      en: "At your service to facilitate dialogue with donors, sponsors, partner churches, and academic institutions.",
-    },
-    bioHighlight: {
-      fr: "Relations donateurs, fondations partenaires & Églises",
-      en: "Donor relations, partner foundations & Churches",
-    },
-    email: "Blessedvallyfoundation@gmail.com",
-  },
-  {
-    id: "programmes",
-    name: "Direction des Programmes Éducatifs",
-    role: {
-      fr: "Programmes & Communautés",
-      en: "Programs & Communities",
-    },
-    badge: {
-      fr: "Équipe Projets",
-      en: "Programs Team",
-    },
-    image: "/images/contact/contact-5.jpg",
-    note: {
-      fr: "Assure le suivi des projets éducatifs, la scolarisation des enfants, les distributions et la logistique de terrain.",
-      en: "Oversees educational initiatives, children's schooling, humanitarian relief, and on-site project logistics.",
-    },
-    bioHighlight: {
-      fr: "Suivi des écoles, cantines & Projets communautaires",
-      en: "School tracking, nutrition & Community projects",
     },
     email: "Blessedvallyfoundation@gmail.com",
   },

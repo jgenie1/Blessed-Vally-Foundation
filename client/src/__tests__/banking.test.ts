@@ -13,7 +13,7 @@ describe("Banking & Donation Methods - Authenticity & Data", () => {
     const frDonate = pageContent.fr.donate;
     const bodyText = frDonate.sections.map((s) => s.body).join(" ");
     expect(bodyText).toContain("Zelle");
-    expect(bodyText).toContain("virement bancaire (Wire)");
+    expect(bodyText).toContain("virement bancaire direct (Wire");
   });
 
   it("verifies the Banque de l'Union Haïtienne (BUH) account numbers", () => {
@@ -21,13 +21,13 @@ describe("Banking & Donation Methods - Authenticity & Data", () => {
     // BUH US Dollar account: 15000017431
     const buhGourdesAccount = "15000017423";
     const buhUsdAccount = "15000017431";
-    const holder = "Vally Jean-Louis Bastien";
+    const holder = "Dr. Vally Docteur Jean-Louis";
 
     expect(buhGourdesAccount.length).toBe(11);
     expect(buhUsdAccount.length).toBe(11);
     expect(buhGourdesAccount).toMatch(/^\d+$/);
     expect(buhUsdAccount).toMatch(/^\d+$/);
-    expect(holder).toBe("Vally Jean-Louis Bastien");
+    expect(holder).toBe("Dr. Vally Docteur Jean-Louis");
   });
 
   it("includes official Haiti and Miami, Florida mailing addresses", () => {

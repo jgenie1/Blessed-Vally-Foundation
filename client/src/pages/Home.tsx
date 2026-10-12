@@ -109,8 +109,14 @@ export default function Home({ language }: { language: Language }) {
       <section className="quote-section section-space">
         <div className="container quote-section__inner">
           <Quote size={32} strokeWidth={1.2} />
-          <p>{language === "fr" ? "Servir aujourd’hui. Éduquer demain. Transformer les générations." : "Serving today. Educating tomorrow. Transforming generations."}</p>
-          <span>— Blessed Vally Foundation</span>
+          <p>
+            {language === "fr"
+              ? "« Notre communauté est notre responsabilité, mais notre mission ultime est de gagner des âmes pour Christ à travers des actions concrètes d’amour et de service. »"
+              : "“Our community is our responsibility, but our ultimate mission is to win souls for Christ through concrete actions of love and service.”"}
+          </p>
+          <span>
+            — {language === "fr" ? "Dr. Vally D. Jn.-Ls. Legouté, Fondatrice & Présidente" : "Dr. Vally D. Jn.-Ls. Legouté, Founder & President"}
+          </span>
         </div>
       </section>
 

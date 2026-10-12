@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 750" width="600" height="750">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#102A43" />
+      <stop offset="100%" stop-color="#243E56" />
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D97706" />
+      <stop offset="100%" stop-color="#F59E0B" />
+    </linearGradient>
+  </defs>
+  <rect width="600" height="750" fill="url(#bgGrad)" />
+  <circle cx="300" cy="270" r="95" fill="none" stroke="rgba(255, 255, 255, 0.15)" stroke-width="3" stroke-dasharray="6 6" />
+  <path d="M300 180 a48 48 0 1 0 0.1 0 Z" fill="rgba(255, 255, 255, 0.22)" />
+  <path d="M220 340 c0 -45 35 -70 80 -70 s80 25 80 70 v20 H220 Z" fill="rgba(255, 255, 255, 0.22)" />
+  <rect x="180" y="440" width="240" height="34" rx="17" fill="rgba(255, 255, 255, 0.08)" stroke="rgba(255, 255, 255, 0.2)" />
+  <text x="300" y="462" text-anchor="middle" fill="#FFFFFF" font-family="'DM Sans', -apple-system, sans-serif" font-size="13" font-weight="600" letter-spacing="1">BLESSED VALLY FOUNDATION</text>
+  <text x="300" y="520" text-anchor="middle" fill="#E2E8F0" font-family="'DM Sans', -apple-system, sans-serif" font-size="16" font-weight="500">Conseil d’Administration</text>
+  <text x="300" y="546" text-anchor="middle" fill="#94A3B8" font-family="'DM Sans', -apple-system, sans-serif" font-size="13">Portrait officiel en attente</text>
+  <text x="300" y="570" text-anchor="middle" fill="#64748B" font-family="'DM Sans', -apple-system, sans-serif" font-size="12">Official portrait pending</text>
+</svg>

@@ -100,9 +100,7 @@ export default function SitePage({ pageKey, language }: { pageKey: Exclude<PageK
 }
 
 function LeadershipTeamSection({ language }: { language: Language }) {
-  // Dr. Vally is prominently honored in FoundersCorner right above,
-  // so the board grid showcases the other 5 executive leaders
-  const executiveMembers = teamMembers.filter((m) => !m.isFounder);
+  const boardMembers = teamMembers;
 
   return (
     <section className="leadership-team section-space">
@@ -110,22 +108,22 @@ function LeadershipTeamSection({ language }: { language: Language }) {
         <div className="leadership-team__header">
           <p className="eyebrow">
             <span className="eyebrow-dot" />
-            {language === "fr" ? "Conseil & Direction" : "Executive Council & Leadership"}
+            {language === "fr" ? "Conseil d'Administration" : "Board of Directors"}
           </p>
           <h2>
             {language === "fr"
-              ? "Le Conseil d’Administration & La Direction"
-              : "Executive Board & Leadership"}
+              ? "Le Conseil d’Administration de BVF"
+              : "BVF Board of Directors"}
           </h2>
           <p className="leadership-team__sub">
             {language === "fr"
-              ? "Aux côtés de la Présidente Fondatrice, l’équipe dirigeante de la Fondation Blessed Vally assure la gouvernance stratégique, la gestion financière, le discernement consultatif et le déploiement des missions sur le terrain."
-              : "Alongside the Founder & President, the executive leadership of the Blessed Vally Foundation ensures strategic governance, financial stewardship, advisory counsel, and on-the-ground mission deployment."}
+              ? "Les membres du Conseil d’Administration de la Fondation Blessed Vally assurent la gouvernance fiduciaire, la conformité statutaire, la supervision financière, le discernement consultatif et le déploiement fidèle des missions sur le terrain."
+              : "The members of the Board of Directors of Blessed Vally Foundation ensure fiduciary governance, statutory compliance, financial oversight, advisory counsel, and faithful field deployment."}
           </p>
         </div>
 
         <div className="leadership-team__grid">
-          {executiveMembers.map((member) => (
+          {boardMembers.map((member) => (
             <div key={member.id} className="contact-card">
               <div className="contact-card__image-wrap">
                 <img src={member.image} alt={member.name} className="contact-card__image" />
@@ -134,6 +132,11 @@ function LeadershipTeamSection({ language }: { language: Language }) {
               <div className="contact-card__content">
                 <h3 className="contact-card__name">{member.name}</h3>
                 <p className="contact-card__role">{member.role[language]}</p>
+                {member.haitiName && (
+                  <p className="contact-card__note" style={{ fontStyle: "italic", fontWeight: 600, color: "var(--coral-dark)", marginBottom: "4px" }}>
+                    {language === "fr" ? `En Haïti : ${member.haitiName}` : `In Haiti: ${member.haitiName}`}
+                  </p>
+                )}
                 <p className="contact-card__note">{member.note[language]}</p>
                 {member.bioHighlight && (
                   <div className="contact-card__highlight">
@@ -254,75 +257,75 @@ function ContactDirectorySection({
   const contactDirectory = [
     {
       id: "vally",
-      name: "Dr. Vally Jean-Louis Legouté",
-      role: { fr: "Fondatrice & Présidente", en: "Founder & President" },
-      badge: { fr: "Direction générale", en: "Executive Office" },
+      name: "Dr. Vally D. Jn.-Ls. Legouté",
+      role: { fr: "Présidente du Conseil", en: "Board President" },
+      badge: { fr: "Présidence", en: "Executive Office" },
       image: "/images/contact/contact-1.jpg",
       scope: {
-        fr: "Orientation pastorale, vision stratégique et relations institutionnelles de haut niveau.",
-        en: "Pastoral guidance, strategic vision, and high-level institutional relations.",
+        fr: "Orientation spirituelle, vision stratégique d'écoles chrétiennes et relations institutionnelles (Haïti : Dr. Vally Docteur Jean-Louis).",
+        en: "Spiritual orientation, Christian school strategic vision, and institutional leadership (Haiti: Dr. Vally Docteur Jean-Louis).",
       },
-      actionLabel: { fr: "Écrire à la Présidence", en: "Message President" },
+      actionLabel: { fr: "Écrire à la Présidente", en: "Message President" },
     },
     {
       id: "jean-ronald",
-      name: "Mr. Jean Ronald Legouté",
-      role: { fr: "Vice-Président", en: "Vice President" },
+      name: "Mr. Jean-Ronald Legouté",
+      role: { fr: "Vice-président", en: "Vice President" },
       badge: { fr: "Vice-Présidence", en: "Vice Presidency" },
       image: "/images/contact/contact-3.jpg",
       scope: {
-        fr: "Partenariats stratégiques, développement institutionnel et relations extérieures.",
-        en: "Strategic partnerships, institutional development, and external relations.",
+        fr: "Partenariats stratégiques, développement institutionnel et coordination humanitaire.",
+        en: "Strategic partnerships, institutional development, and humanitarian coordination.",
       },
       actionLabel: { fr: "Écrire au Vice-Président", en: "Message Vice President" },
     },
     {
       id: "vanessa",
-      name: "Vanessa Ramona Bastien-Joseph",
-      role: { fr: "Trésorière et Directrice Financière (CFO)", en: "Treasurer & CFO" },
+      name: "Mrs. Vanessa R. Bastien-Joseph",
+      role: { fr: "Trésorière", en: "Treasurer" },
       badge: { fr: "Finance & Trésorerie", en: "Finance & Treasury" },
       image: "/images/contact/vanessa-bastien.jpg",
       scope: {
-        fr: "Vérification des virements, reçus de dons officiels, fiscalité et conformité comptable.",
-        en: "Wire transfer verifications, official tax receipts, and financial compliance.",
+        fr: "Gestion financière, suivi budgétaire, reçus officiels et conformité des comptes.",
+        en: "Financial management, budget tracking, official receipts, and account compliance.",
       },
-      actionLabel: { fr: "Contacter les Finances", en: "Contact Finance" },
+      actionLabel: { fr: "Contacter la Trésorière", en: "Contact Treasurer" },
+    },
+    {
+      id: "corie-henrie",
+      name: "Ms. Corie-Henrie Bastien",
+      role: { fr: "Secrétaire", en: "Secretary" },
+      badge: { fr: "Secrétariat du Conseil", en: "Board Secretariat" },
+      image: "/images/contact/contact-4.jpg",
+      scope: {
+        fr: "Tenue des registres statutaires, procès-verbaux des assemblées et correspondances officielles.",
+        en: "Statutory records maintenance, meeting minutes, and official correspondence.",
+      },
+      actionLabel: { fr: "Écrire au Secrétariat", en: "Message Secretariat" },
+    },
+    {
+      id: "sasha-vally",
+      name: "Ms. Sasha-Vally Bastien",
+      role: { fr: "Administratrice", en: "Board Trustee" },
+      badge: { fr: "Conseil d’Administration", en: "Board Trustee" },
+      image: "/images/contact/contact-5.jpg",
+      scope: {
+        fr: "Gouvernance générale, adéquation des programmes avec la mission statutaire et veille de terrain.",
+        en: "General governance, programmatic alignment with the statutory mission, and field support.",
+      },
+      actionLabel: { fr: "Contacter l’Administratrice", en: "Contact Trustee" },
     },
     {
       id: "pierre",
-      name: "Ing. Geraldy Loudy Pierre",
+      name: "Mr. Geraldyr Lourdy Pierre",
       role: { fr: "Conseiller", en: "Counselor" },
       badge: { fr: "Conseil & Orientation", en: "Advisory & Engineering" },
       image: "/images/contact/contact-2.jpg",
       scope: {
-        fr: "Conseil stratégique, chantiers d'ingénierie, eau potable et infrastructures en Haïti.",
-        en: "Strategic counsel, engineering projects, clean water and infrastructure in Haiti.",
+        fr: "Conseil stratégique, expertise d'ingénierie, chantiers d'eau potable et infrastructures en Haïti.",
+        en: "Strategic counsel, engineering expertise, clean water works, and infrastructure in Haiti.",
       },
-      actionLabel: { fr: "Contacter le Conseil", en: "Contact Advisory" },
-    },
-    {
-      id: "relations",
-      name: "Direction & Relations Partenaires",
-      role: { fr: "Coordination & Partenariats", en: "Partnerships & Outreach" },
-      badge: { fr: "Partenariats", en: "Outreach Team" },
-      image: "/images/contact/contact-4.jpg",
-      scope: {
-        fr: "Églises partenaires, fondations mécènes, réseaux de donateurs et parrainages d'écoles.",
-        en: "Partner churches, philanthropic foundations, recurring donors, and school sponsorships.",
-      },
-      actionLabel: { fr: "Contacter les Partenariats", en: "Contact Outreach" },
-    },
-    {
-      id: "programmes",
-      name: "Direction des Programmes Éducatifs",
-      role: { fr: "Programmes & Communautés", en: "Programs & Communities" },
-      badge: { fr: "Missions Terrain", en: "Field Programs" },
-      image: "/images/contact/contact-5.jpg",
-      scope: {
-        fr: "Scolarisation des enfants, vie des classes, logistique des cantines et distributions de terrain.",
-        en: "Children's schooling, classroom operations, nutrition logistics, and field relief.",
-      },
-      actionLabel: { fr: "Contacter les Programmes", en: "Contact Programs" },
+      actionLabel: { fr: "Contacter le Conseiller", en: "Contact Counselor" },
     },
   ];
 
@@ -405,7 +408,7 @@ function ContactDirectorySection({
             </h4>
             <p>
               {language === "fr"
-                ? "Consultez le Coin de la Fondatrice Dre Vally, ses 36 ans d’enseignement et les piliers statutaires qui animent la Fondation."
+                ? "Consultez le Coin de la Fondatrice Dr. Vally, ses 36 ans d’enseignement et les piliers statutaires qui animent la Fondation."
                 : "Read Dr. Vally’s biographical journey, 36 years in education, and the legal foundations animating the Foundation."}
             </p>
           </div>
@@ -439,12 +442,12 @@ function ContactPanel({
 
   const recipientOptions = [
     { id: "all", fr: "Secrétariat général & Direction", en: "General Secretariat & Leadership" },
-    { id: "vally", fr: "Dr. Vally Jean-Louis Legouté (Présidence)", en: "Dr. Vally Jean-Louis Legouté (President)" },
-    { id: "jean-ronald", fr: "Mr. Jean Ronald Legouté (Vice-Présidence)", en: "Mr. Jean Ronald Legouté (Vice President)" },
-    { id: "vanessa", fr: "Vanessa Ramona Bastien-Joseph (Trésorerie & CFO)", en: "Vanessa Ramona Bastien-Joseph (Treasurer & CFO)" },
-    { id: "pierre", fr: "Ing. Geraldy Loudy Pierre (Conseil & Orientation)", en: "Ing. Geraldy Loudy Pierre (Counselor & Advisory)" },
-    { id: "relations", fr: "Direction & Relations Partenaires", en: "Leadership & Outreach Team" },
-    { id: "programmes", fr: "Direction des Programmes Éducatifs", en: "Educational Programs Team" },
+    { id: "vally", fr: "Dr. Vally D. Jn.-Ls. Legouté (Présidence)", en: "Dr. Vally D. Jn.-Ls. Legouté (President)" },
+    { id: "jean-ronald", fr: "Mr. Jean-Ronald Legouté (Vice-Présidence)", en: "Mr. Jean-Ronald Legouté (Vice President)" },
+    { id: "vanessa", fr: "Mrs. Vanessa R. Bastien-Joseph (Trésorerie)", en: "Mrs. Vanessa R. Bastien-Joseph (Treasurer)" },
+    { id: "corie-henrie", fr: "Ms. Corie-Henrie Bastien (Secrétariat)", en: "Ms. Corie-Henrie Bastien (Secretary)" },
+    { id: "sasha-vally", fr: "Ms. Sasha-Vally Bastien (Administration)", en: "Ms. Sasha-Vally Bastien (Trustee)" },
+    { id: "pierre", fr: "Mr. Geraldyr Lourdy Pierre (Conseil & Orientation)", en: "Mr. Geraldyr Lourdy Pierre (Counselor)" },
   ];
 
   const submit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -701,7 +704,7 @@ function BankingMethodsSection({ language }: { language: Language }) {
               />
               <CopyField
                 label={language === "fr" ? "Titulaire du compte" : "Account Holder"}
-                value="Vally Jean-Louis Bastien"
+                value="Dr. Vally Docteur Jean-Louis"
                 language={language}
               />
               <CopyField
@@ -811,6 +814,11 @@ function TaxStatusDirectorySection({ language }: { language: Language }) {
               <CopyField
                 label={language === "fr" ? "Vocation statutaire" : "Corporate Purpose"}
                 value={language === "fr" ? "Éducation, Foi, Humanitaire & Eau" : "Education, Faith, Relief & Clean Water"}
+                language={language}
+              />
+              <CopyField
+                label={language === "fr" ? "Statut fiscal US" : "US Tax Status"}
+                value={language === "fr" ? "Démarches administratives en cours" : "Administrative proceedings in progress"}
                 language={language}
               />
             </div>

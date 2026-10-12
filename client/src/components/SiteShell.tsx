@@ -149,16 +149,24 @@ export default function SiteShell({ language, onLanguageChange, activePage, chil
         </div>
 
         <div className="container site-footer__bottom">
-          <span>© {new Date().getFullYear()} Blessed Vally Foundation</span>
+          <span>© {new Date().getFullYear()} Blessed Vally Foundation Inc.</span>
           <span className="site-footer__agency-credit">
-            {language === "fr" ? "Conception & Développement :" : "Engineered & Designed by :"}{" "}
             <a
               href="https://www.infusa.pro"
               target="_blank"
               rel="noopener noreferrer"
               className="footer-infusa-credit-link"
+              title="INFUSA - www.infusa.pro"
             >
-              <strong>INFUSA</strong> (www.infusa.pro) ↗
+              {language === "fr" ? (
+                <>
+                  Site conçu et développé par <strong>INFUSA</strong> (<span className="footer-infusa-url">www.infusa.pro</span>) ↗
+                </>
+              ) : (
+                <>
+                  Website designed and developed by <strong>INFUSA</strong> (<span className="footer-infusa-url">www.infusa.pro</span>) ↗
+                </>
+              )}
             </a>
           </span>
           <span>{language === "fr" ? "Foi. Éducation. Transformation." : "Faith. Education. Transformation."}</span>

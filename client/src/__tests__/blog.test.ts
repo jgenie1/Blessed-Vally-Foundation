@@ -24,7 +24,7 @@ describe("Blog & Articles System - Data Integrity", () => {
   it("includes the word from the founder (Mot de la Fondatrice) article", () => {
     const founderPost = blogPosts.find((p) => p.id === "mot-de-la-fondatrice-responsabilite");
     expect(founderPost).toBeDefined();
-    expect(founderPost?.author.fr).toContain("Dr Vally Jean-Louis");
+    expect(founderPost?.author.fr).toContain("Dr. Vally D. Jn.-Ls. Legouté");
     expect(founderPost?.content.fr.join(" ")).toContain("responsabilité");
   });
 

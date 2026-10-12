@@ -19,6 +19,7 @@ import {
   Sparkles,
   Users,
   Compass,
+  Quote,
 } from "lucide-react";
 import { routePaths, type Language } from "@/lib/site-content";
 
@@ -182,6 +183,76 @@ export const worksGallery: WorkPhoto[] = [
   },
 ];
 
+export interface DelmasPhoto {
+  id: string;
+  num: string;
+  image: string;
+  tagFr: string;
+  tagEn: string;
+  titleFr: string;
+  titleEn: string;
+  descFr: string;
+  descEn: string;
+}
+
+export const delmasGallery: DelmasPhoto[] = [
+  {
+    id: "delmas-chantier",
+    num: "D1",
+    image: "/images/delmas/delmas-chantier-elevation.jpg",
+    tagFr: "Chantier en cours • Delmas",
+    tagEn: "Active Construction • Delmas",
+    titleFr: "Construction que nous venons de commencer à Delmas",
+    titleEn: "Newly Started Construction in Delmas",
+    descFr: "Élévation de la dalle supérieure et des piliers armés parasismiques avec maçonnerie de blocs de béton, dominant le panorama urbain de Delmas.",
+    descEn: "Upper slab elevation with seismic steel rebar columns and concrete block masonry, overlooking the metropolitan valley of Delmas.",
+  },
+  {
+    id: "delmas-facade",
+    num: "D2",
+    image: "/images/delmas/delmas-residence-facade.jpg",
+    tagFr: "Résidence Missionnaire • Façade",
+    tagEn: "Missionary Residence • Facade",
+    titleFr: "Façade principale de la Résidence Missionnaire",
+    titleEn: "Main Facade of the Missionary Residence",
+    descFr: "Bâtiment à deux niveaux avec colonnades de porche classiques, balcon supérieur sécurisé et jardin d'accueil pour les missionnaires.",
+    descEn: "Two-story facility featuring classical entrance portico columns, secured upper balcony, and landscaped gardens welcoming visiting teams.",
+  },
+  {
+    id: "delmas-interieur",
+    num: "D3",
+    image: "/images/delmas/delmas-residence-interieur.jpg",
+    tagFr: "Espaces Intérieurs • Accueil",
+    tagEn: "Interior Spaces • Reception",
+    titleFr: "Salon de réception et espaces de réunion",
+    titleEn: "Reception Hall & Meeting Spaces",
+    descFr: "Intérieur carrelé avec arches en pierres de taille, menuiseries sculptées et fer forgé pour accueillir dignement les ouvriers du Seigneur.",
+    descEn: "Tiled interior featuring natural stone arches, handcrafted woodwork, and wrought iron doors to welcome missionary workers with dignity.",
+  },
+  {
+    id: "delmas-nuit",
+    num: "D4",
+    image: "/images/delmas/delmas-residence-nuit.jpg",
+    tagFr: "Sécurité & Logistique • Cour",
+    tagEn: "Security & Logistics • Courtyard",
+    titleFr: "Cour intérieure pavée et arcades de nuit",
+    titleEn: "Paved Inner Courtyard & Night Arcades",
+    descFr: "Cour intérieure sécurisée avec arcades en briques apparentes, éclairage nocturne et véhicule logistique pour les déplacements de terrain.",
+    descEn: "Secured inner courtyard with brick arcades, nighttime safety illumination, and logistics vehicles for field outreach.",
+  },
+  {
+    id: "delmas-portail",
+    num: "D5",
+    image: "/images/delmas/delmas-residence-portail.jpg",
+    tagFr: "Enceinte & Accès • Sécurité",
+    tagEn: "Perimeter & Access • Security",
+    titleFr: "Portail d'entrée sécurisé et bougainvilliers",
+    titleEn: "Secured Entrance Gate & Bougainvillea",
+    descFr: "Grille ouvragée en fer forgé et mur d'enceinte fleuri garantissant la tranquillité et la sécurité de l'accueil missionnaire.",
+    descEn: "Heavy wrought-iron arched gates and blooming bougainvillea perimeter wall ensuring safe, peaceful missionary hospitality.",
+  },
+];
+
 export interface MachineryItem {
   id: string;
   nameFr: string;
@@ -318,46 +389,86 @@ export const ecosystemEntities: EcosystemEntity[] = [
 
 export default function HaitiWorksSection({ language }: { language: Language }) {
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
-  const [activePhotoIndex, setActivePhotoIndex] = useState<number | null>(null);
+  const [lightboxState, setLightboxState] = useState<{
+    source: "dondon" | "delmas";
+    index: number;
+  } | null>(null);
 
   const filteredPhotos =
     selectedCategory === "all"
       ? worksGallery
       : worksGallery.filter((p) => p.category === selectedCategory);
 
-  const openLightbox = (idx: number) => {
-    setActivePhotoIndex(idx);
+  const currentLightboxList =
+    lightboxState?.source === "delmas" ? delmasGallery : filteredPhotos;
+
+  const currentLightboxPhoto =
+    lightboxState !== null ? currentLightboxList[lightboxState.index] : null;
+
+  const openLightbox = (source: "dondon" | "delmas", index: number) => {
+    setLightboxState({ source, index });
   };
 
   const closeLightbox = () => {
-    setActivePhotoIndex(null);
+    setLightboxState(null);
   };
 
   const prevPhoto = useCallback(() => {
-    if (activePhotoIndex === null) return;
-    setActivePhotoIndex(
-      (activePhotoIndex - 1 + filteredPhotos.length) % filteredPhotos.length
+    if (!lightboxState) return;
+    const list = lightboxState.source === "delmas" ? delmasGallery : filteredPhotos;
+    setLightboxState((prev) =>
+      prev
+        ? {
+            ...prev,
+            index: (prev.index - 1 + list.length) % list.length,
+          }
+        : null
     );
-  }, [activePhotoIndex, filteredPhotos.length]);
+  }, [lightboxState, filteredPhotos]);
 
   const nextPhoto = useCallback(() => {
-    if (activePhotoIndex === null) return;
-    setActivePhotoIndex((activePhotoIndex + 1) % filteredPhotos.length);
-  }, [activePhotoIndex, filteredPhotos.length]);
+    if (!lightboxState) return;
+    const list = lightboxState.source === "delmas" ? delmasGallery : filteredPhotos;
+    setLightboxState((prev) =>
+      prev
+        ? {
+            ...prev,
+            index: (prev.index + 1) % list.length,
+          }
+        : null
+    );
+  }, [lightboxState, filteredPhotos]);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (activePhotoIndex === null) return;
+      if (!lightboxState) return;
       if (e.key === "Escape") closeLightbox();
       if (e.key === "ArrowLeft") prevPhoto();
       if (e.key === "ArrowRight") nextPhoto();
     };
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [activePhotoIndex, prevPhoto, nextPhoto]);
+  }, [lightboxState, prevPhoto, nextPhoto]);
 
   return (
     <section className="haiti-works-section" id="travaux">
+      {/* 0. DEVISE SPIRITUELLE OFFICIELLE DE LA FONDATION */}
+      <div className="haiti-spiritual-banner">
+        <div className="container">
+          <div className="haiti-spiritual-banner__inner">
+            <Quote size={24} className="haiti-spiritual-banner__icon" />
+            <p className="haiti-spiritual-banner__text">
+              {language === "fr"
+                ? "« Notre communauté est notre responsabilité, mais notre mission ultime est de gagner des âmes pour Christ à travers des actions concrètes d’amour et de service. »"
+                : "“Our community is our responsibility, but our ultimate mission is to win souls for Christ through concrete actions of love and service.”"}
+            </p>
+            <span className="haiti-spiritual-banner__author">
+              — {language === "fr" ? "Dr. Vally DOCTEUR JEAN-LOUIS, Fondatrice & Présidente" : "Dr. Vally D. Jn.-Ls. Legouté, Founder & President"}
+            </span>
+          </div>
+        </div>
+      </div>
+
       {/* 1. URGENT FOUNDER APPEAL (Authentic Message from Dr. Vally DOCTEUR JEAN-LOUIS) */}
       <div className="section-space">
         <div className="container">
@@ -626,23 +737,23 @@ export default function HaitiWorksSection({ language }: { language: Language }) 
         </div>
       </div>
 
-      {/* 4. APERÇU DES TRAVAUX – GALERIE COMPLETE AVEC FILTRES & LIGHTBOX */}
+      {/* 4. APERÇU DES TRAVAUX – CAMPUS DE BROSTAGE (DONDON) */}
       <div className="section-space haiti-section--alt" id="galerie-travaux">
         <div className="container">
           <div className="haiti-works__header">
             <p className="eyebrow">
               <span className="eyebrow-dot" />
-              {language === "fr" ? "Galerie de chantier" : "Field Photographic Archive"}
+              {language === "fr" ? "Brostage, Dondon • Département du Nord" : "Brostage, Dondon • Northern Department"}
             </p>
             <h2>
               {language === "fr"
-                ? "Aperçu des travaux : nous construisons plusieurs bâtiments"
-                : "Works Overview: Constructing Multiple Facilities"}
+                ? "Campus de Brostage (Dondon) : Galerie du complexe éducatif"
+                : "Brostage Campus (Dondon): Educational Facility Gallery"}
             </h2>
             <p className="haiti-works__intro">
               {language === "fr"
-                ? "Découvrez en détail l'élévation des structures, le ferraillage des fondations, les arcades du bâtiment éducatif et le travail quotidien des artisans haïtiens à Dondon et Brostage."
-                : "Examine detailed perspectives of structural elevation, seismic foundation steelwork, educational campus colonnades, and the daily dedication of local builders in Dondon and Brostage."}
+                ? "Découvrez en détail l'élévation des structures, le ferraillage des fondations, les arcades du bâtiment éducatif et le travail quotidien des artisans haïtiens sur le campus scolaire de Brostage à Dondon (Département du Nord)."
+                : "Examine detailed perspectives of structural elevation, seismic foundation steelwork, educational campus colonnades, and the daily dedication of local builders at the Brostage campus in Dondon (Northern Department)."}
             </p>
           </div>
 
@@ -704,13 +815,13 @@ export default function HaitiWorksSection({ language }: { language: Language }) 
               <div
                 key={item.id}
                 className="works-card"
-                onClick={() => openLightbox(idx)}
+                onClick={() => openLightbox("dondon", idx)}
                 role="button"
                 tabIndex={0}
                 onKeyDown={(e) => {
                   if (e.key === "Enter" || e.key === " ") {
                     e.preventDefault();
-                    openLightbox(idx);
+                    openLightbox("dondon", idx);
                   }
                 }}
               >
@@ -761,24 +872,108 @@ export default function HaitiWorksSection({ language }: { language: Language }) 
         </div>
       </div>
 
-      {/* 5. VIDEOS DU TERRAIN A DELMAS */}
-      <div className="section-space">
+      {/* 5. IMPLANTATION DE DELMAS : CHANTIER EN COURS & RÉSIDENCE MISSIONNAIRE */}
+      <div className="section-space" id="delmas">
         <div className="container">
+          <div className="haiti-works__header">
+            <p className="eyebrow">
+              <span className="eyebrow-dot" />
+              {language === "fr" ? "Département de l'Ouest • Delmas" : "Western Department • Delmas"}
+            </p>
+            <h2>
+              {language === "fr"
+                ? "Delmas : Notre nouvelle construction et la Résidence Missionnaire"
+                : "Delmas: Our Newly Started Construction & Missionary Residence"}
+            </h2>
+            <div className="delmas-quote-callout" style={{ background: "rgba(224,86,36,0.06)", borderLeft: "4px solid var(--coral)", padding: "14px 18px", borderRadius: "2px", margin: "16px 0 20px" }}>
+              <p style={{ margin: 0, font: "italic 15px/1.5 'Fraunces', serif", color: "var(--ink)" }}>
+                {language === "fr"
+                  ? "« Pour les travaux en cours à Delmas, nous venons de commencer la construction. » — La Fondation Blessed Vally documente chaque étape avec authenticité."
+                  : "“For our ongoing work in Delmas, we have just started construction.” — Blessed Vally Foundation documents every milestone with complete transparency."}
+              </p>
+            </div>
+            <p className="haiti-works__intro">
+              {language === "fr"
+                ? "À Delmas, la Fondation Blessed Vally déploie deux pôles essentiels : les travaux de gros œuvre récemment démarrés pour étendre nos capacités de service, et la Résidence Missionnaire garantissant un accueil sécurisé, fraternel et logistique pour les ouvriers du Seigneur et les délégations en visite."
+                : "In Delmas, Blessed Vally Foundation operates two vital hubs: newly started structural works expanding our ministry reach, and the Missionary Residence offering secure, fraternal, and logistical hospitality for mission teams."}
+            </p>
+          </div>
+
+          {/* Delmas Photos Grid */}
+          <div className="delmas-gallery__grid">
+            {delmasGallery.map((item, idx) => {
+              const isFeatured = idx < 2;
+              return (
+                <div
+                  key={item.id}
+                  className={`delmas-card ${isFeatured ? "delmas-card--featured" : "delmas-card--standard"}`}
+                  onClick={() => openLightbox("delmas", idx)}
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      e.preventDefault();
+                      openLightbox("delmas", idx);
+                    }
+                  }}
+                >
+                  <div className="delmas-card__media">
+                    <img
+                      src={item.image}
+                      alt={language === "fr" ? item.titleFr : item.titleEn}
+                      className="delmas-card__img"
+                      loading="lazy"
+                    />
+                    <span className="delmas-card__badge-overlay">
+                      {language === "fr" ? item.tagFr : item.tagEn}
+                    </span>
+                    <button
+                      type="button"
+                      className="delmas-card__zoom-btn"
+                      title={language === "fr" ? "Agrandir" : "Enlarge"}
+                      aria-label={language === "fr" ? "Agrandir" : "Enlarge"}
+                    >
+                      <Maximize2 size={15} />
+                    </button>
+                  </div>
+                  <div className="delmas-card__body">
+                    <div className="delmas-card__meta">
+                      <span className="delmas-card__tag">
+                        {item.num} • {language === "fr" ? "Delmas, Haïti" : "Delmas, Haiti"}
+                      </span>
+                    </div>
+                    <h3 className="delmas-card__title">
+                      {language === "fr" ? item.titleFr : item.titleEn}
+                    </h3>
+                    <p className="delmas-card__desc">
+                      {language === "fr" ? item.descFr : item.descEn}
+                    </p>
+                    <div className="delmas-card__action">
+                      <Eye size={14} />
+                      <span>{language === "fr" ? "Agrandir la vue authentique" : "View authentic photo"}</span>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Videos Grid with Accurate Posters */}
           <div className="works-videos">
             <div className="works-videos__header">
               <p className="eyebrow">
                 <span className="eyebrow-dot" />
-                {language === "fr" ? "Vidéos du terrain" : "Field Video Footage"}
+                {language === "fr" ? "Vidéos de terrain" : "Field Video Footage"}
               </p>
               <h3>
                 {language === "fr"
-                  ? "Le chantier en mouvement à Delmas."
-                  : "Active construction in motion at Delmas."}
+                  ? "Les chantiers en mouvement sur le terrain"
+                  : "Field Construction in Motion"}
               </h3>
               <p className="works-videos__intro">
                 {language === "fr"
-                  ? "Visualisez directement la progression des équipes sur le terrain haïtien : coulage des piliers, ferraillage antisismique et disposition des volumes du complexe."
-                  : "Watch direct footage from the Haitian building site: pillar concrete pouring, seismic steelwork, and spatial layout of the upcoming facility."}
+                  ? "Visualisez directement le déploiement de nos équipes : coulage des piliers armés, ferraillage antisismique et dispositions architecturales des bâtiments."
+                  : "Watch on-site footage of team deployment: reinforced pillar pours, seismic steel cages, and architectural framing."}
               </p>
             </div>
             <div className="works-videos__grid">
@@ -786,7 +981,7 @@ export default function HaitiWorksSection({ language }: { language: Language }) 
                 <video
                   controls
                   preload="metadata"
-                  poster="/images/travaux/chantier-facade-colonnes.jpg"
+                  poster="/images/delmas/delmas-chantier-elevation.jpg"
                   src="https://blessedvallyfoundation.org/wp-content/uploads/2023/01/16.mp4"
                 >
                   <p>
@@ -798,13 +993,13 @@ export default function HaitiWorksSection({ language }: { language: Language }) 
                 <div className="works-video-card__info">
                   <h4>
                     {language === "fr"
-                      ? "Chantier & Érection des structures"
-                      : "Construction & Structural Elevation"}
+                      ? "Chantier de Delmas : Érection des structures"
+                      : "Delmas Works: Structural Elevation"}
                   </h4>
                   <p>
                     {language === "fr"
-                      ? "Captation vidéo directe du chantier de Delmas et du travail des ouvriers sur les fondations."
-                      : "Direct on-site video showing local builders advancing foundational infrastructure in Delmas."}
+                      ? "Captation vidéo directe du travail des ouvriers sur les fondations et piliers armés à Delmas."
+                      : "Direct on-site footage showing workers advancing structural columns and masonry in Delmas."}
                   </p>
                 </div>
               </div>
@@ -813,7 +1008,7 @@ export default function HaitiWorksSection({ language }: { language: Language }) 
                 <video
                   controls
                   preload="metadata"
-                  poster="/images/travaux/travaux-2.jpg"
+                  poster="/images/travaux/chantier-facade-colonnes.jpg"
                   src="https://blessedvallyfoundation.org/wp-content/uploads/2023/01/22.mp4"
                 >
                   <p>
@@ -825,13 +1020,13 @@ export default function HaitiWorksSection({ language }: { language: Language }) 
                 <div className="works-video-card__info">
                   <h4>
                     {language === "fr"
-                      ? "Perspective du complexe éducatif"
-                      : "Educational Campus Perspective"}
+                      ? "Complexe de Brostage (Dondon) : Perspective du campus"
+                      : "Brostage Campus (Dondon): Architectural Perspective"}
                   </h4>
                   <p>
                     {language === "fr"
-                      ? "Visite des volumes intérieurs, des colonnes porteuses et de l'implantation dans la vallée."
-                      : "Walkthrough of interior spaces, load-bearing columns, and surrounding valley scenery."}
+                      ? "Visite des volumes intérieurs, des arcades et de l'implantation dans la vallée du Nord à Brostage."
+                      : "Walkthrough of interior classrooms, colonnades, and surrounding mountain valley setting in Brostage."}
                   </p>
                 </div>
               </div>
@@ -977,7 +1172,7 @@ export default function HaitiWorksSection({ language }: { language: Language }) 
       </div>
 
       {/* 8. INTERACTIVE LIGHTBOX */}
-      {activePhotoIndex !== null && (
+      {currentLightboxPhoto && lightboxState !== null && (
         <div
           className="works-lightbox"
           onClick={closeLightbox}
@@ -991,15 +1186,15 @@ export default function HaitiWorksSection({ language }: { language: Language }) 
             <div className="works-lightbox__header">
               <div className="works-lightbox__counter">
                 <span className="works-lightbox__num">
-                  {filteredPhotos[activePhotoIndex].num}
+                  {currentLightboxPhoto.num}
                 </span>
                 <span className="works-lightbox__tag">
                   {language === "fr"
-                    ? filteredPhotos[activePhotoIndex].tagFr
-                    : filteredPhotos[activePhotoIndex].tagEn}
+                    ? currentLightboxPhoto.tagFr
+                    : currentLightboxPhoto.tagEn}
                 </span>
                 <span className="works-lightbox__pagination">
-                  {activePhotoIndex + 1} / {filteredPhotos.length}
+                  {lightboxState.index + 1} / {currentLightboxList.length}
                 </span>
               </div>
               <button
@@ -1024,11 +1219,11 @@ export default function HaitiWorksSection({ language }: { language: Language }) 
 
               <div className="works-lightbox__media">
                 <img
-                  src={filteredPhotos[activePhotoIndex].image}
+                  src={currentLightboxPhoto.image}
                   alt={
                     language === "fr"
-                      ? filteredPhotos[activePhotoIndex].titleFr
-                      : filteredPhotos[activePhotoIndex].titleEn
+                      ? currentLightboxPhoto.titleFr
+                      : currentLightboxPhoto.titleEn
                   }
                   className="works-lightbox__img"
                 />
@@ -1047,13 +1242,13 @@ export default function HaitiWorksSection({ language }: { language: Language }) 
             <div className="works-lightbox__caption">
               <h4>
                 {language === "fr"
-                  ? filteredPhotos[activePhotoIndex].titleFr
-                  : filteredPhotos[activePhotoIndex].titleEn}
+                  ? currentLightboxPhoto.titleFr
+                  : currentLightboxPhoto.titleEn}
               </h4>
               <p>
                 {language === "fr"
-                  ? filteredPhotos[activePhotoIndex].descFr
-                  : filteredPhotos[activePhotoIndex].descEn}
+                  ? currentLightboxPhoto.descFr
+                  : currentLightboxPhoto.descEn}
               </p>
             </div>
           </div>

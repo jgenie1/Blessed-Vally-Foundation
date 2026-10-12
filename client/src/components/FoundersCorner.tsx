@@ -22,37 +22,52 @@ export default function FoundersCorner({
             <div className="image-frame image-frame--portrait">
               <img
                 src="/images/contact/contact-1.jpg"
-                alt={language === "fr" ? "Dr. Vally Jean-Louis Legouté, Fondatrice et Présidente" : "Dr. Vally Jean-Louis Legouté, Founder & President"}
+                alt={language === "fr" ? "Dr. Vally D. Jn.-Ls. Legouté, Fondatrice et Présidente" : "Dr. Vally D. Jn.-Ls. Legouté, Founder & President"}
               />
               <div className="image-frame__badge">
                 {language === "fr" ? "Fondatrice & Présidente" : "Founder & President"}
               </div>
               <div className="image-frame__caption">
-                {language === "fr" ? "Dr. Vally Jean-Louis Legouté" : "Dr. Vally Jean-Louis Legouté"}
+                {language === "fr" ? "Dr. Vally D. Jn.-Ls. Legouté" : "Dr. Vally D. Jn.-Ls. Legouté"}
               </div>
             </div>
 
+            {/* Context Name Note */}
+            <div className="founder-name-context" style={{ fontSize: "12px", color: "var(--muted)", padding: "4px 8px", background: "rgba(16,42,67,0.03)", borderRadius: "4px", border: "1px solid var(--line)" }}>
+              <span>{language === "fr" ? "Nom officiel USA : " : "Official U.S. Name: "}<strong>Dr. Vally D. Jn.-Ls. Legouté</strong></span>
+              <br />
+              <span>{language === "fr" ? "Nom officiel Haïti : " : "Official Haiti Name: "}<strong>Dr. Vally Docteur Jean-Louis</strong></span>
+            </div>
+
+            {/* Official Mission Quote */}
             <div className="founders-corner__quote">
               <Quote size={20} style={{ color: "var(--coral)", marginBottom: 8 }} />
+              <p>
+                {language === "fr"
+                  ? "« Gagner des âmes pour Christ à travers des activités concrètes prouvant que Jésus est le seul Homme en Qui nous devons nous confier. »"
+                  : "“Winning souls for Christ through concrete activities demonstrating that Jesus is the only One in Whom we must place our trust.”"}
+              </p>
+              <span>{language === "fr" ? "Mission officielle de la Fondation" : "Official Foundation Mission"}</span>
+            </div>
+
+            {/* Core Spiritual Conviction Quote */}
+            <div className="founders-corner__quote" style={{ borderLeftColor: "var(--teal)" }}>
+              <p>
+                {language === "fr"
+                  ? "« Notre communauté est notre responsabilité, mais notre mission ultime est de gagner des âmes pour Christ à travers des actions concrètes d’amour et de service. »"
+                  : "“Our community is our responsibility, but our ultimate mission is to win souls for Christ through concrete actions of love and service.”"}
+              </p>
+              <span>{language === "fr" ? "Conviction spirituelle fondamentale" : "Core Spiritual Conviction"}</span>
+            </div>
+
+            {/* Founder's Motto */}
+            <div className="founders-corner__quote" style={{ borderLeftColor: "var(--gold)" }}>
               <p>
                 {language === "fr"
                   ? "« Si Dieu a fait de moi cette femme bénie, Il le fera pour les enfants de Brostage aussi. »"
                   : "“If God made me this blessed woman, He will do the exact same for the children of Brostage too.”"}
               </p>
-              <span>{language === "fr" ? "Devise de Dre Vally" : "Founder's Motto"}</span>
-            </div>
-
-            <div className="founders-corner__quote" style={{ borderLeftColor: "var(--gold)" }}>
-              <p>
-                {language === "fr"
-                  ? "« Tu crois que tu peux aider tout le monde, tu n’es pas Jésus-Christ. »"
-                  : "“You think you can help everyone, you are not Jesus Christ.”"}
-              </p>
-              <span>
-                {language === "fr"
-                  ? "Paroles souvent répétées avec tendresse par son époux"
-                  : "Words tenderly repeated by her husband"}
-              </span>
+              <span>{language === "fr" ? "Devise de la Fondatrice" : "Founder's Motto"}</span>
             </div>
           </div>
 
@@ -67,6 +82,18 @@ export default function FoundersCorner({
                 ? "Une vie de foi, d'éducation et de dévouement pour les enfants."
                 : "A life of faith, education and devotion to children."}
             </h2>
+
+            {/* Official Message from the Founder */}
+            <div className="founder-official-message" style={{ background: "rgba(224, 86, 36, 0.05)", borderLeft: "4px solid var(--coral)", padding: "18px 22px", borderRadius: "2px", marginBottom: "22px" }}>
+              <h4 style={{ margin: "0 0 8px", font: "600 13px 'Fraunces', serif", letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--coral-dark)" }}>
+                {language === "fr" ? "Message officiel de la Fondatrice" : "Official Message from the Founder"}
+              </h4>
+              <p style={{ margin: 0, font: "italic 15px/1.6 'Fraunces', serif", color: "var(--ink)" }}>
+                {language === "fr"
+                  ? "« Notre communauté est notre responsabilité, mais notre mission ultime est de gagner des âmes pour Christ à travers des actions concrètes d’amour et de service. L'Évangile nous appelle à joindre la foi vivante à des œuvres concrètes qui transforment les vies. Nous nous engageons résolument pour l'évangélisation, l'éducation chrétienne d'excellence et l'implantation d'établissements scolaires chrétiens aux États-Unis et en Haïti, afin d'ouvrir un avenir d'espérance à chaque enfant. »"
+                  : "“Our community is our responsibility, but our ultimate mission is to win souls for Christ through concrete actions of love and service. The Gospel calls us to unite living faith with tangible deeds that transform lives. We are steadfastly committed to evangelism, Christian educational excellence, and the establishment of Christian schools in the United States and Haiti, opening a future of hope for every child.”"}
+              </p>
+            </div>
 
             <div className="founders-corner__text">
               <p>
@@ -96,11 +123,11 @@ export default function FoundersCorner({
               <p>
                 {language === "fr" ? (
                   <>
-                    Pendant plus de dix années, elle exerce avec rigueur dans les institutions bancaires en Haïti tout en enseignant dans la formation professionnelle. C’est à l’âge de 38 ans que la clarté de son appel se manifeste pleinement : <strong>consacrer sa vie entière à l’éducation</strong>.
+                    Pendant plus de dix années, elle exerce avec rigueur dans les institutions bancaires en Haïti tout en enseignant dans la formation professionnelle. C’est à l’âge de 38 ans que la clarté de son appel se manifeste pleinement : <strong>consacrer sa vie entière à l’éducation et au ministère chrétien</strong>.
                   </>
                 ) : (
                   <>
-                    For over a decade, she served with distinction in Haitian banking while teaching vocational courses. At age 38, her true life calling crystallized: <strong>dedicating her life to education</strong>.
+                    For over a decade, she served with distinction in Haitian banking while teaching vocational courses. At age 38, her true life calling crystallized: <strong>dedicating her life to education and Christian ministry</strong>.
                   </>
                 )}
               </p>
@@ -108,11 +135,11 @@ export default function FoundersCorner({
               <p>
                 {language === "fr" ? (
                   <>
-                    Établie à Miami en Floride, elle rejoint le corps professoral et obtient un <strong>Doctorat en éducation</strong> ainsi qu'une <strong>Maîtrise en théologie</strong>. Après plus de 36 ans d'expérience pédagogique auprès d’écoliers et d'adultes, elle fonde en 2005 la <strong>Blessed Vally Foundation</strong>. Elle choisit de s’implanter à Brostage, section rurale de Dondon, pour bâtir une école moderne, un puits artésien et un centre de santé.
+                    Établie à Miami en Floride, elle rejoint le corps professoral et obtient un <strong>Doctorat en éducation</strong> ainsi qu'une <strong>Maîtrise en théologie</strong>. Après plus de 36 ans d'expérience pédagogique auprès d’écoliers et d'adultes, elle fonde en 2005 la <strong>Blessed Vally Foundation</strong>. Elle porte une vision claire et déterminée : l’évangélisation par l’action concrète, le développement communautaire et <strong>l’implantation d’établissements scolaires chrétiens aux États-Unis et en Haïti</strong>.
                   </>
                 ) : (
                   <>
-                    Moving to Miami, Florida, she joined the state’s educator ranks, earning a <strong>Doctorate in Education</strong> and a <strong>Master’s in Theology</strong>. After more than 36 years shaping students, she founded <strong>Blessed Vally Foundation</strong> in 2005, dedicating its mission to Brostage, Dondon, to build school classrooms, artesian water, and clinic care.
+                    Moving to Miami, Florida, she joined the state’s educator ranks, earning a <strong>Doctorate in Education</strong> and a <strong>Master’s in Theology</strong>. After more than 36 years shaping students, she founded <strong>Blessed Vally Foundation</strong> in 2005. She carries an unwavering vision: evangelism through concrete action, community development, and <strong>the establishment of accredited Christian schools in the United States and Haiti</strong>.
                   </>
                 )}
               </p>
@@ -140,7 +167,7 @@ export default function FoundersCorner({
 
             <div className="founders-corner__actions">
               <Link className="button button--coral" href={routePaths.mission}>
-                {language === "fr" ? "Découvrir la vision complète" : "Discover our full vision"}
+                {language === "fr" ? "Découvrir la mission officielle" : "Discover our official mission"}
                 <ArrowRight size={16} />
               </Link>
               <Link className="text-link" href={routePaths.donate}>

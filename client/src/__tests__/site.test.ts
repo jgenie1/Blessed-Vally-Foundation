@@ -130,7 +130,7 @@ describe("Blessed Vally Foundation - Official Directory & Addresses", () => {
     const frCorp = pageContent.fr.taxStatus.sections[0];
     expect(frCorp.body).toContain("BLESSED VALLY FOUNDATION, INC.");
     expect(frCorp.body).toContain("Florida Non-Profit Corporation");
-    expect(frCorp.body).toContain("Dr. Vally Jean-Louis Legouté");
+    expect(frCorp.body).toContain("Dr. Vally D. Jn.-Ls. Legouté");
   });
 });
 
@@ -150,7 +150,7 @@ describe("Blessed Vally Foundation - Blog & Carousel Integration", () => {
     expect(waterPost?.title.fr).toContain("Accès à l’eau potable");
     expect(waterPost?.content.fr.length).toBeGreaterThan(3);
     expect(waterPost?.quote?.fr).toContain("L'eau est un bien essentiel");
-    expect(waterPost?.author.fr).toContain("Dr Vally Jean-Louis Legouté");
+    expect(waterPost?.author.fr).toContain("Dr. Vally D. Jn.-Ls. Legouté");
 
     const visionPost = blogPosts.find((p) => p.id === "blessed-vally-foundation-vision-piliers");
     expect(visionPost).toBeDefined();
