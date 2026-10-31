@@ -553,7 +553,7 @@ export const pageContent: Record<Language, Record<Exclude<PageKey, "home">, Page
         {
           eyebrow: "Founder & Leadership",
           title: "Dr. Vally D. Jn.-Ls. Legouté (In Haiti: Dr. Vally Docteur Jean-Louis)",
-          body: "Dr. Vally D. Jn.-Ls. Legouté is the Founder and President of Blessed Vally Foundation. Born in Ranquitte, Haiti, and holding a Doctorate in Education and a Master’s in Theology, she devoted over 36 years to teaching and educational service. Her lifelong commitment combines evangelism, whole-person education, and the vision of establishing high-quality Christian schools in the United States and Haiti.",
+          body: "Dr. Vally D. Jn.-Ls. Legouté is the Founder and President of Blessed Vally Foundation. Born in Ranquitte, Haiti, and holding a Doctorate in Education and a Master’s in Theology, she devoted over 40 years to teaching and educational service. Her lifelong commitment combines evangelism, whole-person education, and the vision of establishing high-quality Christian schools in the United States and Haiti.",
           bullets: [
             "Official U.S. Name: Dr. Vally D. Jn.-Ls. Legouté",
             "Official Haiti Name: Dr. Vally Docteur Jean-Louis",
@@ -625,7 +625,7 @@ export const pageContent: Record<Language, Record<Exclude<PageKey, "home">, Page
           eyebrow: "Campus in Progress",
           title: "Building modern classrooms for children in Brostage.",
           body: "On our grounds in Brostage, Dondon, we are actively raising a two-story educational facility designed to shelter illuminated classrooms, an administrative wing, a learning library, and safe outdoor courtyards.",
-          quote: "Founder Dr. Vally D. Jn.-Ls. Legouté has invested extensive personal resources and over 36 years of teaching experience to bring this school to life.",
+          quote: "Founder Dr. Vally D. Jn.-Ls. Legouté has invested extensive personal resources and over 40 years of teaching experience to bring this school to life.",
         },
       ],
     },
@@ -959,7 +959,7 @@ export const pageContent: Record<Language, Record<Exclude<PageKey, "home">, Page
         {
           eyebrow: "La Fondatrice & Présidente",
           title: "Dr. Vally D. Jn.-Ls. Legouté (En Haïti : Dr. Vally Docteur Jean-Louis)",
-          body: "Dr. Vally D. Jn.-Ls. Legouté est la Fondatrice et Présidente de la Fondation Blessed Vally. Née à Ranquitte, dans le Nord d’Haïti, elle a consacré plus de 36 années de sa vie à l'enseignement et au service des jeunes. Titulaire d'un Doctorat en Éducation et d'une Maîtrise en Théologie, elle porte une vision audacieuse : unir l'évangélisation, l'éducation chrétienne d'excellence et l'implantation d'établissements scolaires chrétiens aux États-Unis et en Haïti.",
+          body: "Dr. Vally D. Jn.-Ls. Legouté est la Fondatrice et Présidente de la Fondation Blessed Vally. Née à Ranquitte, dans le Nord d’Haïti, elle a consacré plus de 40 années de sa vie à l'enseignement et au service des jeunes. Titulaire d'un Doctorat en Éducation et d'une Maîtrise en Théologie, elle porte une vision audacieuse : unir l'évangélisation, l'éducation chrétienne d'excellence et l'implantation d'établissements scolaires chrétiens aux États-Unis et en Haïti.",
           bullets: [
             "Nom officiel aux États-Unis : Dr. Vally D. Jn.-Ls. Legouté",
             "Nom officiel en Haïti : Dr. Vally Docteur Jean-Louis",
@@ -1031,7 +1031,7 @@ export const pageContent: Record<Language, Record<Exclude<PageKey, "home">, Page
           eyebrow: "Le Campus de Brostage",
           title: "Bâtir des salles de classe dignes pour les enfants de Dondon.",
           body: "Sur notre site de Brostage à Dondon, les travaux progressent pour ériger un bâtiment scolaire à deux niveaux comprenant des salles de classe claires, des bureaux administratifs, une bibliothèque et des espaces de récréation sécurisés.",
-          quote: "La Présidente Dre Vally D. Jn.-Ls. Legouté consacre son expérience de plus de 36 ans d'enseignement pour faire de ce campus un phare d'espérance.",
+          quote: "La Présidente Dre Vally D. Jn.-Ls. Legouté consacre son expérience de plus de 40 ans d'enseignement pour faire de ce campus un phare d'espérance.",
         },
       ],
     },

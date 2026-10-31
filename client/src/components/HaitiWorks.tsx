@@ -490,11 +490,11 @@ export default function HaitiWorksSection({ language }: { language: Language }) 
                 <div className="haiti-founder-appeal__portrait-card">
                   <div className="haiti-founder-appeal__img-frame">
                     <img
-                      src="/images/travaux/chantier-facade-colonnes.jpg"
+                      src="/images/contact/contact-1.jpg"
                       alt={
                         language === "fr"
-                          ? "Bâtiment en construction financé par Dr. Jean-Louis"
-                          : "Building under construction funded by Dr. Jean-Louis"
+                          ? "Dr. Vally DOCTEUR JEAN-LOUIS, Fondatrice et Présidente"
+                          : "Dr. Vally DOCTEUR JEAN-LOUIS, Founder & President"
                       }
                       className="haiti-founder-appeal__img"
                     />

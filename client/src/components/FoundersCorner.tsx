@@ -135,11 +135,11 @@ export default function FoundersCorner({
               <p>
                 {language === "fr" ? (
                   <>
-                    Établie à Miami en Floride, elle rejoint le corps professoral et obtient un <strong>Doctorat en éducation</strong> ainsi qu'une <strong>Maîtrise en théologie</strong>. Après plus de 36 ans d'expérience pédagogique auprès d’écoliers et d'adultes, elle fonde en 2005 la <strong>Blessed Vally Foundation</strong>. Elle porte une vision claire et déterminée : l’évangélisation par l’action concrète, le développement communautaire et <strong>l’implantation d’établissements scolaires chrétiens aux États-Unis et en Haïti</strong>.
+                    Établie à Miami en Floride, elle rejoint le corps professoral et obtient un <strong>Doctorat en éducation</strong> ainsi qu'une <strong>Maîtrise en théologie</strong>. Après plus de 40 ans d'expérience pédagogique auprès d’écoliers et d'adultes, elle fonde en 2005 la <strong>Blessed Vally Foundation</strong>. Elle porte une vision claire et déterminée : l’évangélisation par l’action concrète, le développement communautaire et <strong>l’implantation d’établissements scolaires chrétiens aux États-Unis et en Haïti</strong>.
                   </>
                 ) : (
                   <>
-                    Moving to Miami, Florida, she joined the state’s educator ranks, earning a <strong>Doctorate in Education</strong> and a <strong>Master’s in Theology</strong>. After more than 36 years shaping students, she founded <strong>Blessed Vally Foundation</strong> in 2005. She carries an unwavering vision: evangelism through concrete action, community development, and <strong>the establishment of accredited Christian schools in the United States and Haiti</strong>.
+                    Moving to Miami, Florida, she joined the state’s educator ranks, earning a <strong>Doctorate in Education</strong> and a <strong>Master’s in Theology</strong>. After more than 40 years shaping students, she founded <strong>Blessed Vally Foundation</strong> in 2005. She carries an unwavering vision: evangelism through concrete action, community development, and <strong>the establishment of accredited Christian schools in the United States and Haiti</strong>.
                   </>
                 )}
               </p>
@@ -156,7 +156,7 @@ export default function FoundersCorner({
                 <span>{language === "fr" ? "Ans en milieu bancaire" : "Years in banking career"}</span>
               </div>
               <div className="milestone-item">
-                <strong>36+</strong>
+                <strong>40+</strong>
                 <span>{language === "fr" ? "Ans d'enseignement & Doctorat" : "Years teaching & Doctorate"}</span>
               </div>
               <div className="milestone-item">

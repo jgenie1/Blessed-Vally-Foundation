@@ -30,8 +30,8 @@ export const teamMembers: TeamMember[] = [
       en: "Founder and Board President. Leads the vision of evangelism through concrete actions, Christian educational excellence, and the establishment of Christian schools in the United States and Haiti.",
     },
     bioHighlight: {
-      fr: "Doctorat en Éducation · Maîtrise en Théologie · 36+ années d'enseignement",
-      en: "Doctorate in Education · Master’s in Theology · 36+ years teaching",
+      fr: "Doctorat en Éducation · Maîtrise en Théologie · 40+ années d'enseignement",
+      en: "Doctorate in Education · Master’s in Theology · 40+ years teaching",
     },
     email: "Blessedvallyfoundation@gmail.com",
     isFounder: true,

@@ -11,14 +11,14 @@ describe("Founder's Corner (Le Coin de la Fondatrice) - Integration & Content", 
   it("verifies Dr. Vally Jean-Louis Legouté key biographical milestones", () => {
     const milestones = [
       { label: "1961", detail: "Ranquitte, Haïti" },
-      { label: "36 ans", detail: "Enseignement & Vocation" },
+      { label: "40 ans", detail: "Enseignement & Vocation" },
       { label: "2005", detail: "Miami, Floride" },
       { label: "Brostage", detail: "Campus Dondon" },
     ];
 
     expect(milestones.length).toBe(4);
     expect(milestones[0].label).toBe("1961");
-    expect(milestones[1].label).toBe("36 ans");
+    expect(milestones[1].label).toBe("40 ans");
     expect(milestones[2].label).toBe("2005");
     expect(milestones[3].label).toBe("Brostage");
   });

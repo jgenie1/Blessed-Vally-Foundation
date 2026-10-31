@@ -408,8 +408,8 @@ function ContactDirectorySection({
             </h4>
             <p>
               {language === "fr"
-                ? "Consultez le Coin de la Fondatrice Dr. Vally, ses 36 ans d’enseignement et les piliers statutaires qui animent la Fondation."
-                : "Read Dr. Vally’s biographical journey, 36 years in education, and the legal foundations animating the Foundation."}
+                ? "Consultez le Coin de la Fondatrice Dr. Vally, ses 40 ans d’enseignement et les piliers statutaires qui animent la Fondation."
+                : "Read Dr. Vally’s biographical journey, 40 years in education, and the legal foundations animating the Foundation."}
             </p>
           </div>
           <a href={routePaths.leadership} className="button button--paper">
