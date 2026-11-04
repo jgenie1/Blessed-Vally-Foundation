@@ -2944,6 +2944,7 @@ blockquote { position: relative; max-width: 700px; margin: 39px 0 0; padding: 19
 .donation-module-section {
   background: var(--sand);
   border-bottom: 1px solid var(--line);
+  padding: 68px 0 96px;
 }
 
 .donation-module__header {
@@ -2959,18 +2960,20 @@ blockquote { position: relative; max-width: 700px; margin: 39px 0 0; padding: 19
 }
 
 .donation-module__secure-tag,
-.donation-module__sunbiz-tag {
+.donation-module__sunbiz-tag,
+.donation-module__stripe-tag {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 5px 12px;
-  background: rgba(255, 255, 255, 0.85);
+  padding: 6px 14px;
+  background: rgba(255, 255, 255, 0.9);
   border: 1px solid var(--line);
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: var(--ink-soft);
+  border-radius: 3px;
 }
 
 .donation-module__secure-tag svg {
@@ -2979,6 +2982,10 @@ blockquote { position: relative; max-width: 700px; margin: 39px 0 0; padding: 19
 
 .donation-module__sunbiz-tag svg {
   color: var(--leaf);
+}
+
+.donation-module__stripe-tag svg {
+  color: #635bff;
 }
 
 .donation-module__header h2 {
@@ -3616,6 +3623,51 @@ blockquote { position: relative; max-width: 700px; margin: 39px 0 0; padding: 19
 @media (max-width: 900px) {
   .donation-module__grid {
     grid-template-columns: 1fr;
+  }
+}
+
+.donation-trust-strip {
+  margin-top: 56px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.donation-trust-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  padding: 24px 22px;
+  box-shadow: 0 4px 16px rgba(16, 42, 67, 0.04);
+}
+
+.donation-trust-icon {
+  color: var(--coral);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.donation-trust-item strong {
+  display: block;
+  font: 500 16px/1.3 "Fraunces", serif;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+
+.donation-trust-item p {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+@media (max-width: 900px) {
+  .donation-trust-strip {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 36px;
   }
 }
 

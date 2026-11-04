@@ -157,12 +157,8 @@ export default function DonationModule({ language }: { language: Language }) {
       if (!response.ok || !result.url) {
         throw new Error(result.error || "Unable to open secure checkout");
       }
-      window.open(result.url, "_blank", "noopener,noreferrer");
-      setMessage(
-        language === "fr"
-          ? "La page de paiement Stripe sécurisée s'est ouverte dans un nouvel onglet."
-          : "Secure Stripe checkout opened in a new tab."
-      );
+      // Redirection directe et fluide vers Stripe Checkout
+      window.location.href = result.url;
     } catch {
       setError(
         language === "fr"
@@ -182,19 +178,27 @@ export default function DonationModule({ language }: { language: Language }) {
           <div className="donation-module__badge-row">
             <span className="donation-module__secure-tag">
               <LockKeyhole size={14} />
-              {language === "fr" ? "Plateforme de Don Sécurisée" : "Secure Donation Platform"}
+              {language === "fr" ? "Paiement 100% Sécurisé SSL" : "100% Secure SSL Gateway"}
             </span>
             <span className="donation-module__sunbiz-tag">
               <ShieldCheck size={14} />
-              {language === "fr" ? "Organisme Sunbiz Floride Enregistré" : "Registered Florida Non-Profit"}
+              {language === "fr" ? "Florida Non-Profit (Sunbiz)" : "Registered Florida Non-Profit"}
+            </span>
+            <span className="donation-module__stripe-tag">
+              <CreditCard size={14} />
+              {language === "fr" ? "Paiement Stripe Actif" : "Stripe Verified"}
             </span>
           </div>
 
-          <h2>{language === "fr" ? "Chaque don transforme des vies." : "Every gift transforms lives."}</h2>
+          <h2>
+            {language === "fr"
+              ? "Soutenez la mission et transformez des vies en Haïti."
+              : "Support our mission and transform lives in Haiti."}
+          </h2>
           <p className="donation-module__lead">
             {language === "fr"
-              ? "Rejoignez la mission de la Fondation Blessed Vally. Vos contributions soutiennent directement l'éducation chrétienne des enfants, la cantine scolaire, l'accès à l'eau potable et la réfection des salles de classe en Haïti."
-              : "Partner with Blessed Vally Foundation. Your generosity directly advances Christian education, school nutrition, clean water, and classroom infrastructure for children and families in Haiti."}
+              ? "Vos contributions financent directement l'éducation chrétienne, les cantines scolaires, l'accès à l'eau potable et la construction des salles de classe à Brostage, Dondon. Choisissez votre montant et validez votre don en toute confiance."
+              : "Your contributions directly fund Christian education, school nutrition, clean drinking water, and classroom facilities in Brostage, Dondon. Select your gift and give with complete confidence."}
           </p>
         </div>
 
@@ -914,6 +918,51 @@ export default function DonationModule({ language }: { language: Language }) {
           </div>
         </div>
         )}
+
+        {/* Piliers de Réassurance & Transparence Donateurs */}
+        <div className="donation-trust-strip">
+          <div className="donation-trust-item">
+            <div className="donation-trust-icon">
+              <ShieldCheck size={22} />
+            </div>
+            <div>
+              <strong>{language === "fr" ? "Affectation 100% Terrain" : "100% Direct Field Impact"}</strong>
+              <p>
+                {language === "fr"
+                  ? "Chaque don est directement alloué aux chantiers scolaires, aux forages d'eau potable et à l'aide d'urgence en Haïti."
+                  : "Every gift directly funds school construction, clean water wells, and emergency relief in Haiti."}
+              </p>
+            </div>
+          </div>
+
+          <div className="donation-trust-item">
+            <div className="donation-trust-icon">
+              <CheckCircle2 size={22} />
+            </div>
+            <div>
+              <strong>{language === "fr" ? "Reçu Officiel Systématique" : "Certified Tax Receipt"}</strong>
+              <p>
+                {language === "fr"
+                  ? "Une attestation nominative officielle est systématiquement générée et envoyée par email à chaque donateur."
+                  : "An official statement is automatically generated and emailed to every donor for accounting and tax purposes."}
+              </p>
+            </div>
+          </div>
+
+          <div className="donation-trust-item">
+            <div className="donation-trust-icon">
+              <LockKeyhole size={22} />
+            </div>
+            <div>
+              <strong>{language === "fr" ? "Sécurité Bancaire Maximale" : "Bank-Grade Encryption"}</strong>
+              <p>
+                {language === "fr"
+                  ? "Paiement sécurisé par Stripe (PCI-DSS niveau 1, chiffrement SSL 256 bits). Aucune donnée bancaire n'est conservée."
+                  : "Processed securely via Stripe (PCI-DSS Level 1, 256-bit SSL). No card numbers are ever stored."}
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

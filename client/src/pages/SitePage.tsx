@@ -29,7 +29,7 @@ export default function SitePage({ pageKey, language }: { pageKey: Exclude<PageK
 
   return (
     <>
-      {pageKey !== "leadership" && (
+      {pageKey !== "leadership" && pageKey !== "donate" && (
         <PageHero
           kicker={model.kicker}
           title={model.title}
@@ -59,7 +59,7 @@ export default function SitePage({ pageKey, language }: { pageKey: Exclude<PageK
 
       {pageKey === "news" && <BlogSection language={language} />}
 
-      {pageKey !== "leadership" && pageKey !== "contact" && (
+      {pageKey !== "leadership" && pageKey !== "contact" && pageKey !== "donate" && (
         <div className="page-sections">
           {model.sections.map((section, index) => <ContentSection key={`${section.title}-${index}`} section={section} index={index} language={language} />)}
         </div>
@@ -68,13 +68,7 @@ export default function SitePage({ pageKey, language }: { pageKey: Exclude<PageK
       {pageKey === "haiti" && <HaitiWorksSection language={language} />}
       {pageKey === "taxStatus" && <TaxStatusDirectorySection language={language} />}
       {pageKey === "news" && <NewsArchive language={language} />}
-      {pageKey === "donate" && (
-        <>
-          <DonationModule language={language} />
-          <BankingMethodsSection language={language} />
-          <ReceiptConfirmationSection language={language} />
-        </>
-      )}
+      {pageKey === "donate" && <DonationModule language={language} />}
       {pageKey === "privacy" && (
         <ImpactBand
           eyebrow={language === "fr" ? "Transparence & Données" : "Transparency & Privacy"}
