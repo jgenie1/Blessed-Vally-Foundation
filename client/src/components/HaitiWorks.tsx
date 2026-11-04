@@ -956,12 +956,12 @@ export default function HaitiWorksSection({ language }: { language: Language }) 
             })}
           </div>
 
-          {/* Videos Grid with Accurate Posters */}
+          {/* Field Perspectives Photo Showcase */}
           <div className="works-videos">
             <div className="works-videos__header">
               <p className="eyebrow">
                 <span className="eyebrow-dot" />
-                {language === "fr" ? "Vidéos de terrain" : "Field Video Footage"}
+                {language === "fr" ? "Perspectives de terrain" : "Field Perspectives"}
               </p>
               <h3>
                 {language === "fr"
@@ -971,23 +971,45 @@ export default function HaitiWorksSection({ language }: { language: Language }) 
               <p className="works-videos__intro">
                 {language === "fr"
                   ? "Visualisez directement le déploiement de nos équipes : coulage des piliers armés, ferraillage antisismique et dispositions architecturales des bâtiments."
-                  : "Watch on-site footage of team deployment: reinforced pillar pours, seismic steel cages, and architectural framing."}
+                  : "View direct on-site documentation of team deployment: reinforced pillar pours, seismic steel cages, and architectural framing."}
               </p>
             </div>
             <div className="works-videos__grid">
-              <div className="works-video-card">
-                <video
-                  controls
-                  preload="metadata"
-                  poster="/images/delmas/delmas-chantier-elevation.jpg"
-                  src="https://blessedvallyfoundation.org/wp-content/uploads/2023/01/16.mp4"
-                >
-                  <p>
-                    {language === "fr"
-                      ? "Votre navigateur ne prend pas en charge la lecture vidéo."
-                      : "Your browser does not support the video tag."}
-                  </p>
-                </video>
+              <div
+                className="works-video-card"
+                onClick={() => openLightbox("delmas", 0)}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    openLightbox("delmas", 0);
+                  }
+                }}
+              >
+                <div className="works-video-card__media">
+                  <img
+                    src="/images/delmas/delmas-chantier-elevation.jpg"
+                    alt={
+                      language === "fr"
+                        ? "Chantier de Delmas : Érection des structures"
+                        : "Delmas Works: Structural Elevation"
+                    }
+                    className="works-video-card__img"
+                    loading="lazy"
+                  />
+                  <span className="works-video-card__badge-overlay">
+                    {language === "fr" ? "Delmas • Chantier en cours" : "Delmas • Active Works"}
+                  </span>
+                  <button
+                    type="button"
+                    className="works-video-card__zoom-btn"
+                    title={language === "fr" ? "Agrandir" : "Enlarge"}
+                    aria-label={language === "fr" ? "Agrandir" : "Enlarge"}
+                  >
+                    <Maximize2 size={15} />
+                  </button>
+                </div>
                 <div className="works-video-card__info">
                   <h4>
                     {language === "fr"
@@ -996,25 +1018,55 @@ export default function HaitiWorksSection({ language }: { language: Language }) 
                   </h4>
                   <p>
                     {language === "fr"
-                      ? "Captation vidéo directe du travail des ouvriers sur les fondations et piliers armés à Delmas."
-                      : "Direct on-site footage showing workers advancing structural columns and masonry in Delmas."}
+                      ? "Documentation directe des travaux sur les fondations et piliers armés à Delmas."
+                      : "Direct on-site documentation showing workers advancing structural columns and masonry in Delmas."}
                   </p>
+                  <div className="works-video-card__action">
+                    <Eye size={14} />
+                    <span>{language === "fr" ? "Agrandir la photo authentique" : "View authentic photo"}</span>
+                  </div>
                 </div>
               </div>
 
-              <div className="works-video-card">
-                <video
-                  controls
-                  preload="metadata"
-                  poster="/images/travaux/chantier-facade-colonnes.jpg"
-                  src="https://blessedvallyfoundation.org/wp-content/uploads/2023/01/22.mp4"
-                >
-                  <p>
-                    {language === "fr"
-                      ? "Votre navigateur ne prend pas en charge la lecture vidéo."
-                      : "Your browser does not support the video tag."}
-                  </p>
-                </video>
+              <div
+                className="works-video-card"
+                onClick={() => {
+                  const idx = filteredPhotos.findIndex((p) => p.id === "facade-colonnes");
+                  openLightbox("dondon", idx >= 0 ? idx : 0);
+                }}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    const idx = filteredPhotos.findIndex((p) => p.id === "facade-colonnes");
+                    openLightbox("dondon", idx >= 0 ? idx : 0);
+                  }
+                }}
+              >
+                <div className="works-video-card__media">
+                  <img
+                    src="/images/travaux/chantier-facade-colonnes.jpg"
+                    alt={
+                      language === "fr"
+                        ? "Complexe de Brostage (Dondon) : Perspective du campus"
+                        : "Brostage Campus (Dondon): Architectural Perspective"
+                    }
+                    className="works-video-card__img"
+                    loading="lazy"
+                  />
+                  <span className="works-video-card__badge-overlay">
+                    {language === "fr" ? "Dondon • Campus de Brostage" : "Dondon • Brostage Campus"}
+                  </span>
+                  <button
+                    type="button"
+                    className="works-video-card__zoom-btn"
+                    title={language === "fr" ? "Agrandir" : "Enlarge"}
+                    aria-label={language === "fr" ? "Agrandir" : "Enlarge"}
+                  >
+                    <Maximize2 size={15} />
+                  </button>
+                </div>
                 <div className="works-video-card__info">
                   <h4>
                     {language === "fr"
@@ -1026,6 +1078,10 @@ export default function HaitiWorksSection({ language }: { language: Language }) 
                       ? "Visite des volumes intérieurs, des arcades et de l'implantation dans la vallée du Nord à Brostage."
                       : "Walkthrough of interior classrooms, colonnades, and surrounding mountain valley setting in Brostage."}
                   </p>
+                  <div className="works-video-card__action">
+                    <Eye size={14} />
+                    <span>{language === "fr" ? "Agrandir la photo authentique" : "View authentic photo"}</span>
+                  </div>
                 </div>
               </div>
             </div>

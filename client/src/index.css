@@ -2562,36 +2562,111 @@ blockquote { position: relative; max-width: 700px; margin: 39px 0 0; padding: 19
 }
 
 .works-video-card {
+  display: flex;
+  flex-direction: column;
   background: var(--sand);
   border: 1px solid var(--line);
   padding: 10px;
   border-radius: 4px;
   box-shadow: 0 8px 24px rgba(16,42,67,.06);
+  cursor: pointer;
+  transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease;
 }
 
-.works-video-card video {
+.works-video-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(16,42,67,.28);
+  box-shadow: 0 16px 32px rgba(16,42,67,.12);
+}
+
+.works-video-card__media {
+  position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9;
-  background: #0d1b26;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
   border-radius: 2px;
+  background: var(--sand-dark);
+}
+
+.works-video-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
   display: block;
+  transition: transform .5s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.works-video-card:hover .works-video-card__img {
+  transform: scale(1.04);
+}
+
+.works-video-card__badge-overlay {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(16,42,67,.88);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 2px;
+  backdrop-filter: blur(4px);
+}
+
+.works-video-card__zoom-btn {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(16,42,67,0.75);
+  color: #fff;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background .2s ease;
+}
+
+.works-video-card:hover .works-video-card__zoom-btn {
+  background: var(--coral);
 }
 
 .works-video-card__info {
   padding: 14px 8px 6px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 .works-video-card__info h4 {
-  margin: 0 0 4px;
-  font: 500 17px/1.2 "Fraunces", serif;
+  margin: 0 0 6px;
+  font: 500 18px/1.25 "Fraunces", serif;
   color: var(--ink);
 }
 
 .works-video-card__info p {
-  margin: 0;
+  margin: 0 0 12px;
   font-size: 13px;
   color: var(--muted);
   line-height: 1.5;
+  flex-grow: 1;
+}
+
+.works-video-card__action {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border-top: 1px dashed var(--line);
+  padding-top: 10px;
 }
 
 /* Spiritual Motto Banner */
