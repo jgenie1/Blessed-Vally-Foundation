@@ -20,6 +20,7 @@ import {
   DONATION_CAUSES,
   formatCurrencyAmount,
   getDynamicImpactMessage,
+  getPresetsForCurrency,
   PAYMENT_TABS,
   USD_PRESETS,
   type Currency,
@@ -114,6 +115,18 @@ export default function DonationModule({ language }: { language: Language }) {
       setTimeout(() => setCopiedField(null), 2200);
     } catch {
       // fallback
+    }
+  };
+
+  const handleCurrencySelect = (newCurrency: Currency) => {
+    if (currency === newCurrency) return;
+    setCurrency(newCurrency);
+    if (!isCustomAmount) {
+      if (newCurrency === "HTG") {
+        setAmount("5000");
+      } else if (currency === "HTG") {
+        setAmount("100");
+      }
     }
   };
 
@@ -388,7 +401,7 @@ export default function DonationModule({ language }: { language: Language }) {
                       key={cur}
                       type="button"
                       className={`currency-pill ${currency === cur ? "is-active" : ""}`}
-                      onClick={() => setCurrency(cur)}
+                      onClick={() => handleCurrencySelect(cur)}
                     >
                       {cur}
                     </button>
@@ -398,7 +411,7 @@ export default function DonationModule({ language }: { language: Language }) {
 
               {/* Boutons de présets */}
               <div className="amount-presets-grid">
-                {USD_PRESETS.map((preset) => {
+                {getPresetsForCurrency(currency).map((preset) => {
                   const isActive = !isCustomAmount && amount === String(preset.value);
                   return (
                     <button
@@ -408,8 +421,9 @@ export default function DonationModule({ language }: { language: Language }) {
                       onClick={() => handleSelectPreset(preset.value)}
                     >
                       <span className="preset-btn__value">
-                        {CURRENCY_SYMBOLS[currency]}
-                        {preset.value}
+                        {currency === "HTG"
+                          ? `${preset.value.toLocaleString()} HTG`
+                          : `${CURRENCY_SYMBOLS[currency]}${preset.value}`}
                       </span>
                       {preset.popular && (
                         <span className="preset-btn__badge">

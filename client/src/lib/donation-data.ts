@@ -147,6 +147,49 @@ export const USD_PRESETS: AmountPreset[] = [
   },
 ];
 
+export const HTG_PRESETS: AmountPreset[] = [
+  {
+    value: 1000,
+    impact: {
+      fr: "Kits de fournitures scolaires, cahiers et stylos pour des élèves en Haïti.",
+      en: "School supplies, notebooks and pens for students in Haiti.",
+    },
+  },
+  {
+    value: 2500,
+    impact: {
+      fr: "Repas chauds et équilibrés pour des enfants en classe pendant une semaine.",
+      en: "Warm balanced meals for schoolchildren for an entire week.",
+    },
+  },
+  {
+    value: 5000,
+    popular: true,
+    impact: {
+      fr: "Scolarité mensuelle, soutien nutritionnel et suivi médical d'un enfant.",
+      en: "One month of full schooling, nutrition and health support for a child.",
+    },
+  },
+  {
+    value: 10000,
+    impact: {
+      fr: "Matériel pédagogique, manuels scolaires et équipement d'une classe.",
+      en: "Pedagogical materials, textbooks and classroom gear.",
+    },
+  },
+  {
+    value: 25000,
+    impact: {
+      fr: "Contribution majeure aux chantiers scolaires et au forage d'eau potable à Brostage.",
+      en: "Major contribution to school building and clean water well drilling in Brostage.",
+    },
+  },
+];
+
+export function getPresetsForCurrency(currency: Currency): AmountPreset[] {
+  return currency === "HTG" ? HTG_PRESETS : USD_PRESETS;
+}
+
 export const PAYMENT_TABS: PaymentTab[] = [
   {
     id: "stripe",
