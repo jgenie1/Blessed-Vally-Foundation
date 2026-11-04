@@ -127,6 +127,10 @@ export async function createCheckoutSession(
     mode: isMonthly ? "subscription" : "payment",
     customer_email: params.donorEmail || undefined,
     billing_address_collection: "auto",
+    payment_intent_data:
+      !isMonthly && params.donorEmail
+        ? { receipt_email: params.donorEmail }
+        : undefined,
     metadata,
     success_url: `${origin}/donate?status=success&session_id={CHECKOUT_SESSION_ID}`,
     cancel_url: `${origin}/donate?status=cancelled`,

@@ -95,6 +95,7 @@ async function createCheckoutSession(params) {
     mode: isMonthly ? "subscription" : "payment",
     customer_email: params.donorEmail || void 0,
     billing_address_collection: "auto",
+    payment_intent_data: !isMonthly && params.donorEmail ? { receipt_email: params.donorEmail } : void 0,
     metadata,
     success_url: `${origin}/donate?status=success&session_id={CHECKOUT_SESSION_ID}`,
     cancel_url: `${origin}/donate?status=cancelled`
