@@ -14,7 +14,7 @@ import {
   RotateCcw,
   ShieldCheck,
 } from "lucide-react";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   CURRENCY_SYMBOLS,
   DONATION_CAUSES,
@@ -88,6 +88,7 @@ export default function DonationModule({ language }: { language: Language }) {
   const [currency, setCurrency] = useState<Currency>("USD");
   const [amount, setAmount] = useState<string>("100");
   const [isCustomAmount, setIsCustomAmount] = useState<boolean>(false);
+  const customInputRef = useRef<HTMLInputElement>(null);
   const [selectedCause, setSelectedCause] = useState<string>("general");
   const [isTribute, setIsTribute] = useState<boolean>(false);
   const [tributeName, setTributeName] = useState<string>("");
@@ -437,7 +438,10 @@ export default function DonationModule({ language }: { language: Language }) {
                 <button
                   type="button"
                   className={`preset-btn ${isCustomAmount ? "is-active" : ""}`}
-                  onClick={() => setIsCustomAmount(true)}
+                  onClick={() => {
+                    setIsCustomAmount(true);
+                    setTimeout(() => customInputRef.current?.focus(), 0);
+                  }}
                 >
                   <span className="preset-btn__value">
                     {language === "fr" ? "Montant libre" : "Custom"}
@@ -446,9 +450,15 @@ export default function DonationModule({ language }: { language: Language }) {
               </div>
 
               {/* Champ de saisie personnalisé */}
-              <div className="custom-amount-wrap">
-                <span className="custom-amount-symbol">{CURRENCY_SYMBOLS[currency]}</span>
+              <div
+                className="custom-amount-wrap"
+                onClick={() => customInputRef.current?.focus()}
+              >
+                {currency !== "HTG" && (
+                  <span className="custom-amount-symbol">{CURRENCY_SYMBOLS[currency]}</span>
+                )}
                 <input
+                  ref={customInputRef}
                   type="number"
                   min="1"
                   step="any"
