@@ -679,10 +679,10 @@ export const pageContent: Record<Language, Record<Exclude<PageKey, "home">, Page
     haiti: {
       kicker: "Works in Haiti & Field Calling",
       title: "Building to transform lives and communities in Haiti.",
-      description: "From Brostage/Dondon to Delmas, Blessed Vally Foundation is raising lasting infrastructure: an educational campus, clean drinking water reservoir, modern sanitation block, and a missionary residence.",
+      description: "From Brostage/Dondon to Delmas, Blessed Vally Foundation is raising lasting infrastructure: safe sanitation facilities, clean drinking water access, a community cafeteria, an educational campus, and a missionary residence.",
       image: "/images/travaux/chantier-facade-colonnes.jpg",
       metaTitle: "Works in Haiti | Blessed Vally Foundation",
-      metaDescription: "Discover active construction in Haiti: educational campus, artesian well, clean water reservoir, sanitation block, and machinery on the ground.",
+      metaDescription: "Discover active construction in Haiti: priority sanitation facilities, clean water access, community cafeteria, educational campus, and machinery on the ground.",
       sections: [
         {
           eyebrow: "Our Field Mission in Haiti",
@@ -691,9 +691,21 @@ export const pageContent: Record<Language, Record<Exclude<PageKey, "home">, Page
           quote: "Winning souls for Christ through concrete activities demonstrating that Jesus is the only One in Whom we must place our trust.",
         },
         {
+          eyebrow: "Brostage, Dondon • Haiti",
+          title: "Priority Projects – Brostage, Dondon, Haiti",
+          body: "Blessed Vally Foundation seeks to address three essential community needs in Brostage–Dondon: sanitation, access to safe drinking water, and food assistance.\n\nOur immediate priorities are:\n\n1. Construction of Sanitation Facilities\nProvide safe, clean, and accessible sanitation facilities to improve hygiene and protect human dignity.\n\n2. Access to Safe Drinking Water\nDevelop a sustainable drinking water supply solution to meet essential community needs.\n\n3. Construction of a Community Cafeteria\nEstablish a suitable facility for preparing and distributing meals to children, families, and vulnerable community members.\n\nStatus: Priority Projects Seeking Funding.\n\nThrough these initiatives, the Foundation seeks to demonstrate the love of Jesus Christ through meaningful community service.",
+          bullets: [
+            "1. Construction of Sanitation Facilities: safe, clean, and accessible facilities",
+            "2. Access to Safe Drinking Water: sustainable supply solution for essential needs",
+            "3. Construction of a Community Cafeteria: preparing and distributing meals to children and families",
+            "Status: Priority Projects Seeking Funding",
+          ],
+          quote: "Through these initiatives, the Foundation seeks to demonstrate the love of Jesus Christ through meaningful community service.",
+        },
+        {
           eyebrow: "Progress Status & Transparency",
           title: "Clear distinction between completed, active, and planned initiatives.",
-          body: "To maintain rigorous transparency, our initiatives in Haiti are organized into four verified categories:\n\n• Completed Milestones: Deep earthquake-resistant foundations, load-bearing concrete structural frame for the main two-story building, upper slab pour, initial artesian borehole, and educational kit distributions.\n• Active Works: Second-phase classroom finishing, molded safety balustrades, rainwater drainage and clean water storage reservoir construction, and modern four-stall sanitary block erection.\n• Projects in Preparation: Fully equipped computer learning laboratory, permanent school canteen feeding program, community first-aid health clinic, and the Dondon Guesthouse.\n• Current Urgent Needs: Cement bags, steel rebar reinforcement, solar energy panels, student desks and classroom furniture.",
+          body: "To maintain rigorous transparency, our initiatives in Haiti are organized into four verified categories:\n\n• Completed Milestones: Deep earthquake-resistant foundations, load-bearing concrete structural frame for the main two-story building, upper slab pour, initial artesian borehole, and educational kit distributions.\n• Active Works: Second-phase classroom finishing, molded safety balustrades, rainwater drainage and clean water storage reservoir construction, and modern sanitation facilities.\n• Projects in Preparation: Fully equipped computer learning laboratory, permanent community cafeteria, community first-aid health clinic, and the Dondon Guesthouse.\n• Current Urgent Needs: Cement bags, steel rebar reinforcement, solar energy panels, student desks and classroom furniture.",
         },
       ],
     },
@@ -1110,10 +1122,10 @@ export const pageContent: Record<Language, Record<Exclude<PageKey, "home">, Page
     haiti: {
       kicker: "Chantier en cours & Vocation de service",
       title: "Travaux en cours : bâtir pour transformer des vies en Haïti.",
-      description: "De Brostage/Dondon à Delmas, la Fondation Blessed Vally érige un complexe éducatif, sécurise l'accès à l'eau potable, bâtit un bloc sanitaire moderne et implante une résidence missionnaire au service des enfants et des familles.",
+      description: "De Brostage/Dondon à Delmas, la Fondation Blessed Vally érige un complexe éducatif, sécurise l'accès à l'eau potable, bâtit des blocs sanitaires sûrs et une cafétéria communautaire au service des enfants et des familles.",
       image: "/images/travaux/chantier-facade-colonnes.jpg",
       metaTitle: "Travaux en cours en Haïti | Fondation Blessed Vally",
-      metaDescription: "Suivez l'avancement concret des travaux en Haïti : complexe éducatif R+1, réservoir d'eau potable, bloc sanitaire et matériels mobilisés.",
+      metaDescription: "Suivez l'avancement concret des travaux en Haïti : projets prioritaires à Brostage, complexe éducatif R+1, réservoir d'eau, blocs sanitaires et cafétéria.",
       sections: [
         {
           eyebrow: "Notre Vocation de Terrain en Haïti",
@@ -1122,9 +1134,21 @@ export const pageContent: Record<Language, Record<Exclude<PageKey, "home">, Page
           quote: "« Gagner des âmes pour Christ à travers des activités concrètes prouvant que Jésus est le seul Homme en Qui nous devons nous confier. »",
         },
         {
+          eyebrow: "Brostage, Dondon • Haïti",
+          title: "Projets prioritaires – Brostage, Dondon, Haïti",
+          body: "La Blessed Vally Foundation souhaite répondre à trois besoins essentiels de la communauté de Brostage–Dondon :\n\nl’assainissement, l’accès à l’eau potable et l’alimentation.\n\nNos priorités immédiates sont :\n\n1. Construction de blocs sanitaires\nMettre à disposition des installations sanitaires sûres, propres et adaptées afin d’améliorer les conditions d’hygiène et de préserver la dignité des bénéficiaires.\n\n2. Accès à l’eau potable\nDévelopper une solution durable d’approvisionnement en eau potable pour répondre aux besoins essentiels de la communauté.\n\n3. Construction d’une cafétéria communautaire\nAménager un espace de préparation et de distribution de repas pour soutenir les enfants, les familles et les personnes vulnérables.\n\nStatut : Projets prioritaires en recherche de financement.\n\nÀ travers ces initiatives, la Fondation entend témoigner de l’amour de Jésus-Christ par des actions concrètes au service de la communauté.",
+          bullets: [
+            "1. Construction de blocs sanitaires : hygiène et dignité préservées",
+            "2. Accès à l’eau potable : solution durable d'approvisionnement",
+            "3. Construction d’une cafétéria communautaire : repas pour les enfants et personnes vulnérables",
+            "Statut officiel : Projets prioritaires en recherche de financement",
+          ],
+          quote: "« À travers ces initiatives, la Fondation entend témoigner de l’amour de Jésus-Christ par des actions concrètes au service de la communauté. »",
+        },
+        {
           eyebrow: "État d'Avancement & Transparence",
           title: "Distinction claire entre réalisations, chantiers en cours et projets.",
-          body: "Dans un souci de rigueur et d'honnêteté envers nos donateurs, nous distinguons clairement les étapes de notre travail en Haïti :\n\n• Réalisations achevées : Fondations parasismiques coulées, structure porteuse en béton armé du bâtiment principal R+1 achevée, dalle supérieure coulée, forage préliminaire du puits artésien et distributions de kits scolaires.\n• Activités en cours : Second œuvre et crépissage des salles de classe, pose des balustrades moulées de sécurité, creusement et maçonnerie du réservoir d'eau potable, construction du bloc sanitaire à 4 cabines.\n• Projets en préparation : Équipement de la salle informatique et bibliothèque, cantine scolaire pérenne, dispensaire de soins primaires, et aménagement de la Guesthouse de Dondon.\n• Besoins actuels prioritaires : Sacs de ciment, fer à béton, panneaux photovoltaïques solaires, pupitres et tables scolaires pour les élèves.",
+          body: "Dans un souci de rigueur et d'honnêteté envers nos donateurs, nous distinguons clairement les étapes de notre travail en Haïti :\n\n• Réalisations achevées : Fondations parasismiques coulées, structure porteuse en béton armé du bâtiment principal R+1 achevée, dalle supérieure coulée, forage préliminaire du puits artésien et distributions de kits scolaires.\n• Activités en cours : Second œuvre et crépissage des salles de classe, pose des balustrades moulées de sécurité, creusement et maçonnerie du réservoir d'eau potable, construction de blocs sanitaires et de la cafétéria communautaire.\n• Projets en préparation : Équipement de la salle informatique et bibliothèque, cantine scolaire pérenne, dispensaire de soins primaires, et aménagement de la Guesthouse de Dondon.\n• Besoins actuels prioritaires : Sacs de ciment, fer à béton, panneaux photovoltaïques solaires, pupitres et tables scolaires pour les élèves.",
         },
       ],
     },

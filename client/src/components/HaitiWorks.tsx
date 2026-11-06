@@ -18,6 +18,7 @@ import {
   Layers,
   Compass,
   Quote,
+  UtensilsCrossed,
 } from "lucide-react";
 import { routePaths, type Language } from "@/lib/site-content";
 
@@ -467,7 +468,136 @@ export default function HaitiWorksSection({ language }: { language: Language }) 
         </div>
       </div>
 
-      {/* 1. URGENT FOUNDER APPEAL (Authentic Message from Dr. Vally DOCTEUR JEAN-LOUIS) */}
+      {/* 1. PROJETS PRIORITAIRES – BROSTAGE, DONDON, HAÏTI */}
+      <div className="section-space haiti-priority-projects-section" id="projets-prioritaires">
+        <div className="container">
+          <div className="haiti-priority-card">
+            <div className="haiti-priority-card__top">
+              <div className="haiti-priority-card__badge-row">
+                <span className="haiti-priority-tag">
+                  <MapPin size={14} />
+                  <span>Brostage, Dondon • Haïti</span>
+                </span>
+                <span className="haiti-priority-status-pill">
+                  <span className="haiti-priority-status-dot" />
+                  <span>
+                    {language === "fr"
+                      ? "Statut : Projets prioritaires en recherche de financement"
+                      : "Status: Priority Projects Seeking Funding"}
+                  </span>
+                </span>
+              </div>
+              <h2 className="haiti-priority-card__title">
+                {language === "fr"
+                  ? "Projets prioritaires – Brostage, Dondon, Haïti"
+                  : "Priority Projects – Brostage, Dondon, Haiti"}
+              </h2>
+              <p className="haiti-priority-card__intro">
+                {language === "fr"
+                  ? "La Blessed Vally Foundation souhaite répondre à trois besoins essentiels de la communauté de Brostage–Dondon : l’assainissement, l’accès à l’eau potable et l’alimentation. Nos priorités immédiates sont :"
+                  : "Blessed Vally Foundation seeks to address three essential community needs in Brostage–Dondon: sanitation, access to safe drinking water, and food assistance. Our immediate priorities are:"}
+              </p>
+            </div>
+
+            <div className="haiti-priority-grid">
+              {/* Priorité 1: Blocs sanitaires */}
+              <div className="haiti-priority-item">
+                <div className="haiti-priority-item__header">
+                  <span className="haiti-priority-item__num">01</span>
+                  <div
+                    className="haiti-priority-item__icon-wrapper"
+                    style={{ background: "rgba(43, 138, 62, 0.1)", color: "var(--leaf)" }}
+                  >
+                    <ShieldCheck size={22} />
+                  </div>
+                </div>
+                <span className="haiti-priority-item__category">
+                  {language === "fr" ? "Assainissement & Hygiène" : "Sanitation & Hygiene"}
+                </span>
+                <h3 className="haiti-priority-item__title">
+                  {language === "fr" ? "1. Construction de blocs sanitaires" : "1. Construction of Sanitation Facilities"}
+                </h3>
+                <p className="haiti-priority-item__desc">
+                  {language === "fr"
+                    ? "Mettre à disposition des installations sanitaires sûres, propres et adaptées afin d’améliorer les conditions d’hygiène et de préserver la dignité des bénéficiaires."
+                    : "Provide safe, clean, and accessible sanitation facilities to improve hygiene and protect human dignity."}
+                </p>
+              </div>
+
+              {/* Priorité 2: Eau potable */}
+              <div className="haiti-priority-item">
+                <div className="haiti-priority-item__header">
+                  <span className="haiti-priority-item__num">02</span>
+                  <div
+                    className="haiti-priority-item__icon-wrapper"
+                    style={{ background: "rgba(16, 42, 67, 0.08)", color: "var(--navy, #102a43)" }}
+                  >
+                    <Droplets size={22} />
+                  </div>
+                </div>
+                <span className="haiti-priority-item__category">
+                  {language === "fr" ? "Eau Potable & Santé" : "Clean Water & Health"}
+                </span>
+                <h3 className="haiti-priority-item__title">
+                  {language === "fr" ? "2. Accès à l’eau potable" : "2. Access to Safe Drinking Water"}
+                </h3>
+                <p className="haiti-priority-item__desc">
+                  {language === "fr"
+                    ? "Développer une solution durable d’approvisionnement en eau potable pour répondre aux besoins essentiels de la communauté."
+                    : "Develop a sustainable drinking water supply solution to meet essential community needs."}
+                </p>
+              </div>
+
+              {/* Priorité 3: Cafétéria communautaire */}
+              <div className="haiti-priority-item">
+                <div className="haiti-priority-item__header">
+                  <span className="haiti-priority-item__num">03</span>
+                  <div
+                    className="haiti-priority-item__icon-wrapper"
+                    style={{ background: "rgba(224, 86, 36, 0.1)", color: "var(--coral-dark)" }}
+                  >
+                    <UtensilsCrossed size={22} />
+                  </div>
+                </div>
+                <span className="haiti-priority-item__category">
+                  {language === "fr" ? "Alimentation & Nutrition" : "Food Assistance & Meals"}
+                </span>
+                <h3 className="haiti-priority-item__title">
+                  {language === "fr" ? "3. Construction d’une cafétéria communautaire" : "3. Construction of a Community Cafeteria"}
+                </h3>
+                <p className="haiti-priority-item__desc">
+                  {language === "fr"
+                    ? "Aménager un espace de préparation et de distribution de repas pour soutenir les enfants, les familles et les personnes vulnérables."
+                    : "Establish a suitable facility for preparing and distributing meals to children, families, and vulnerable community members."}
+                </p>
+              </div>
+            </div>
+
+            <div className="haiti-priority-card__footer">
+              <div className="haiti-priority-faith-box">
+                <Quote size={20} className="haiti-priority-faith-icon" />
+                <p className="haiti-priority-faith-text">
+                  {language === "fr"
+                    ? "« À travers ces initiatives, la Fondation entend témoigner de l’amour de Jésus-Christ par des actions concrètes au service de la communauté. »"
+                    : "“Through these initiatives, the Foundation seeks to demonstrate the love of Jesus Christ through meaningful community service.”"}
+                </p>
+              </div>
+
+              <div className="haiti-priority-actions">
+                <a href={routePaths.donate} className="button button--coral">
+                  <span>{language === "fr" ? "Soutenir ces projets prioritaires" : "Support these priority projects"}</span>
+                  <ArrowRight size={16} />
+                </a>
+                <a href={routePaths.contact} className="button button--paper">
+                  <span>{language === "fr" ? "Partenariats & Financement" : "Partnerships & Funding"}</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* 2. URGENT FOUNDER APPEAL (Authentic Message from Dr. Vally DOCTEUR JEAN-LOUIS) */}
       <div className="section-space">
         <div className="container">
           <div className="haiti-founder-appeal">
@@ -548,34 +678,26 @@ export default function HaitiWorksSection({ language }: { language: Language }) 
                 {/* 4 Priority Pillars Badge Strip */}
                 <div className="haiti-founder-appeal__pillars">
                   <div className="haiti-appeal-pill">
+                    <ShieldCheck size={16} className="haiti-appeal-pill__icon" />
+                    <div>
+                      <strong>{language === "fr" ? "1. Blocs sanitaires" : "1. Sanitation Facilities"}</strong>
+                      <span>{language === "fr" ? "Hygiène & dignité" : "Hygiene & dignity"}</span>
+                    </div>
+                  </div>
+
+                  <div className="haiti-appeal-pill">
                     <Droplets size={16} className="haiti-appeal-pill__icon" />
                     <div>
-                      <strong>{language === "fr" ? "Réservoir d'eau" : "Water Reservoir"}</strong>
-                      <span>{language === "fr" ? "Eau potable autonome" : "Clean drinking water"}</span>
+                      <strong>{language === "fr" ? "2. Eau potable" : "2. Safe Drinking Water"}</strong>
+                      <span>{language === "fr" ? "Solution durable" : "Sustainable supply"}</span>
                     </div>
                   </div>
 
                   <div className="haiti-appeal-pill">
-                    <Building2 size={16} className="haiti-appeal-pill__icon" />
+                    <UtensilsCrossed size={16} className="haiti-appeal-pill__icon" />
                     <div>
-                      <strong>{language === "fr" ? "Bloc 4 WC modernes" : "4-Stall Modern Toilets"}</strong>
-                      <span>{language === "fr" ? "Hygiène & dignité" : "Dignity & sanitation"}</span>
-                    </div>
-                  </div>
-
-                  <div className="haiti-appeal-pill">
-                    <Home size={16} className="haiti-appeal-pill__icon" />
-                    <div>
-                      <strong>{language === "fr" ? "Complexe R+1" : "Two-Story School"}</strong>
-                      <span>{language === "fr" ? "Salles de cours & bureaux" : "Classrooms & offices"}</span>
-                    </div>
-                  </div>
-
-                  <div className="haiti-appeal-pill">
-                    <HeartHandshake size={16} className="haiti-appeal-pill__icon" />
-                    <div>
-                      <strong>{language === "fr" ? "Clinique & Dépôt" : "Clinic & Food Bank"}</strong>
-                      <span>{language === "fr" ? "Soins & vivres d'urgence" : "Healthcare & storage"}</span>
+                      <strong>{language === "fr" ? "3. Cafétéria" : "3. Community Cafeteria"}</strong>
+                      <span>{language === "fr" ? "Repas & soutien" : "Meal distribution"}</span>
                     </div>
                   </div>
                 </div>

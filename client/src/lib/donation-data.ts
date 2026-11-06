@@ -64,31 +64,31 @@ export const DONATION_CAUSES: DonationCause[] = [
   {
     id: "nutrition",
     label: {
-      fr: "Cantines scolaires & Nutrition infantile",
-      en: "School Canteens & Child Nutrition",
+      fr: "Cafétéria communautaire & Nutrition (Brostage)",
+      en: "Community Cafeteria & Food Support (Brostage)",
     },
     description: {
-      fr: "Fourniture de repas chauds et nutritifs quotidiens pour soutenir la santé et l'attention en classe.",
-      en: "Provides daily warm nutritious meals to sustain physical health and learning concentration.",
+      fr: "Aménagement d’un espace de préparation et de distribution de repas pour soutenir les enfants, les familles et les personnes vulnérables.",
+      en: "Establishing a suitable facility for preparing and distributing meals to children, families, and vulnerable community members.",
     },
     badge: {
-      fr: "Santé",
-      en: "Health",
+      fr: "Priorité 3",
+      en: "Priority 3",
     },
   },
   {
     id: "infrastructure",
     label: {
-      fr: "Infrastructures, Énergie solaire & Eau potable (Dondon)",
-      en: "Classroom Infrastructure, Solar Power & Clean Water (Dondon)",
+      fr: "Blocs sanitaires & Eau potable (Brostage–Dondon)",
+      en: "Sanitation Facilities & Clean Water (Brostage–Dondon)",
     },
     description: {
-      fr: "Construction et réfection des salles de classe, panneaux solaires et forage d'eau potable.",
-      en: "Supports classroom renovation, solar installation, and deep-well drinking water access.",
+      fr: "Installations sanitaires sûres pour préserver l'hygiène et la dignité, et solution durable d’approvisionnement en eau potable.",
+      en: "Safe sanitation facilities to protect hygiene and human dignity, and sustainable drinking water supply solutions.",
     },
     badge: {
-      fr: "Terrain",
-      en: "Fieldwork",
+      fr: "Priorités 1 & 2",
+      en: "Priorities 1 & 2",
     },
   },
   {

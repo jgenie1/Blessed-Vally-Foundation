@@ -236,4 +236,35 @@ describe("Blessed Vally Foundation - Legal & Privacy Policy Compliance", () => {
   });
 });
 
+describe("Blessed Vally Foundation - Priority Projects in Brostage, Dondon, Haiti", () => {
+  it("includes the 3 immediate priority projects in French with exact text and status", () => {
+    const prioritySection = pageContent.fr.haiti.sections.find(
+      (s) => s.title.includes("Projets prioritaires") && s.title.includes("Brostage")
+    );
+    expect(prioritySection).toBeDefined();
+    expect(prioritySection?.title).toBe("Projets prioritaires – Brostage, Dondon, Haïti");
+    expect(prioritySection?.body).toContain("l’assainissement, l’accès à l’eau potable et l’alimentation");
+    expect(prioritySection?.body).toContain("1. Construction de blocs sanitaires");
+    expect(prioritySection?.body).toContain("2. Accès à l’eau potable");
+    expect(prioritySection?.body).toContain("3. Construction d’une cafétéria communautaire");
+    expect(prioritySection?.body).toContain("Statut : Projets prioritaires en recherche de financement");
+    expect(prioritySection?.body).toContain("témoigner de l’amour de Jésus-Christ");
+  });
+
+  it("includes the 3 immediate priority projects in English with exact text and status", () => {
+    const prioritySection = pageContent.en.haiti.sections.find(
+      (s) => s.title.includes("Priority Projects") && s.title.includes("Brostage")
+    );
+    expect(prioritySection).toBeDefined();
+    expect(prioritySection?.title).toBe("Priority Projects – Brostage, Dondon, Haiti");
+    expect(prioritySection?.body).toContain("sanitation, access to safe drinking water, and food assistance");
+    expect(prioritySection?.body).toContain("1. Construction of Sanitation Facilities");
+    expect(prioritySection?.body).toContain("2. Access to Safe Drinking Water");
+    expect(prioritySection?.body).toContain("3. Construction of a Community Cafeteria");
+    expect(prioritySection?.body).toContain("Status: Priority Projects Seeking Funding");
+    expect(prioritySection?.body).toContain("demonstrate the love of Jesus Christ");
+  });
+});
+
+
 
