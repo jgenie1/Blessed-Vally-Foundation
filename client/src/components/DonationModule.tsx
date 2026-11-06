@@ -320,8 +320,8 @@ export default function DonationModule({ language }: { language: Language }) {
               <div className="donation-receipt-footer">
                 <p>
                   {language === "fr"
-                    ? `Une attestation fiscale officielle a été générée pour ${sessionDetails?.customerEmail || "votre adresse électronique"}. Blessed Vally Foundation Inc. est une corporation sans but lucratif enregistrée auprès du Département d'État de Floride (Sunbiz).`
-                    : `An official tax acknowledgment has been recorded for ${sessionDetails?.customerEmail || "your email"}. Blessed Vally Foundation Inc. is a registered Non-Profit Corporation with the Florida Department of State (Sunbiz).`}
+                    ? `Une attestation officielle de contribution a été générée pour ${sessionDetails?.customerEmail || "votre adresse électronique"}. Blessed Vally Foundation Inc. est une organisation à but non lucratif constituée en Floride (Sunbiz - N12000006840).`
+                    : `An official contribution receipt has been generated for ${sessionDetails?.customerEmail || "your email"}. Blessed Vally Foundation Inc. is a registered Non-Profit Corporation with the Florida Department of State (Sunbiz - N12000006840).`}
                 </p>
               </div>
             </div>
@@ -494,7 +494,7 @@ export default function DonationModule({ language }: { language: Language }) {
                   <div className="tax-deduction-callout__text">
                     {language === "fr" ? (
                       <>
-                        Un reçu officiel de confirmation est délivré pour chaque contribution. Les démarches administratives relatives au statut fiscal aux États-Unis sont actuellement en cours.
+                        Un reçu officiel de confirmation est délivré pour chaque contribution. Les démarches administratives relatives à la régularisation et au statut fiscal de la Fondation sont actuellement en cours.
                       </>
                     ) : (
                       <>
@@ -615,7 +615,7 @@ export default function DonationModule({ language }: { language: Language }) {
                     </div>
 
                     <div className="form-group">
-                      <label>{language === "fr" ? "Adresse courriel (pour le reçu fiscal)" : "Email Address (for tax receipt)"}</label>
+                      <label>{language === "fr" ? "Adresse courriel (pour le reçu de don)" : "Email Address (for donation receipt)"}</label>
                       <input
                         required
                         type="email"
@@ -643,8 +643,8 @@ export default function DonationModule({ language }: { language: Language }) {
                       />
                       <span>
                         {language === "fr"
-                          ? "Je souhaite recevoir un reçu fiscal officiel nominatif par email"
-                          : "I request an official tax acknowledgment receipt via email"}
+                          ? "Je souhaite recevoir un reçu officiel nominatif de don par email"
+                          : "I request an official contribution receipt via email"}
                       </span>
                     </label>
 
@@ -964,11 +964,11 @@ export default function DonationModule({ language }: { language: Language }) {
               <CheckCircle2 size={22} />
             </div>
             <div>
-              <strong>{language === "fr" ? "Reçu Officiel Systématique" : "Certified Tax Receipt"}</strong>
+              <strong>{language === "fr" ? "Reçu Officiel Systématique" : "Official Contribution Receipt"}</strong>
               <p>
                 {language === "fr"
                   ? "Une attestation nominative officielle est systématiquement générée et envoyée par email à chaque donateur."
-                  : "An official statement is automatically generated and emailed to every donor for accounting and tax purposes."}
+                  : "An official statement is automatically generated and emailed to every donor for administrative and records purposes."}
               </p>
             </div>
           </div>

@@ -762,37 +762,42 @@ function TaxStatusDirectorySection({ language }: { language: Language }) {
           </p>
           <h2>
             {language === "fr"
-              ? "Informations légales, fiscales et coordonnées officielles."
-              : "Official Legal, Tax & Contact Information."}
+              ? "Statut juridique, fiscal et transparence."
+              : "Legal Status, Tax Status & Transparency."}
           </h2>
           <p className="tax-directory__sub">
             {language === "fr"
-              ? "Retrouvez les mentions officielles de la Fondation Blessed Vally Inc. telles qu’enregistrées auprès de l'État de Floride et publiées sur le site officiel blessedvallyfoundation.org. Ces coordonnées font foi pour vos courriers, chèques de dons et démarches administratives."
-              : "Access the verified records of Blessed Vally Foundation Inc. as registered with the State of Florida and published on blessedvallyfoundation.org. These details serve for all official mail, check gifts, and administrative inquiries."}
+              ? "Retrouvez les mentions officielles de Blessed Vally Foundation, Inc. enregistrées auprès de la Division of Corporations de l’État de Floride (Sunbiz - N12000006840). Ces coordonnées font foi pour vos courriers, chèques de dons et démarches administratives."
+              : "Access the official records of Blessed Vally Foundation, Inc. registered with the Florida Department of State, Division of Corporations (Sunbiz - N12000006840). These details serve for all official mail, check gifts, and administrative inquiries."}
           </p>
         </div>
 
         <div className="tax-directory__grid">
-          {/* Card 1: Statut fiscal exact */}
+          {/* Card 1: Statut juridique & Sunbiz */}
           <div className="banking-card">
             <div className="banking-card__top">
               <span className="banking-card__num">01</span>
               <span className="banking-card__tag">
-                {language === "fr" ? "Statut fiscal exact" : "Exact Tax Status"}
+                {language === "fr" ? "Statut légal & Sunbiz" : "Corporate Status & Sunbiz"}
               </span>
             </div>
             <h3 className="banking-card__title">
-              {language === "fr" ? "Entité & Statut juridique" : "Entity & Corporate Status"}
+              {language === "fr" ? "Entité & Immatriculation" : "Entity & Florida Registration"}
             </h3>
             <p className="banking-card__desc">
               {language === "fr"
-                ? "Organisation sans but lucratif constituée dans l'État de Floride (Sunbiz)"
-                : "Non-profit corporation registered in the State of Florida (Sunbiz)"}
+                ? "Organisation à but non lucratif constituée en Floride en 2012 (Sunbiz)"
+                : "Nonprofit corporation incorporated in the State of Florida in 2012 (Sunbiz)"}
             </p>
             <div className="banking-card__fields">
               <CopyField
-                label={language === "fr" ? "Raison sociale officielle" : "Official Legal Name"}
-                value="Blessed Vally Foundation Inc."
+                label={language === "fr" ? "Dénomination légale" : "Official Legal Name"}
+                value="BLESSED VALLY FOUNDATION, INC."
+                language={language}
+              />
+              <CopyField
+                label={language === "fr" ? "N° d'enregistrement en Floride" : "Florida Document Number"}
+                value="N12000006840"
                 language={language}
               />
               <CopyField
@@ -806,22 +811,72 @@ function TaxStatusDirectorySection({ language }: { language: Language }) {
                 language={language}
               />
               <CopyField
-                label={language === "fr" ? "Vocation statutaire" : "Corporate Purpose"}
-                value={language === "fr" ? "Éducation, Foi, Humanitaire & Eau" : "Education, Faith, Relief & Clean Water"}
+                label={language === "fr" ? "Dossier administratif Floride" : "Florida Administrative Record"}
+                value={language === "fr" ? "Régularisation & réactivation en cours" : "Regularization & reactivation in progress"}
                 language={language}
               />
               <CopyField
-                label={language === "fr" ? "Statut fiscal US" : "US Tax Status"}
-                value={language === "fr" ? "Démarches administratives en cours" : "Administrative proceedings in progress"}
+                label={language === "fr" ? "Statut fiscal fédéral US" : "US Federal Tax Status"}
+                value={language === "fr" ? "501(c)(3) : démarches prévues (non actif à ce jour)" : "501(c)(3) : reinstatement planned (not active at this time)"}
                 language={language}
               />
             </div>
           </div>
 
-          {/* Card 2: Adresse postale officielle */}
+          {/* Card 2: Gouvernance de la fondation */}
           <div className="banking-card">
             <div className="banking-card__top">
               <span className="banking-card__num">02</span>
+              <span className="banking-card__tag">
+                {language === "fr" ? "Direction & Conseil" : "Foundation Governance"}
+              </span>
+            </div>
+            <h3 className="banking-card__title">
+              {language === "fr" ? "Gouvernance de la fondation" : "Board of Directors & Officers"}
+            </h3>
+            <p className="banking-card__desc">
+              {language === "fr"
+                ? "Équipe assurant l'orientation stratégique et la réalisation des objectifs"
+                : "Leadership guiding strategic direction, stewardship, and mission delivery"}
+            </p>
+            <div className="banking-card__fields">
+              <CopyField
+                label={language === "fr" ? "Présidente" : "President"}
+                value="Dr. Vally D. Jn.-Ls. Legouté"
+                language={language}
+              />
+              <CopyField
+                label={language === "fr" ? "Vice-président" : "Vice President"}
+                value="Jean-Ronald Legouté"
+                language={language}
+              />
+              <CopyField
+                label={language === "fr" ? "Trésorière" : "Treasurer"}
+                value="Vanessa R. Bastien-Joseph"
+                language={language}
+              />
+              <CopyField
+                label={language === "fr" ? "Secrétaire" : "Secretary"}
+                value="Corie-Henrie Bastien"
+                language={language}
+              />
+              <CopyField
+                label={language === "fr" ? "Administratrice" : "Administrator"}
+                value="Sasha-Vally Bastien"
+                language={language}
+              />
+              <CopyField
+                label={language === "fr" ? "Conseiller" : "Counselor"}
+                value="Geraldyr Lourdy Pierre"
+                language={language}
+              />
+            </div>
+          </div>
+
+          {/* Card 3: Adresses officielles */}
+          <div className="banking-card">
+            <div className="banking-card__top">
+              <span className="banking-card__num">03</span>
               <span className="banking-card__tag">
                 {language === "fr" ? "Adresses officielles" : "Official Addresses"}
               </span>
@@ -858,86 +913,46 @@ function TaxStatusDirectorySection({ language }: { language: Language }) {
             </div>
           </div>
 
-          {/* Card 3: Numéros de téléphone officiels */}
-          <div className="banking-card">
-            <div className="banking-card__top">
-              <span className="banking-card__num">03</span>
-              <span className="banking-card__tag">
-                {language === "fr" ? "Téléphones vérifiés" : "Verified Telephones"}
-              </span>
-            </div>
-            <h3 className="banking-card__title">
-              {language === "fr" ? "Numéros de téléphone officiels" : "Official Telephone Numbers"}
-            </h3>
-            <p className="banking-card__desc">
-              {language === "fr"
-                ? "Lignes directes pour joindre la présidence et les responsables de projets"
-                : "Direct lines to reach executive leadership and program coordinators"}
-            </p>
-            <div className="banking-card__fields">
-              <CopyField
-                label={language === "fr" ? "Téléphone officiel (États-Unis - Ligne 1)" : "Official Phone (United States - Line 1)"}
-                value="+1 (786) 443-0472"
-                language={language}
-              />
-              <CopyField
-                label={language === "fr" ? "Téléphone officiel (États-Unis - Ligne 2)" : "Official Phone (United States - Line 2)"}
-                value="+1 (845) 655-7399"
-                language={language}
-              />
-              <CopyField
-                label={language === "fr" ? "Téléphone officiel (Haïti - Ligne 1)" : "Official Phone (Haiti - Line 1)"}
-                value="+509 3618-4340"
-                language={language}
-              />
-              <CopyField
-                label={language === "fr" ? "Téléphone officiel (Haïti - Ligne 2)" : "Official Phone (Haiti - Line 2)"}
-                value="+509 4310-8621"
-                language={language}
-              />
-              <CopyField
-                label={language === "fr" ? "Téléphone officiel (Haïti - Ligne 3)" : "Official Phone (Haiti - Line 3)"}
-                value="+509 48 34 2601"
-                language={language}
-              />
-              <CopyField
-                label={language === "fr" ? "Courriel officiel" : "Official Email"}
-                value="blessedvallyfoundation@gmail.com"
-                language={language}
-              />
-            </div>
-          </div>
-
-          {/* Card 4: Mention sur les reçus fiscaux */}
+          {/* Card 4: Transparence & Reçus */}
           <div className="banking-card">
             <div className="banking-card__top">
               <span className="banking-card__num">04</span>
               <span className="banking-card__tag">
-                {language === "fr" ? "Reçus & Déductibilité" : "Receipts & Deductions"}
+                {language === "fr" ? "Transparence & Reçus" : "Transparency & Receipts"}
               </span>
             </div>
             <h3 className="banking-card__title">
-              {language === "fr" ? "Mention sur les reçus fiscaux" : "Tax Receipts & Statement"}
+              {language === "fr" ? "Reçus & Traitement fiscal" : "Receipts & Tax Treatment"}
             </h3>
             <p className="banking-card__desc">
               {language === "fr"
-                ? "Délivrance de confirmation officielle pour chaque contribution financière"
+                ? "Délivrance d'une attestation officielle pour chaque contribution financière reçue"
                 : "Official acknowledgment statement issued for every charitable contribution"}
             </p>
             <div className="banking-card__fields">
               <CopyField
-                label={language === "fr" ? "Modes de don éligibles" : "Eligible Payment Methods"}
-                value="Stripe, Chèque Bank of America, Zelle, Wire"
+                label={language === "fr" ? "Reçu officiel délivré" : "Official Receipt Issued"}
+                value={language === "fr" ? "Oui, systématiquement pour chaque don" : "Yes, automatically for every gift"}
                 language={language}
               />
               <CopyField
-                label={language === "fr" ? "Contrepartie reçue" : "Goods / Services Exchanged"}
-                value={language === "fr" ? "Aucune (Don bénévole direct sans contrepartie)" : "None (Direct contribution, no goods exchanged)"}
+                label={language === "fr" ? "Déductibilité fiscale" : "Tax Deductibility"}
+                value={language === "fr" ? "Non garantie (selon statut reconnu et lois applicables)" : "Not assumed (subject to official status and applicable laws)"}
                 language={language}
               />
               <CopyField
-                label={language === "fr" ? "Demande de reçu officiel" : "Request Official Receipt"}
+                label={language === "fr" ? "Demande de reçu" : "Request Official Receipt"}
                 value="blessedvallyfoundation@gmail.com"
+                language={language}
+              />
+              <CopyField
+                label={language === "fr" ? "Téléphone officiel USA" : "Official US Phone"}
+                value="+1 (786) 443-0472"
+                language={language}
+              />
+              <CopyField
+                label={language === "fr" ? "Registre d'État (Sunbiz)" : "State Registry (Sunbiz)"}
+                value="Florida Division of Corporations (N12000006840)"
                 language={language}
               />
               <CopyField
@@ -947,6 +962,25 @@ function TaxStatusDirectorySection({ language }: { language: Language }) {
               />
             </div>
           </div>
+        </div>
+
+        {/* Sunbiz Public Verification Link Button */}
+        <div style={{ marginTop: "36px", textAlign: "center" }}>
+          <a
+            href="https://search.sunbiz.org/Inquiry/CorporationSearch/ByName"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="button button--paper"
+            style={{ display: "inline-flex", alignItems: "center", gap: "8px" }}
+          >
+            <ShieldCheck size={16} />
+            <span>
+              {language === "fr"
+                ? "Consulter le registre officiel Sunbiz (Floride - Doc #N12000006840)"
+                : "Verify on Official Florida Sunbiz Registry (Doc #N12000006840)"}
+            </span>
+            <ArrowRight size={14} />
+          </a>
         </div>
 
         {/* Commitment Banner linking to Donate and Contact */}
