@@ -6,6 +6,7 @@ import DonationModule from "@/components/DonationModule";
 import FoundersCorner from "@/components/FoundersCorner";
 import HaitiWorksSection from "@/components/HaitiWorks";
 import TaxStatusSection from "@/components/TaxStatusSection";
+import LegalDocSection from "@/components/LegalDocSection";
 import { pageContent, routePaths, ui, type Language, type PageKey } from "@/lib/site-content";
 import { teamMembers } from "@/lib/team-data";
 
@@ -60,7 +61,7 @@ export default function SitePage({ pageKey, language }: { pageKey: Exclude<PageK
 
       {pageKey === "news" && <BlogSection language={language} />}
 
-      {pageKey !== "leadership" && pageKey !== "contact" && pageKey !== "donate" && pageKey !== "taxStatus" && (
+      {pageKey !== "leadership" && pageKey !== "contact" && pageKey !== "donate" && pageKey !== "taxStatus" && pageKey !== "privacy" && pageKey !== "terms" && (
         <div className="page-sections">
           {model.sections.map((section, index) => <ContentSection key={`${section.title}-${index}`} section={section} index={index} language={language} />)}
         </div>
@@ -68,26 +69,11 @@ export default function SitePage({ pageKey, language }: { pageKey: Exclude<PageK
 
       {pageKey === "haiti" && <HaitiWorksSection language={language} />}
       {pageKey === "taxStatus" && <TaxStatusSection language={language} />}
+      {(pageKey === "privacy" || pageKey === "terms") && (
+        <LegalDocSection pageKey={pageKey} language={language} />
+      )}
       {pageKey === "news" && <NewsArchive language={language} />}
       {pageKey === "donate" && <DonationModule language={language} />}
-      {pageKey === "privacy" && (
-        <ImpactBand
-          eyebrow={language === "fr" ? "Transparence & Données" : "Transparency & Privacy"}
-          title={language === "fr" ? "Une question relative à vos données personnelles ?" : "A question regarding your personal data?"}
-          body={language === "fr" ? "Notre équipe administrative est disponible pour répondre à toute demande d’accès, de rectification ou de suppression." : "Our administrative team is available to address any request for record access, update, or removal."}
-          ctaLabel={copy.contact}
-          ctaHref={routePaths.contact}
-        />
-      )}
-      {pageKey === "terms" && (
-        <ImpactBand
-          eyebrow={language === "fr" ? "Gouvernance & Statuts" : "Governance & Legal"}
-          title={language === "fr" ? "Consulter notre statut fiscal officiel et nos coordonnées." : "Review our official tax status and corporate records."}
-          body={language === "fr" ? "Retrouvez notre statut d'organisation sans but lucratif, nos mentions de reçus fiscaux et nos adresses officielles aux États-Unis et en Haïti." : "Access our verified non-profit records, tax receipt provisions, and registered addresses in the United States and Haiti."}
-          ctaLabel={language === "fr" ? "Voir le statut fiscal" : "View tax status"}
-          ctaHref={routePaths.taxStatus}
-        />
-      )}
       {pageKey === "partnerships" && <ImpactBand eyebrow={language === "fr" ? "Construire ensemble" : "Build together"} title={language === "fr" ? "Une bonne conversation peut devenir une action partagée." : "A good conversation can become shared action."} body={language === "fr" ? "Parlons de votre contexte, de vos ressources et de la manière dont ils peuvent servir les enfants et les communautés." : "Let’s talk about your context, your resources and how they can serve children and communities."} ctaLabel={copy.contact} ctaHref={routePaths.contact} />}
       {pageKey === "getInvolved" && <ImpactBand eyebrow={language === "fr" ? "Votre place" : "Your place"} title={language === "fr" ? "Le prochain pas peut être simple." : "The next step can be simple."} body={language === "fr" ? "Présentez-vous, dites-nous ce qui vous mobilise et nous vous répondrons avec une piste concrète." : "Introduce yourself, tell us what moves you and we’ll respond with a concrete next step."} ctaLabel={copy.contact} ctaHref={routePaths.contact} />}
     </>

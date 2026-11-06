@@ -176,3 +176,64 @@ describe("Blessed Vally Foundation - Blog & Carousel Integration", () => {
   });
 });
 
+describe("Blessed Vally Foundation - Legal & Privacy Policy Compliance", () => {
+  it("enforces strict zero-sale data policy and Stripe PCI encryption in privacy policy", () => {
+    // French privacy
+    const frPrivacy = pageContent.fr.privacy;
+    expect(frPrivacy.sections.length).toBeGreaterThanOrEqual(4);
+    const frCore = frPrivacy.sections[0];
+    expect(frCore.body.toLowerCase()).toMatch(/ne vendons|n’échangeons|commercialisons/);
+    expect(frCore.bullets?.some((b) => b.toLowerCase().includes("revente"))).toBe(true);
+
+    const frData = frPrivacy.sections[1];
+    expect(frData.body).toContain("Stripe");
+    expect(frData.body).toContain("TLS");
+
+    // English privacy
+    const enPrivacy = pageContent.en.privacy;
+    expect(enPrivacy.sections.length).toBeGreaterThanOrEqual(4);
+    const enCore = enPrivacy.sections[0];
+    expect(enCore.body.toLowerCase()).toContain("never sell");
+    expect(enCore.bullets?.some((b) => b.toLowerCase().includes("zero sale"))).toBe(true);
+
+    const enData = enPrivacy.sections[1];
+    expect(enData.body).toContain("Stripe");
+    expect(enData.body).toContain("PCI");
+  });
+
+  it("enforces copyright protection and voluntary donation clauses in terms of use", () => {
+    // French terms
+    const frTerms = pageContent.fr.terms;
+    expect(frTerms.sections.length).toBeGreaterThanOrEqual(4);
+    const frIP = frTerms.sections[1];
+    expect(frIP.body.toLowerCase()).toContain("propriété exclusive");
+    expect(frIP.body.toLowerCase()).toContain("haïti");
+
+    const frDonation = frTerms.sections[2];
+    expect(frDonation.body.toLowerCase()).toContain("volontaires");
+    expect(frDonation.body.toLowerCase()).toContain("irrévocables");
+
+    // English terms
+    const enTerms = pageContent.en.terms;
+    expect(enTerms.sections.length).toBeGreaterThanOrEqual(4);
+    const enIP = enTerms.sections[1];
+    expect(enIP.body.toLowerCase()).toContain("intellectual property");
+    expect(enIP.body.toLowerCase()).toContain("haiti");
+
+    const enDonation = enTerms.sections[2];
+    expect(enDonation.body.toLowerCase()).toContain("voluntary");
+    expect(enDonation.body.toLowerCase()).toContain("irrevocable");
+  });
+
+  it("guarantees official Florida jurisdiction and registered office in both legal documents", () => {
+    expect(pageContent.fr.terms.sections[3].body).toContain("Floride");
+    expect(pageContent.fr.terms.sections[3].body).toContain("12933 SW 129 Street");
+    expect(pageContent.en.terms.sections[3].body).toContain("Florida");
+    expect(pageContent.en.terms.sections[3].body).toContain("12933 SW 129 Street");
+
+    expect(pageContent.fr.privacy.sections[3].body).toContain("12933 SW 129 Street");
+    expect(pageContent.en.privacy.sections[3].body).toContain("12933 SW 129 Street");
+  });
+});
+
+
