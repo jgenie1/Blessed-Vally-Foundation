@@ -665,12 +665,464 @@ blockquote { position: relative; max-width: 700px; margin: 39px 0 0; padding: 19
   }
 }
 
-/* Tax Status Directory */
-.tax-directory { background: var(--sand); border-top: 1px solid var(--line); }
-.tax-directory__header { max-width: 760px; margin-bottom: 40px; }
-.tax-directory__header h2 { margin: 10px 0 16px; font: 500 clamp(32px, 4vw, 48px)/1.08 "Fraunces", serif; letter-spacing: -.04em; color: var(--ink); }
-.tax-directory__sub { color: var(--muted); font-size: 15px; line-height: 1.6; margin: 0; }
-.tax-directory__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; align-items: stretch; }
+/* ==========================================================================
+   Tax Status & Transparency Page (Bespoke Institutional Layout)
+   ========================================================================== */
+
+.tax-status-page {
+  background: var(--paper);
+  border-top: 1px solid var(--line);
+}
+
+/* Certificate Card */
+.tax-cert-card {
+  background: var(--sand);
+  border: 1px solid rgba(16,42,67,.14);
+  border-radius: 6px;
+  padding: 36px 32px;
+  margin-bottom: 56px;
+  box-shadow: 0 10px 30px rgba(16,42,67,.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.tax-cert-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--coral), var(--sand-dark), var(--coral));
+}
+
+.tax-cert-card__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 24px;
+}
+
+.tax-cert-card__issuer {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.tax-cert-card__issuer-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: rgba(16,42,67,.07);
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.tax-cert-card__issuer-text strong {
+  display: block;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--ink);
+}
+
+.tax-cert-card__issuer-text small {
+  display: block;
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.tax-cert-card__title-row {
+  margin-bottom: 24px;
+}
+
+.tax-cert-card__name {
+  font: 500 clamp(24px, 3.2vw, 36px)/1.15 "Fraunces", serif;
+  color: var(--ink);
+  letter-spacing: -.02em;
+  margin: 0 0 8px;
+}
+
+.tax-cert-card__meta-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 18px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.tax-cert-field__label {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--muted);
+  margin-bottom: 5px;
+}
+
+.tax-cert-field__value {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.4;
+}
+
+.tax-cert-field__value-copy {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-weight: 700;
+  color: var(--coral-dark);
+}
+
+.tax-cert-field__copy-btn {
+  background: var(--sand);
+  border: 1px solid var(--line);
+  padding: 3px 8px;
+  border-radius: 3px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--ink);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: all .2s ease;
+}
+
+.tax-cert-field__copy-btn:hover {
+  background: var(--ink);
+  color: #fff;
+  border-color: var(--ink);
+}
+
+.tax-cert-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding-top: 6px;
+}
+
+/* Mission Pillars Grid */
+.tax-section-block {
+  margin-bottom: 60px;
+}
+
+.tax-section-block__head {
+  max-width: 760px;
+  margin-bottom: 28px;
+}
+
+.tax-section-block__head h3 {
+  font: 500 clamp(24px, 3vw, 32px)/1.2 "Fraunces", serif;
+  color: var(--ink);
+  letter-spacing: -.03em;
+  margin: 6px 0 10px;
+}
+
+.tax-section-block__head p {
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.tax-pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.tax-pillar-card {
+  background: var(--sand);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+
+.tax-pillar-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(16,42,67,.25);
+  box-shadow: 0 12px 24px rgba(16,42,67,.06);
+}
+
+.tax-pillar-card__icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  background: rgba(224,86,36,.1);
+  color: var(--coral);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.tax-pillar-card h4 {
+  font: 500 17px/1.3 "Fraunces", serif;
+  color: var(--ink);
+  margin: 0 0 8px;
+}
+
+.tax-pillar-card p {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.55;
+  margin: 0;
+}
+
+.tax-pillar-location-note {
+  margin-top: 24px;
+  padding: 16px 20px;
+  background: rgba(16,42,67,.03);
+  border-left: 3px solid var(--coral);
+  border-radius: 2px;
+  font-size: 14px;
+  color: var(--ink-soft);
+  line-height: 1.55;
+}
+
+/* Board Members Grid */
+.tax-board-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+.tax-board-card {
+  background: var(--sand);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 20px;
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+}
+
+.tax-board-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(16,42,67,.28);
+  box-shadow: 0 10px 20px rgba(16,42,67,.05);
+}
+
+.tax-board-card__avatar {
+  width: 76px;
+  height: 92px;
+  border-radius: 4px;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: var(--sand-dark);
+  box-shadow: 0 2px 8px rgba(16,42,67,.08);
+}
+
+.tax-board-card__avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.tax-board-card__body {
+  flex: 1;
+  min-width: 0;
+}
+
+.tax-board-card__role {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--coral-dark);
+  margin-bottom: 4px;
+}
+
+.tax-board-card__name {
+  font: 500 16px/1.25 "Fraunces", serif;
+  color: var(--ink);
+  margin: 0 0 6px;
+}
+
+.tax-board-card__desc {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Legal Notice Box */
+.tax-legal-notice-box {
+  background: linear-gradient(135deg, rgba(16,42,67,.03) 0%, rgba(224,86,36,.06) 100%);
+  border: 1px solid var(--line);
+  border-left: 5px solid var(--coral);
+  border-radius: 4px;
+  padding: 32px;
+  margin-bottom: 60px;
+}
+
+.tax-legal-notice-box__header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.tax-legal-notice-box__header h3 {
+  font: 500 clamp(20px, 2.5vw, 24px)/1.25 "Fraunces", serif;
+  color: var(--ink);
+  margin: 0;
+}
+
+.tax-legal-notice-box__list {
+  display: grid;
+  gap: 14px;
+  margin: 0 0 22px;
+}
+
+.tax-legal-notice-item {
+  display: flex;
+  gap: 12px;
+  font-size: 14px;
+  color: var(--ink);
+  line-height: 1.6;
+}
+
+.tax-legal-notice-item svg {
+  flex-shrink: 0;
+  color: var(--coral);
+  margin-top: 3px;
+}
+
+.tax-legal-notice-box__disclaimer {
+  padding-top: 18px;
+  border-top: 1px dashed rgba(16,42,67,.18);
+  font-size: 13px;
+  color: var(--ink-soft);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Two-Column Directory */
+.tax-directory-panel {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 28px;
+  margin-bottom: 60px;
+}
+
+.tax-dir-card {
+  background: var(--sand);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 30px;
+}
+
+.tax-dir-card__head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 22px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--line);
+}
+
+.tax-dir-card__head h4 {
+  font: 500 19px/1.2 "Fraunces", serif;
+  color: var(--ink);
+  margin: 0;
+}
+
+.tax-dir-item {
+  margin-bottom: 20px;
+}
+
+.tax-dir-item:last-child {
+  margin-bottom: 0;
+}
+
+.tax-dir-item__label {
+  display: block;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+
+.tax-dir-item__value {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.45;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+/* Motto Banner */
+.tax-motto-banner {
+  background: var(--sand-dark);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 44px 32px;
+  text-align: center;
+}
+
+.tax-motto-banner__quote {
+  font: italic 500 clamp(18px, 2.4vw, 24px)/1.45 "Fraunces", serif;
+  color: var(--ink);
+  max-width: 800px;
+  margin: 0 auto 16px;
+}
+
+.tax-motto-banner__sign {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--coral-dark);
+  margin-bottom: 26px;
+}
+
+.tax-motto-banner__actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 600px) {
+  .tax-cert-card { padding: 24px 18px; }
+  .tax-cert-card__meta-grid { padding: 16px; grid-template-columns: 1fr; }
+  .tax-board-card { flex-direction: column; }
+  .tax-board-card__avatar { width: 100%; height: 160px; }
+  .tax-board-card__avatar img { object-position: center 20%; }
+  .tax-legal-notice-box { padding: 22px 18px; }
+  .tax-dir-card { padding: 22px 18px; }
+  .tax-directory-panel { grid-template-columns: 1fr; }
+}
 
 /* ==========================================================================
    Haiti Works Section ("Travaux et infrastructures en cours")
