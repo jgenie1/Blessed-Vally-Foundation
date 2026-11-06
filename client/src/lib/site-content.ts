@@ -85,7 +85,7 @@ export const secondaryNav: NavItem[] = [
 ];
 
 export const legalNav: NavItem[] = [
-  { key: "taxStatus", label: { en: "Tax status & official directory", fr: "Statut fiscal & coordonnées officielles" } },
+  { key: "taxStatus", label: { en: "Legal status & transparency", fr: "Statut juridique & transparence" } },
   { key: "privacy", label: { en: "Privacy policy", fr: "Politique de confidentialité" } },
   { key: "terms", label: { en: "Terms of use", fr: "Conditions d’utilisation" } },
 ];
@@ -104,7 +104,7 @@ export const pageLabels: Record<PageKey, Record<Language, string>> = {
   getInvolved: { en: "Get involved", fr: "Participer" },
   donate: { en: "Donate", fr: "Faire un don" },
   contact: { en: "Contact", fr: "Contact" },
-  taxStatus: { en: "Tax status & official directory", fr: "Statut fiscal & coordonnées officielles" },
+  taxStatus: { en: "Legal status & transparency", fr: "Statut juridique & transparence" },
   privacy: { en: "Privacy policy", fr: "Politique de confidentialité" },
   terms: { en: "Terms of use", fr: "Conditions d’utilisation" },
 };

@@ -107,11 +107,11 @@ export const teamMembers: TeamMember[] = [
     name: "Ms. Sasha-Vally Bastien",
     role: {
       fr: "Administratrice",
-      en: "Board Member / Trustee",
+      en: "Administrator",
     },
     badge: {
-      fr: "Conseil d’Administration",
-      en: "Board Trustee",
+      fr: "Administration du Conseil",
+      en: "Board Administrator",
     },
     image: "/images/contact/contact-5.jpg",
     note: {
